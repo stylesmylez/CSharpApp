@@ -1,0 +1,34 @@
+version 1.9 (April, 2013)
+============
+Upgraded code to support Google Maps API v3. Most of the code should work fine.
+Upgraded ASP.Net code to .Net framework 4.0 with Visual Web Developer Express 2010 version
+Following functionality is not working currently
+->Color change for direction lines (MapWithDirections.aspx)
+->Changing map type (satellite, hybrid etc) via ASP.Net code doesn't work. (MapWithSatelliteView.aspx)
+->Geocoding may not work (MapWithGeocoding.aspx)
+
+
+version 1.8 (November, 2011)
+============================
+Added OnZoomChanged() event. It will allow user to get current zoom level in ASP.Net code
+Added MapWithZoomLevels.aspx sample.
+
+Version 1.7 (March, 2011)
+=========================
+Changed default value of AutomaticBoundaryAndZoom to false. This will disable recentering and automatic zoom by default. Many people were not able to do this before.  See example MapWithAutoMovingPushpinsAndDynamicBoundaries.aspx.
+New event MapClicked() added to control. See example MapClickEvent.aspx.
+New event OnPushpinClick() added to control. See example PushpinsClickEvent.aspx.
+New event OnPushpinDrag() added to control. See example PushpinsDragEvent.aspx.
+
+Directions related changes
+--------------------------
+Removed GoogleObject.Directions.FromAddress and GoogleObject.Directions.ToAddress properties. Instead added GoogleObject.Directions.Addresses property. This will allow users to draw direction from more than two addresses. See example MapWithDirections.aspx.
+Changed name of ShowDirection property to ShowDirectionInstructions to be more clear.
+Added property as GoogleObject.Directions.HideMarkers. This property controls direction markers visibility (e.g. pushpins with A, B, C etc). It will allow user to draw a route between multiple addresses without having to display each pushpin. See example MapWithDirections.aspx.
+Added property as GoogleObject.Directions.PolylineColor. This property controls color of direction line. See example MapWithDirections.aspx.
+Added property as GoogleObject.Directions.PolylineWidth. This property controls width of direction line. See example MapWithDirections.aspx.
+Added property as GoogleObject.Directions.PolylineColor. This property controls opacity of direction line. See example MapWithDirections.aspx.
+
+Version 1.6 (September 3, 2009)
+================================
+Added driving directions support

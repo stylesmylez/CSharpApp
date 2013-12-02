@@ -1,0 +1,596 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	How to use Query String to pass values between ASP.NET Pages - .Net Articles & Samples
+</title><meta name="Description" content="Directory of ASP.NET, VB.NET, C#, XML and SQL resources, articles, samples, tutorials, scripts, applications and sample chapters arranged by category."><meta name="keywords" content="DevASP.NET, ASP.NET, ASP.Net Help, VB.NET, VS.NET, .NET Framework, ADO.NET, ASP .NET, VB .NET, XML, Visual Studio.Net, SOAP, ASP.Net Samples, VB.Net Samples, ASP.Net Articles, VB.Net Articles, C-Sharp .Net, VB.Net Samples, .Net Framework, Sample Chapters, Articles, Samples, Links, Search, Components"><link id="_ctl0_linkMain" rel="stylesheet" type="text/css" href="../../../include/stylesheet.css" />
+  <script type="text/javascript" language="javascript" src='/include/java.js'></script>
+  <meta name="verify-v1" content="H7NW4P9MX8HFIjTom6KhvF8FVq2Jisqos3JXQTPVUB4="><meta name="msvalidate.01" content="B10575A27DADF1D515673FAA02F356D4">
+  <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+</head>
+<body link="#0000FF" vlink="#0000FF" topmargin="0">
+  <center>
+    <div align="center">
+      <form name="aspnetForm" method="post" action="1278.html?404%3bhttp%3a%2f%2fwww.devasp.net%3a80%2fnet%2farticles%2fdisplay%2f1278.html" id="aspnetForm">
+<input type="hidden" name="_ctl0_ContentPlaceHolder1_ToolkitScriptManager1_HiddenField" id="_ctl0_ContentPlaceHolder1_ToolkitScriptManager1_HiddenField" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMTE4MjIyNjIyDxYEHghQYWdlTmFtZQU7NDA0O2h0dHA6Ly93d3cuZGV2YXNwLm5ldDo4MC9uZXQvYXJ0aWNsZXMvZGlzcGxheS8xMjc4Lmh0bWweCUFydGljbGVJRCgpWVN5c3RlbS5JbnQ2NCwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BDEyNzhkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYBBTtfY3RsMDpDb250ZW50UGxhY2VIb2xkZXIxOkFkZEFydGljbGVDb21tZW50MTpjYkVtYWlsQXJ0aWNsZQ==" />
+
+
+<script src="/ScriptResource.axd?d=Hi1XczbZxV_gDQw3YdYKuqsWwLdidi0fqV5S0a_vRQHbjK45aaBgqXQDLVF85TjCzh0dXDiE0AGeqvqB3qlI7Tz3q6O2M42Co_WgwsUE_zrjR79G0&amp;t=11e6618b" type="text/javascript"></script>
+      <map name="tabsmap">
+        <area href="/net/search/" shape="rect" coords="10, 0, 75, 25">
+        <area href="http://www.devasp.com/search/display/category330.html" shape="rect" coords="85, 0, 132, 25">
+        <area href="http://www.devasp.com/search/display/category77.html" shape="rect" coords="140, 0, 188, 25">
+        <area href="/net/search/display/category272.html" shape="rect" coords="200, 0, 270, 25">
+        <area href="/net/search/display/category253.html" shape="rect" coords="285, 0, 345, 25">
+        <area href="/net/search/display/category248.html" shape="rect" coords="358, 0, 430, 25">
+        <area href="/net/search/display/category147.html" shape="rect" coords="440, 0, 490, 25">
+      </map>
+      <table border="0" cellpadding="0" cellspacing="0" width="940" style="text-align: center;">
+        <tr>
+          <td colspan="10" style="text-align: center;">
+            <span id="_ctl0_lblb728x90"><script type="text/javascript"><!--
+google_ad_client = "pub-8159070411425418";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel ="8306012387";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></span>
+          </td>
+        </tr>
+        <tr>
+          <td align="left" width="20" bgcolor="#0679F9" nowrap>
+            <img src="/Images/corner1.gif" width="20" height="20" border="0">
+          </td>
+          <td align="center" bgcolor="#0679F9" width="735" nowrap>
+            <b><a class="slink" href="/net/search/">Search</a>  - 
+            <a class="slink" href="/net/articles/">Articles</a></td>
+          <td align="right" bgcolor="#0679F9" nowrap>
+            <img src="/Images/corner2.gif" width="20" height="20" border="0">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <td valign="top" style="text-align: left; width: 125px" bgcolor="#0679F9">
+                  <table border="0" style="width: 125px" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td style="height: 1px">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; vertical-align: bottom;" nowrap>
+                        <a href="http://www.devasp.net">
+                          <img src="/Images/DevASPNet_Logo.gif" alt="DevASP.NET for ASP.NET, VB.NET, XML and C# (C-Sharp) Developers Tuesday, March 03, 2009"
+                            border="0" width="100" height="30"></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="height: 2px">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="slink">
+                      <br>
+                        <a href="/">Home</a><br>
+                        <a href="/net/articles/">Dev Articles</a><br>
+                        <a href="/net/samplechapters/">Sample Chapters</a><br>
+                        <a href="/net/search/listingaddnew.aspx">Add a Listing</a><br>
+                        <a href="/net/contact.aspx">Contact</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="height: 1px">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td bgcolor="#FFFFBB" style="text-align: center; vertical-align: baseline; height: 18px">
+                        <b><a href="/net/articles/">Dev Articles</a></b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="slink">
+                      <br>
+                        <a href="/net/articles/asp_net.aspx" id="_ctl0_lnkAsp">ASP.NET (512)</a><br>
+                        <a href="/net/articles/c_sharp.aspx" id="_ctl0_lnkCSharp">C# (300)</a><br>
+                        <a href="/net/articles/sql_server.aspx" id="_ctl0_lnkSql">SQL Server (59)</a><br>
+                        <a href="/net/articles/vb_net.aspx" id="_ctl0_lnkVB">VB.NET (195)</a><br>
+                        <a href="/net/articles/web_services.aspx" id="_ctl0_lnkWService">Web Services (6)</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td bgcolor="#FFFFBB" style="text-align: center; vertical-align: baseline; height: 18px">
+                        <b><a href="/net/search/">Search Directory</a></b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="slink">
+                      <br>
+                        <a href="/net/search/display/category75070.html">ASP.Net AJAX</a><br>
+                        <a href="/net/search/display/category75364.html">AJAX ToolKit</a><br>
+                        <a href="/net/search/display/category65694.html">.NET Namespaces</a><br>
+                        <a href="/net/search/display/category87.html">Applications</a><br>
+                        <a href="/net/search/display/category215.html">Articles & Samples</a><br>
+                        <a href="/net/search/display/category212.html">Assembly & Controls</a><br>
+                        <a href="/net/search/display/category246.html">Community</a><br>
+                        <a href="/net/search/display/category187.html">Developer Sites</a><br>
+                        <a href="/net/search/display/category379.html">Downloads</a><br>
+                        <a href="/net/search/display/category263.html">Hosting Services</a><br>
+                        <a href="/net/search/display/category163.html">Introduction</a><br>
+                        <a href="/net/search/display/category296.html">Knowledge Base</a><br>
+                        <a href="/net/search/display/category373.html">Sample Chapters</a><br>
+                        <a href="/net/search/display/category945.html">WebCasts</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span id="_ctl0_lblb125x125"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td bgcolor="#FFFFBB" style="text-align: center; vertical-align: baseline; height: 18px">
+                        <b><a href="/net/search/display/category272.html">ASP.NET</a></b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="slink">
+                      <br>
+                        <a href="/net/search/display/category224.html">Applications</a><br>
+                        <a href="/net/search/display/category30.html">Articles & Samples</a><br>
+                        <a href="/net/search/display/category151.html">ASP.Net Sites</a><br>
+                        <a href="/net/search/display/category212.html">Assembly & Controls</a><br>
+                        <a href="/net/search/display/category114.html">Downloads</a><br>
+                        <a href="/net/search/display/category867.html">Errors & Bugs</a><br>
+                        <a href="/net/search/display/category291.html">Introduction</a><br>
+                        <a href="/net/search/display/category177.html">Knowledge Base</a><br>
+                        <a href="/net/search/display/category410.html">Sample Chapters</a><br>
+                        <a href="/net/search/display/category950.html">WebCasts</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td bgcolor="#FFFFBB" style="text-align: center; vertical-align: baseline; height: 18px">
+                        <b><a href="/net/search/display/category253.html">VB.Net</a></b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="slink">
+                      <br>
+                        <a href="/net/search/display/category270.html">Articles & Samples</a><br>
+                        <a href="/net/search/display/category380.html">Downloads</a><br>
+                        <a href="/net/search/display/category920.html">Errors, Bugs & Fixes</a><br>
+                        <a href="/net/search/display/category292.html">Introduction</a><br>
+                        <a href="/net/search/display/category635.html">Knowledge Base</a><br>
+                        <a href="/net/search/display/category928.html">Sample Chapters</a><br>
+                        <a href="/net/search/display/category1001.html">WebCasts</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td bgcolor="#FFFFBB" style="text-align: center; vertical-align: baseline; height: 18px">
+                        <b><a href="/net/search/display/category248.html">C-Sharp</a></b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="slink">
+                      <br>
+                        <a href="/net/search/display/category526.html">Applications</a><br>
+                        <a href="/net/search/display/category322.html">Articles & Samples</a><br>
+                        <a href="/net/search/display/category162.html">C-Sharp Sites</a><br>
+                        <a href="/net/search/display/category922.html">Errors, Bugs & Fixes</a><br>
+                        <a href="/net/search/display/category293.html">Introduction</a><br>
+                        <a href="/net/search/display/category646.html">Knowledge Base</a><br>
+                        <a href="/net/search/display/category411.html">Sample Chapters</a><br>
+                        <a href="/net/search/display/category1003.html">WebCasts</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td bgcolor="#FFFFBB" style="text-align: center; vertical-align: baseline; height: 18px">
+                        <b><a href="/net/search/display/category147.html">SQL Server</a></b>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="slink">
+                      <br>
+                        <a href="/net/search/display/category492.html">Applications</a><br>
+                        <a href="/net/search/display/category463.html">Articles & Samples</a><br>
+                        <a href="/net/search/display/category1179.html">SQL Sites</a><br>
+                        <a href="/net/search/display/category404.html">Downloads</a><br>
+                        <a href="/net/search/display/category523.html">Errors, Bugs & Fixes</a><br>
+                        <a href="/net/search/display/category486.html">Introduction</a><br>
+                        <a href="/net/search/display/category522.html">Knowledge Base</a><br>
+                        <a href="/net/search/display/category537.html">Sample Chapters</a><br>
+                        <a href="/net/search/display/category948.html">WebCasts</a>
+                        <br>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td bgcolor="#FFFFBB" style="text-align: center; vertical-align: baseline; height: 18px">
+                        &nbsp;
+                      </td>
+                    </tr>
+                    
+                    <tr>
+                      <td style="text-align: center;">
+                      <br>
+                        <a href="http://www.devasp.com">
+                          <img src="/images/devasplogo2.gif" border="0" width="100" height="30">
+                        </a>
+                      </td>
+                    </tr>
+                    
+                  </table>
+                </td>
+                <td style="text-align: center;" width="100%">
+                  <table cellspacing="0" cellpadding="5" width="100%" border="0">
+                    <tr>
+                      <td>
+                        
+  
+  <table cellspacing="0" cellpadding="2" width="100%" border="0">
+  <tr>
+  <td style="width: 100%; vertical-align: top; text-align: center; padding-bottom: 5px;">
+   <center> <table style=" border-width:1px; text-align:center; border-style:solid; border-color:#bbbbbb; width:98%;" Cellpadding="3" cellspacing="0" BGColor="Yellow"><tr>	<td Align="center" > <a href="/net/ad_redirect.asp?ad_id=554" Target="_new"><b>FREE 12 month online training for ASP.NET & MS Expression Studio and a Free copy of MS Expression Web with Windows Server Purchase</B></a></td></tr></table> </center>
+    </td>
+  </tr>
+    <tr>
+      <td style="width: 100%; vertical-align: top; text-align: left;">
+        <span id="_ctl0_ContentPlaceHolder1_Label1"><font face=arial color="#0000ff" Size=3><b>How to use Query String to pass values between ASP.NET Pages</b></font><br/><br><font face=arial size=2><b>Author: </b>Nikki Smith<br /><br>Query String is a way to pass values from one page to another in ASP.NET. I will explain it with a simple example in this article.<br><br>
+<div style="text-align:center;"><script type="text/javascript"><!--
+google_ad_client = "pub-8159070411425418";
+google_ad_width = 336;
+google_ad_height = 280;
+google_ad_format = "336x280_as";
+google_ad_channel ="0488415096";
+google_color_border = "FFFFFF";
+google_color_link = "0000FF";
+google_color_bg = "FFFFFF";
+google_color_text = "000000";
+google_color_url = "008000";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+<p> </p>
+<p>Although Query String is not a best way to pass values between ASP.NET pages but it is very useful in some situations. We append values in the URL of the page to pass to that page and then retrieve these values in that page. This technique has security issues because we show our values to the user in URL. Also, most browsers limit the URL to 255 characters. The Key-Value pair is used to pass values. First Query String variable is appended in the URL starting with question mark (?) and after that every other variable is appended using “and” sign (&). “Equals” sign (=) is used between each Query String Key-Value pair.</p>
+<div>You will learn to use Query String to pass values between ASP.NET pages with a simple example.</div>
+<div> </div>
+<div>
+<ol>
+    <li>Create a new Web Site in Visual Studio 2010 either in Visual Basic or Visual C#.</li>
+    <li>Add two Web Forms in the Web Site. Name First Web Form as Page1.aspx and second as Page2.aspx</li>
+    <li>Write code below in Page1.aspx page. I have added 2 Labels, 2 Textboxes and 1 Button<br />
+    <br />
+    <div>
+    <div><div>&lt;asp:Label ID=&quot;lblName&quot; runat=&quot;server&quot; Text=&quot;Name:&quot;&gt;&lt;/asp:Label&gt;</div></div>
+    <div>    <div>&lt;asp:TextBox ID=&quot;txtboxName&quot; runat=&quot;server&quot;&gt;&lt;/asp:TextBox&gt;</div></div>
+    <div>    <div>&lt;br /&gt;</div></div>
+    <div>    <div>&lt;asp:Label ID=&quot;lblCity&quot; runat=&quot;server&quot; Text=&quot;City:&quot;&gt;&lt;/asp:Label&gt;</div></div>
+    <div>    <div>&lt;asp:TextBox ID=&quot;txtBoxCity&quot; runat=&quot;server&quot;&gt;&lt;/asp:TextBox&gt;</div></div>
+    <div>    <div>&lt;br /&gt;</div></div>
+    <div>    &lt;asp:Button ID=&quot;btnQueryStringValues&quot; runat=&quot;server&quot; Text=&quot;Click To See Query String Values on Page2&quot; Width=&quot;270px&quot; onclick=&quot;btnQueryStringValues_Click&quot; /&gt;<br /><br />
+     </div>
+    </div>
+    </li>
+    <li> Now add Button click event in code behind file of Page1<br />
+    <br />
+    <div><b>Visual Basic<br />
+    <br />
+    </b></div>
+    <div>Protected Sub btnQueryStringValues_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnQueryStringValues.Click</div>
+    <div>     Dim name As String = txtboxName.Text</div>
+    <div>     Dim city As String = txtBoxCity.Text</div>
+    <div>     Response.Redirect("Page2.aspx?Name=" + name + "&City=" + city)</div>
+    <div>End Sub</div>
+    <div> </div>
+    <div><b>Visual C#<br />
+    <br type="_moz" />
+    </b></div>
+    <div>protected void btnQueryStringValues_Click(object sender, EventArgs e) {</div>
+    <div>    string name = txtboxName.Text;</div>
+    <div>    string city = txtBoxCity.Text;</div>
+    <div>    Response.Redirect("Page2.aspx?Name=" + name + "&City=" + city);</div>
+    <div>}<br />
+    <br />
+    <div>Name and City values are appended in the URL using Key-Value pair. We need the “Key for every value to retrieve Query String variables in the page.  </div>
+    </div>
+    </li>
+    <li>
+    <div>Write code below in Page2.aspx page. I have added a Label and a Hyper Link.<br />
+    <br />
+    <div>
+    <div><div>&lt;asp:Label ID=&quot;lblQueryStringValues&quot; runat=&quot;server&quot; &gt;&lt;/asp:Label&gt;</div></div>
+    <div>    <div>&lt;br /&gt;</div></div>
+    <div>    <div>&lt;asp:HyperLink ID=&quot;HyperLink1&quot; runat=&quot;server&quot; NavigateUrl=&quot;~/Page1.aspx&quot;&gt;Back to Page1&lt;/asp:HyperLink&gt;</div><br />
+     </div>
+    </div>
+    </div>
+    </li>
+    <li>
+    <div> Now add code below in Page Load method in code behind file of Page2<br />
+    <br />
+    <div><b>Visual Basic<br />
+    <br type="_moz" />
+    </b></div>
+    <div>Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load</div>
+    <div>    Dim name As String = Request.QueryString("Name")</div>
+    <div>    Dim city As String = Request.QueryString("City")</div>
+    <div>    lblQueryStringValues.Text = "Your name is: " + name + " and City is: " + city</div>
+    <div>End Sub</div>
+    <div> </div>
+    <div><b>Visual C#</b></div>
+    <div> </div>
+    <div>protected void Page_Load(object sender, EventArgs e) {</div>
+    <div>    string name = Request.QueryString["Name"];</div>
+    <div>    string city = Request.QueryString["City"];</div>
+    <div> </div>
+    <div>    lblQueryStringValues.Text = "Your name is: " + name + " and City is: " + city;</div>
+    <div>}<br />
+    <br />
+    <div>Notice here we have used “Key” to retrieve Query String variables.</div>
+     </div>
+    </div>
+    </li>
+    <li>
+    <div>
+    <div>Right click on Page1.aspx and Set As Start Page. Press F5 and see the result in browser.</div>
+    </div>
+    </li>
+</ol>
+</div>
+<p> </p></span>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">
+        
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span id="_ctl0_ContentPlaceHolder1_lblMessage" style="font-family:Verdana;font-size:10pt;"></span>
+      </td>
+    </tr>
+    <tr id="trComments">
+      <td valign="top" align="left" style="padding-top: 35px; padding-bottom: 10px; background-image: url('/images/ArticleCommentHeader.gif');
+        background-repeat: no-repeat;">
+        <div id="divComments" >
+        <div id="_ctl0_ContentPlaceHolder1_AddArticleComment1_UpdateProgress1" style="display:none;">
+	
+									<div>
+										<img src='/Images/Loading.gif' />
+										<font color="green" size="2" face="arial"><b>Please wait ...</B></font></div>
+								
+</div>
+                  <div id="_ctl0_ContentPlaceHolder1_AddArticleComment1_UpdatePanel1">
+	  
+<table cellpadding="2" cellspacing="0" style="font-family: Verdana; font-size: 10pt;" width="100%">
+      <tr>
+        <td width="100px">
+          &nbsp;</td>
+        <td >
+          &nbsp;<span id="_ctl0_ContentPlaceHolder1_AddArticleComment1_lblMessage" style="color:Red;"></span></td>
+      </tr>
+     <tr>
+        <td colspan="2">
+          <span id="_ctl0_ContentPlaceHolder1_AddArticleComment1_Label2" style="color:Blue;font-size:Large;font-weight:bold;">Add Article Comment:</span></td>
+    
+      </tr>
+      
+      <tr>
+        <td nowrap style="font-weight:bold ">
+          Name :
+        </td>
+        <td>
+          <input name="_ctl0:ContentPlaceHolder1:AddArticleComment1:txtName" type="text" id="_ctl0_ContentPlaceHolder1_AddArticleComment1_txtName" style="font-family:Verdana;font-size:10pt;width:250px;" />
+         </td>
+      </tr>
+      <tr>
+        <td nowrap  style="font-weight:bold ">
+          Email Address :
+        </td>
+        <td>
+          <input name="_ctl0:ContentPlaceHolder1:AddArticleComment1:txtEmailAddress" type="text" id="_ctl0_ContentPlaceHolder1_AddArticleComment1_txtEmailAddress" style="font-family:Verdana;font-size:10pt;width:250px;" />
+          </td>
+      </tr>
+       <tr>
+        <td >
+          &nbsp;</td>
+        <td >
+          &nbsp;<span id="_ctl0_ContentPlaceHolder1_AddArticleComment1_lblComments" style="color:Red;"></span></td>
+      </tr>
+      <tr>
+        <td nowrap style="font-weight:bold ">
+          Comments :
+        </td>
+        <td width="100%">
+          <textarea name="_ctl0:ContentPlaceHolder1:AddArticleComment1:txtComments" id="_ctl0_ContentPlaceHolder1_AddArticleComment1_txtComments" style="font-family:Verdana;font-size:10pt;height:100px;width:70%;">
+</textarea><br />
+         </td>
+      </tr>
+      <tr>
+        <td>
+          &nbsp;</td>
+        <td>
+          <span style="font-family:Verdana;font-size:10pt;"><input id="_ctl0_ContentPlaceHolder1_AddArticleComment1_cbEmailArticle" type="checkbox" name="_ctl0:ContentPlaceHolder1:AddArticleComment1:cbEmailArticle" /><label for="_ctl0_ContentPlaceHolder1_AddArticleComment1_cbEmailArticle">Send me an email about this article when other users post a Comment</label></span></td>
+      </tr>
+      <tr>
+        <td>
+          &nbsp;</td>
+        <td>
+          <input type="submit" name="_ctl0:ContentPlaceHolder1:AddArticleComment1:cmdSubmit" value="Submit" id="_ctl0_ContentPlaceHolder1_AddArticleComment1_cmdSubmit" style="font-family:Verdana;font-size:10pt;" />&nbsp;<input
+            type="reset" style="font-family: Verdana; font-size: 10pt;" value="Clear All" /></td>
+      </tr>
+     
+    </table>
+    
+      
+</div>
+       </div> 
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" align="left" style="padding-top: 35px; padding-bottom: 10px; 
+        background-repeat: no-repeat;">
+        <span id="_ctl0_ContentPlaceHolder1_lblPreviousArticle"><a href='/net/articles/display/1277.html'><< How to use repeater control in ASP.NET</a></span>
+        <br /><br />
+        <div style="text-align:right">
+       <span id="_ctl0_ContentPlaceHolder1_lblNextArticle"><a href='/net/articles/display/1279.html'>How to use jQuery Datepicker in ASP.NET >></a></span>
+       </div>
+      </td>
+    </tr>
+  </table>
+  <script type="text/javascript">
+     
+    
+      function Goto1() 
+      {
+          var v1;
+          v1 = document.getElementById("vv1")
+          // alert(v1);
+          //v1.focus();
+         // ScrollToElement(v1);
+          //document.getElementById('divComments').scrollTop = document.getElementById('divComments').offsetTop;
+          //$('trComments').focus();
+         //document.form1.divComments.focus();      
+      }
+     // Goto1();
+    
+      function findPos(obj) {
+          var curtop = 0;
+          if (obj.offsetParent) {
+              do {
+                  curtop += obj.offsetTop;
+              } while (obj = obj.offsetParent);
+              return [curtop];
+          }
+      }
+      //Get object
+      //var SupportDiv = document.getElementById('divComments');
+
+      //Scroll to location of SupportDiv on load
+      //window.scroll(0, findPos(SupportDiv));
+     
+      function ScrollToElement(theElement) {
+
+          var selectedPosX = 0;
+          var selectedPosY = 0;
+
+          while (theElement != null) {
+              selectedPosX += theElement.offsetLeft;
+              selectedPosY += theElement.offsetTop;
+              theElement = theElement.offsetParent;
+          }
+
+          window.scrollTo(selectedPosX, selectedPosY);
+
+      }
+      
+
+  </script>
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td height="100%">
+                        <center>
+                          <table border="0">
+                            <tr>
+                              <td style="text-align: center;" height="25">
+                                <a href="/net/disclaimer.aspx"><font size="1">Disclaimer</font></a> - <a href="/net/Privacy.aspx"><font
+                                  size="1">Privacy</font></a>
+                                <br>
+                                <font face="Arial" size="1">© 2002-2013 DevASP.net</font>
+                              </td>
+                            </tr>
+                          </table>
+                        </center>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td style="text-align: center;" width="130" valign="top">
+                  <table style="text-align: center;" border="0" width="130" cellspacing="0" cellpadding="3">
+                    <tr>
+                      <td style="text-align: center;">
+                        <table style="text-align: center;" border="0" width="125" cellspacing="0" cellpadding="3" id="Table1">
+                          <tr>
+                            <td style="text-align: center;">
+                            <g:plusone></g:plusone><br /><br />
+                              <span id="_ctl0_lblb160x60"><script type="text/javascript"><!--
+google_ad_client = "pub-8159070411425418";
+google_ad_width = 160;
+google_ad_height = 600;
+google_ad_format = "160x600_as";
+google_ad_channel ="4915219479";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></span>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr bgcolor="#0679F9">
+                <td style="text-align: left; vertical-align: bottom; height: 20px" bgcolor="#0679F9">
+                  <img alt="" src="/Images/corner3.gif" style="width: 20px; height: 20px" border="0">
+                </td>
+                <td bgcolor="#0679F9" style="height: 20px">
+                </td>
+                <td style="vertical-align: bottom; text-align: right; height: 20px" bgcolor="#0679F9">
+                  <img src="/Images/corner4.gif" style="width: 20px; height: 20px" border="0" alt="">
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: left; vertical-align: bottom; height: 20px">
+                  &nbsp;
+                </td>
+                <td>
+                  &nbsp;
+                </td>
+                <td style="vertical-align: bottom; text-align: right; height: 20px">
+                  &nbsp;
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </center>
+  
+
+<script type="text/javascript">
+<!--
+(function() {var fn = function() {$get("_ctl0_ContentPlaceHolder1_ToolkitScriptManager1_HiddenField").value = '';Sys.Application.remove_init(fn);};Sys.Application.add_init(fn);})();// -->
+</script>
+</form>
+
+  <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+  </script>
+
+  <script type="text/javascript">
+    _uacct = "UA-735899-12";
+    urchinTracker();
+  </script>
+
+</body>
+</html>

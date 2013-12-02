@@ -1,0 +1,1945 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+<html>
+<head>
+	<title>An Introduction to Entity Framework for Absolute Beginners - CodeProject</title> 
+	<link type="text/css" rel="stylesheet" href="http://s.codeproject.com/App_Themes/Std/Css/Main.min.css?dt=2.6.130305.1">
+
+	
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Description" content="An introduction to Entity Framework for absolute beginners.; Author: Rahul Rajat Singh; Updated: 9 Apr 2012; Section: Libraries; Chapter: Platforms, Frameworks &amp; Libraries; Updated: 9 Apr 2012" />
+<meta name="Keywords" content="C#, ASP.NET, .NET, Dev, Intermediate,Libraries,Platforms, Frameworks &amp; Libraries,Free source code, tutorials" />
+<meta name="Author" content="Rahul Rajat Singh" />
+<meta name="Rating" content="General" />
+<meta name="Robots" content="index, follow, NOODP" />
+<meta name="Revisit-After" content="1 days" />
+<meta name="application-name" content="CodeProject" />
+
+<meta name="msapplication-navbutton-color" content="#FF9900" />
+<meta name="msapplication-tooltip" content="Your Development Resource." />
+<meta name="msapplication-starturl" content="http://www.codeproject.com/?pinned=true" />
+<meta name="msapplication-task" content="name=Homepage;action-uri=http://www.codeproject.com/;icon-uri=http://www.codeproject.com/favico.ico" />
+<meta name="msapplication-task" content="name=Latest Articles;action-uri=http://www.codeproject.com/script/articles/Latest.aspx;icon-uri=http://www.codeproject.com/favico.ico" />
+<meta name="msapplication-task" content="name=Questions and Answers;action-uri=http://www.codeproject.com/script/Answers/;icon-uri=http://www.codeproject.com/favico.ico" />
+<meta name="msapplication-task" content="name=The Lounge;action-uri=http://www.codeproject.com/Lounge.aspx;icon-uri=http://www.codeproject.com/favico.ico" />
+
+<link rel="dns-prefetch" href="//ajax.googleapis.com" /> 
+<link rel="canonical" href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B" />
+
+
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - All Topics" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=1" />
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - MFC/C++" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=2" />
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - C#" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=3" />
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - VB.NET" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=6" />
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - Mobile" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=18" />
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - ASP.NET" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=4" />
+<link rel="alternate" type="application/rss+xml" title="CodeProject Lounge Postings" href="http://www.codeproject.com/webservices/LoungeRSS.aspx" />
+<link rel="search" type="application/opensearchdescription+xml" title="CodeProject" href="http://www.codeproject.com/info/OpenSearch.xml" />
+
+	<base target="_top" />
+	<link rel="icon" href="/favicon.ico" type="image/ico" >
+<link rel="shortcut icon" href="/favicon.ico"  type="image/ico" >
+<link rel="apple-touch-icon" href="/images/FavIcon-Apple.png" type="image/png" >
+<script type="text/javascript" language="Javascript">//<![CDATA[
+function defrm () { /* thanks twitter */ document.write = ''; window.top.location = window.self.location;  setTimeout(function() { document.body.innerHTML = ''; }, 0);  window.self.onload = function(evt) { document.body.innerHTML = ''; }; }if (window.top !== window.self) {  try {  if (window.top.location.host) { /* will throw */ } else { defrm(); /* chrome */ }  } catch (ex) { defrm(); /* everyone else */ } }if (typeof(DemoUrl)!='undefined')   document.write(unescape('%3Cme')+'ta http'+'-equiv="re'+'fresh"                  con'+'tent="1;url='+DemoUrl+unescape('"%3CE'));
+function _dmBootstrap(file) { var _dma = document.createElement('script');  _dma.type = 'text/javascript'; _dma.async = true;  _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);}
+function _dmFollowup(file) { if (typeof DMAds === 'undefined')  _dmBootstrap('www.codeproject.com/script/js/a.min.js?dt=2.6.130305.1');}
+(function () { _dmBootstrap('www.codeproject.com/script/js/a.min.js?dt=2.6.130305.1'); setTimeout(_dmFollowup, 2000);})();
+
+//]]>
+</script>
+
+	
+<script type="text/javascript">
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "13507173" });
+  (function() {
+	var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+	s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+	el.parentNode.insertBefore(s, el);
+  })();
+</script>
+<noscript>
+  <img src="http://b.scorecardresearch.com/p?c1=2&c2=13507173&cv=2.0&cj=1" id="ctl00_Auditing_ComScore" />
+</noscript>
+
+
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-1735123-1']);
+	_gaq.push(['_trackPageview']);
+	_gaq.push(['_setDomainName', 'www.codeproject.com']);
+	_gaq.push(['_setSessionTimeout', '1200']); 
+
+	(function () {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})(); 
+</script>
+
+
+</head>	
+
+<body class="firefox firefox19">
+
+<a href="#Main"><img alt="Click here to Skip to main content" class="access-link" src="/Images/t.gif" /></a>
+
+
+
+
+
+<div class="page-background">
+
+	
+	
+
+	
+<div class="alert-bar  overlay " style="display: none;">
+	<a href="#" class="close-notify">×</a>
+	<div>Sign up for our free weekly <a href="/feature/web-newsletter">Web Developer Newsletter</a>.</div>
+</div>
+
+	<table id="ctl00_Bn" style="width:100%;height:135px" cellpadding="0" cellspacing="0" class="banner fixed">
+	<tr valign="bottom">
+		<td class="blank-background" style="height:31px">&nbsp;</td>
+		<td class="blank-background" rowspan="3" style="width:250px;height:135px"><a href="/"><img id="ctl00_Logo" tabindex="1" title="CodeProject" src="http://s.codeproject.com/App_Themes/Std/Img/logo250x135.gif" alt="Home" style="height:135px;width:250px;border-width:0px;" /></a></td>
+		<td class="blank-background align-right" style="width:728px;height:31px">
+
+<div class="container memberbar clearfix">
+
+	<div id="ctl00_MemberMenu_GenInfo" class="float-left">9,709,751 members (46,654 online) &nbsp; &nbsp; </div>
+
+	<div class="float-left">
+		
+	</div>
+
+	<div class="float-right">
+		<span id="ctl00_MemberMenu_Messages_NotificationDiv" class="tooltip member-message">
+	<a id="ctl00_MemberMenu_Messages_NotificationCount" class="notification-count" href="/script/Membership/MyNotifications.aspx">1</a>
+
+	<div class="tooltip-flyout notification-dropdown">
+		
+		<div id="ctl00_MemberMenu_Messages_Confirm" class="bold spaced"><a id="ctl00_MemberMenu_Messages_EmailConfirm" href="/script/Membership/SendConfirmRequest.aspx?rp=%2fArticles%2f363040%2fAn-Introduction-to-Entity-Framework-for-Absolute-B">Your email address needs to be confirmed.</a></div>
+		
+		<div id="Notifications" class="notification-list">
+			<img src="/images/animated_loading.gif" alt="loading" style="margin:auto;" />
+		</div>
+		<div class="spaced">
+			
+		</div>
+	</div>
+</span><span id="ctl00_MemberMenu_CurRat" class="tooltip">
+				<a id="ctl00_MemberMenu_MyProfile" href="/Members/stylez500">stylez500</a><img src="/Images/arrow-down-16.png" 
+					style="width:16px;height:16px;vertical-align:text-top" />
+				<div class="tooltip-flyout" style="width:135px !important">
+					<div class="list-item"><a id="ctl00_MemberMenu_MySettingsDefault" href="https://www.codeproject.com/script/Membership/Modify.aspx">My Settings</a></div>
+					
+					<div class="list-item"><a id="ctl00_MemberMenu_MyContacts" href="/script/Membership/ListContacts.aspx">My Contact info</a></div>
+					<div class="list-item"><a id="ctl00_MemberMenu_MyBookmarks" href="/script/Bookmarks/List.aspx?obtid=2">My Bookmarks</a></div>
+					
+					<div class="list-item"><a id="ctl00_MemberMenu_MyCodeProject" href="/script/Membership/MyWatchedItems.aspx">My Watched Items</a></div>
+					<div class="list-item"><a id="ctl00_MemberMenu_MyArticles" href="/script/Articles/MemberArticles.aspx?amid=6481265">My Articles</a></div>
+					<div class="list-item"><a id="ctl00_MemberMenu_MyMessages" href="/script/Forums/Messages.aspx?fmid=6481265">My Messages</a></div>
+					<div class="list-item"><a id="ctl00_MemberMenu_MyQuestions" href="/script/Answers/MemberPosts.aspx?tab=questions&amp;mid=6481265&amp;showall=True">My Questions</a></div>
+					<div class="list-item"><a id="ctl00_MemberMenu_MyAnswers" href="/script/Answers/MemberPosts.aspx?tab=answers&amp;mid=6481265&amp;showall=True">My Answers</a></div>
+					<div class="list-item"><a id="ctl00_MemberMenu_MyComments" href="/script/comments/MemberComments.aspx?mid=6481265">My Comments</a></div>
+					
+					
+				</div>
+			</span><span id="ctl00_MemberMenu_TotalPoints" title="Total reputation points"><a class="bold member-rep-box bronze" title="590" href="/script/Reputation/List.aspx?mid=6481265">590</a></span>
+			&nbsp;
+			<a id="ctl00_MemberMenu_Signout" href="/script/Membership/LogOff.aspx?rp=%2fArticles%2f363040%2fAn-Introduction-to-Entity-Framework-for-Absolute-B">Sign out</a>
+			<img src="/images/circle-cross.gif" width="16px" height="16px" style="vertical-align:middle;margin-top:-3px;"/>
+		
+
+		
+	</div>
+</div></td>
+		<td class="blank-background" style="height:31px">&nbsp;</td>
+	</tr>
+	<tr valign="middle">
+		<td class="theme1-background" style="height:94px">&nbsp;</td>
+		<td class="theme1-background ad"><div class="msg-728x90" data-format="728x90" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="ros"  lqm_country='JM' data-country='JM' data-tags='C#, ASP.NET, .NET, Dev, Intermediate,rating4.5'></div></td>
+		<td class="theme1-background" style="height:94px">&nbsp;</td>
+	</tr>
+	<tr valign="top">
+		<td style="height: 10px;"></td>
+		<td style="height: 10px;" class="blank-background"></td>
+		<td style="height: 10px;"></td>
+	</tr>
+</table>
+
+
+	<a href="#Main"><img alt="Click here to Skip to main content" class="access-link" 
+		src="/Images/t.gif" /></a>
+
+	
+	<div id="ctl00_TPR" class="sub-headerbar fixed">
+	<table cellpadding="0" cellspacing="0" class="extended"><tr><td nowrap="nowrap">
+		
+
+<div class="navbar clearfix">
+<ul class="navmenu openable">
+
+<li><a id="ctl00_TopNavBar_Home" href="http://www.codeproject.com">home</a>
+
+
+<li class="openable"><a id="ctl00_TopNavBar_Art" class="down selected" href="/script/Articles/Latest.aspx">articles</a>
+
+	<ul>
+		<li class="openable"><a id="ctl00_TopNavBar_ArtTopicList" class="fly" onmouseover="navBarMenu.ShowMap(this, &#39;ctl00_TopNavBar_MapFlyout&#39;);" href="/script/Content/SiteMap.aspx">Chapters and Sections<span class="has-submenu">&gt;</span></a><ul id="ctl00_TopNavBar_MapFlyout">
+			<li>
+				<div id="siteMap">
+					<img src="/images/animated.gif" alt="loading" style="margin:150px;width:100px;height:100px;" />
+				</div>
+			</li>
+			</ul>
+		</li>
+		<li><a id="ctl00_TopNavBar_ArtSearch" class="fly break" href="/search.aspx">Search</a></li>
+		<li><a id="ctl00_TopNavBar_ArtLatestArts" class="fly" href="/script/Articles/Latest.aspx?at=1,3,7">Latest Articles</a></li>
+		<li><a id="ctl00_TopNavBar_ArtLatestTips" class="fly" href="/script/Articles/Latest.aspx?at=6">Latest Tips/Tricks</a></li>
+		<li><a id="ctl00_TopNavBar_ArtTop" class="fly" href="/script/Articles/TopArticles.aspx?ta_so=5">Top Articles</a></li>
+		<li><a id="ctl00_TopNavBar_ArtBeginner" class="fly" href="/search.aspx?aidlst=152&amp;sa_us=True">Beginner Articles</a></li>
+		<li><a id="ctl00_TopNavBar_ArtBlogArticles" class="fly break" href="/script/Articles/BlogArticleList.aspx">Technical Blogs</a></li>
+		<li><a id="ctl00_TopNavBar_ArtGuide" class="fly" href="/info/Submit.aspx">Posting/Update Guidelines</a></li>
+		<li><a id="ctl00_TopNavBar_ArtHelpForum" class="fly" href="/Forums/1641/Article-Writing.aspx">Article Help Forum</a></li>
+		<li><a id="ctl00_TopNavBar_ArtCompetition" class="fly break" href="/script/Awards/CurrentCompetitions.aspx?cmpTpId=1">Article Competition</a></li>
+		<li><a id="ctl00_TopNavBar_ArtPostArticle" class="fly highlight1" href="/script/Articles/Submit.aspx">
+			<img src="/images/write-gr.png" width="19px" height="13px" /> Submit an article or tip
+			</a></li>
+		<li><a id="ctl00_TopNavBar_ArtPostBlog" class="fly highlight2" href="/script/Articles/BlogFeed.aspx">
+			<img src="/images/write-or.png" width="19px" height="13px" /> Post your Blog
+			</a></li>		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+
+<li class="openable"><a id="ctl00_TopNavBar_Answers" href="/script/Answers/List.aspx?tab=active">quick answers</a>
+	<ul>
+		<li id="ctl00_TopNavBar_AQL"><a id="ctl00_TopNavBar_ArticleQuestion" class="fly highlight1" href="#_comments">
+			<img src="/images/write-gr.png" width="19px" height="13px" /> Ask a Question about this 
+			article</a>
+		</li>
+
+		<li><a id="ctl00_TopNavBar_QAAsk" class="fly highlight2" href="/Questions/ask.aspx"><img 
+			src="/images/write-or.png" width="19px" height="13px" /> Ask a Question</a></li>
+
+		
+		<li><a id="ctl00_TopNavBar_QAUnanswered" class="fly" href="/script/Answers/List.aspx?tab=unanswered">View Unanswered Questions</a></li>
+		<li><a id="ctl00_TopNavBar_QALatest" class="fly" href="/script/Answers/List.aspx?tab=active">View All Questions...</a></li>
+		
+				<li><a id="ctl00_TopNavBar_QATR_ctl00_Tag" class="fly" href="/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=81" style="padding-left:30px">C# questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl01_Tag" class="fly" href="/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=85" style="padding-left:30px">ASP.NET questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl02_Tag" class="fly" href="/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=842" style="padding-left:30px">VB.NET questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl03_Tag" class="fly" href="/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=308" style="padding-left:30px">C#4.0 questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl04_Tag" class="fly" href="/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=78" style="padding-left:30px">C++ questions</a></li>
+			
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+
+<li class="openable"><a id="ctl00_TopNavBar_Forums" href="/script/Forums/List.aspx">discussions</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_MessageBoardsAll" class="fly" href="/script/Forums/List.aspx">All Message Boards...</a></li>
+		<li class="openable"><a class="fly" style="padding-left:30px" href="/Forums/1580997/Application-Lifecycle.aspx">Application Lifecycle<span class="has-submenu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="/Forums/1533717/Running-a-Business.aspx">Running a Business</a></li>
+<li><a class="fly" href="/Forums/1533716/Sales-Marketing.aspx">Sales / Marketing</a></li>
+<li><a class="fly" href="/Forums/1651/Collaboration-Beta-Testing.aspx">Collaboration / Beta Testing</a></li>
+<li><a class="fly" href="/Forums/3304/Work-Training-Issues.aspx">Work &amp; Training Issues</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/369270/Design-and-Architecture.aspx">Design and Architecture</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/12076/ASP-NET.aspx">ASP.NET</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1580226/JavaScript.aspx">JavaScript</a>
+</li>
+<li class="openable"><a class="fly" style="padding-left:30px" href="/Forums/1647/C-Cplusplus-MFC.aspx">C / C++ / MFC<span class="has-submenu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="/Forums/4486/ATL-WTL-STL.aspx">ATL /  WTL / STL</a></li>
+<li><a class="fly" href="/Forums/3785/Managed-Cplusplus-CLI.aspx">Managed C++/CLI</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1827459/Adobe-Technologies.aspx">Adobe Technologies</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1649/Csharp.aspx">C#</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1627782/Free-Tools.aspx">Free Tools</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1827460/Objective-C.aspx">Objective-C</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1725/Database.aspx">Database</a>
+</li>
+<li class="openable"><a class="fly" style="padding-left:30px" href="/Forums/186301/Hardware-Devices.aspx">Hardware &amp; Devices<span class="has-submenu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="/Forums/1644/System-Admin.aspx">System Admin</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1606152/Hosting-and-Servers.aspx">Hosting and Servers</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1643/Java.aspx">Java</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1650/NET-Framework.aspx">.NET Framework</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/13695/Mobile.aspx">Mobile</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1653293/VS-11-NET-4-5.aspx">VS 11 &amp; .NET 4.5</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1540733/Sharepoint.aspx">Sharepoint</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1004257/Silverlight-WPF.aspx">Silverlight / WPF</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1646/Visual-Basic.aspx">Visual Basic</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1640/Web-Development.aspx">Web Development</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="/Forums/1645/Site-Bugs-Suggestions.aspx">Site Bugs / Suggestions</a>
+</li>
+
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+
+
+<li class="openable"><a id="ctl00_TopNavBar_Features" href="/Feature/">features</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_Catalog" class="fly" href="/script/Catalog/List.aspx">Component & Service Catalog</a></li>
+		<li><a id="ctl00_TopNavBar_Comps" class="fly" href="/script/Awards/CurrentCompetitions.aspx?cmpTpId=1&amp;awsac=true">Competitions</a></li>
+		<li><a id="ctl00_TopNavBar_News" class="fly" href="/script/News/List.aspx">News</a></li>
+		<li><a id="ctl00_TopNavBar_Insider" class="fly" href="/Feature/Insider/">The Insider Newsletter</a></li>
+		<li><a id="ctl00_TopNavBar_Newsletters" class="fly" href="/script/Mailouts/Archive.aspx?mtpid=1">Newsletter archive</a></li>
+		<li><a id="ctl00_TopNavBar_Surveys" class="fly" href="/script/Surveys/List.aspx">Surveys</a></li>
+		<li><a id="ctl00_TopNavBar_Showcase" class="fly" href="/KB/showcase/">Product Showcase</a></li>
+
+		
+		<li><a id="ctl00_TopNavBar_Stuff" class="fly" href="/Info/Stuff.aspx">CodeProject Stuff</a></li>
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+<li  class="openable"><a id="ctl00_TopNavBar_Lounge" href="/Lounge.aspx">community</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_InsiderLnk" class="fly" href="/Insider.aspx">The Insider News</a></li>
+		<li><a id="ctl00_TopNavBar_LoungeLnk" class="fly" href="/Lounge.aspx">The Lounge  </a></li>
+		<li><a id="ctl00_TopNavBar_WeirdWonderful" class="fly" href="/Feature/WeirdAndWonderful.aspx">The Weird & The Wonderful</a></li>
+		<li><a id="ctl00_TopNavBar_SoapBoxLnk" class="fly" href="/Forums/1536756/The-Soapbox.aspx">The Soapbox</a></li>
+		<li><a id="ctl00_TopNavBar_PRLnk" class="fly break" href="/Forums/1738007/Press-Releases.aspx">Press Releases</a></li>
+		<li><a id="ctl00_TopNavBar_WhosWho" class="fly" href="/script/Membership/Profiles.aspx">Who's Who</a></li>
+		<li><a id="ctl00_TopNavBar_MVPs" class="fly" href="/script/Awards/MVPWinners.aspx">Most Valuable Professionals</a></li>
+		<li><a id="ctl00_TopNavBar_Companies" class="fly break" href="/script/Membership/Profiles.aspx?mgtid=1&amp;mgm=True">Company Listings</a></li>
+
+		
+		<li class="openable"><a class="fly" href="/Forums/1580229/Hindi.aspx">Non-English Language
+			<span class="has-submenu">&gt;</span></a>
+		<ul>
+		<li><a class="fly" href="/Forums/1580229/Hindi.aspx">General Indian Topics</a></li>
+		<li><a class="fly" href="/Forums/1580230/Chinese.aspx">General Chinese Topics</a></li>
+		</ul>
+		<li class="last"></li>
+		
+	</ul>
+
+</li>
+
+
+<li class="openable" style="margin-left:20px"><a id="ctl00_TopNavBar_Help" href="/KB/FAQs/">help</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_HelpWhatIs" class="fly" href="/info/guide.aspx">What is 'CodeProject'?</a></li>
+		<li><a id="ctl00_TopNavBar_HelpGeneral" class="fly break" href="/KB/FAQs/">General FAQ</a></li>
+		<li><a id="ctl00_TopNavBar_HelpPostQuestion" class="fly break highlight1" href="/Questions/ask.aspx">Ask a Question</a></li>
+		<li><a id="ctl00_TopNavBar_HelpBugs" class="fly" href="/Forums/1645/Site-Bugs-Suggestions.aspx">Bugs and Suggestions</a></li>
+		<li><a id="ctl00_TopNavBar_HelpArticles" class="fly" href="/Forums/1641/Article-Writing.aspx">Article Help Forum</a></li>
+		<li><a id="ctl00_TopNavBar_HelpSiteMap" class="fly" href="/script/Content/SiteMap.aspx">Site Map</a></li>
+		<li><a id="ctl00_TopNavBar_HelpAdvertise" class="fly" href="http://developermedia.com/">Advertise with us</a></li>
+		<li><a id="ctl00_TopNavBar_HelpAboutUs" class="fly" href="/info/about.aspx">About Us</a></li>
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+</ul>
+
+</div>
+	</td><td align="right">
+		
+
+<div class="searchbar">
+
+<form method="get" action="/search.aspx" name="Search" class="tight">
+
+
+<table border="0" cellspacing="0" cellpadding="0" class="search"><tr><td><input TabIndex="2" class="search " id="sb_tb" value="" name="q" /></td><td><input type="image" src="/images/search.gif" /></td></tr></table>
+
+<div class="hover-container">
+	<div id="SearchFilter" class="search-advanced popup small-text align-left">
+	<b>Search within:<br /></b>
+		
+		<input type="radio" id="sb_kw" name="sbo" value="kw" checked="true"><label for="sb_kw">Articles</label><br>
+<input type="radio" id="sb_qa" name="sbo" value="qa"><label for="sb_qa">Quick Answers</label><br>
+<input type="radio" id="sb_fm" name="sbo" value="fm"><label for="sb_fm">Messages</label><br>
+<input type="radio" id="sb_ctlk" name="sbo" value="ctlk"><label for="sb_ctlk">Product Catalog</label><br>
+
+
+		
+		
+	</div>
+</div>
+</form>
+
+</div>
+	</td></tr></table>
+	<div class="sub-headerbar-divider"></div>
+	</div>
+	
+
+	<div id="A" class="container-content-wrap fixed"> 
+	<div class="container-content hreview-aggregate"> 
+
+		<div class="clearfix">
+			<div class="float-left container-breadcrumb">
+				<div><a href="/script/Content/SiteMap.aspx">Articles</a> &#187; <a href="/Chapters/8/Platforms-Frameworks-Libraries.aspx">Platforms, Frameworks & Libraries</a> &#187; <a href="/KB/library/">Libraries</a> &#187; <a href="/KB/library/#General">General</a></div>
+			</div>
+
+			<div class="align-left float-right padded-top">
+				
+
+
+
+
+ 
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+			</div>
+
+			<div class="float-right container-breadcrumb article-nav">
+				
+<div class="">
+
+
+<a id="ctl00_PrevNext_NextLink" title="Next" href="/script/Articles/PrevNextLookup.aspx?aid=363040&amp;at=1&amp;secId=119" style="margin-left:5px">Next</a>
+<img id="ctl00_PrevNext_NextImg" title="Next" rel="nofollow" src="/Images/arrow-right.png" style="border-width:0px;vertical-align:bottom;" />
+</div>
+			</div>
+		</div>
+
+		<table class="extended container-article-parts" cellpadding="0" cellspacing="0"><tr valign="top">
+		<td>
+
+			<div id="ctl00_Nav" class="container-article-tabs">
+				<div class="tabs">
+					
+
+<div class="">
+	<div class="selected">Article</div><div class="unselected"><a href="/script/Articles/ViewDownloads.aspx?aid=363040">Browse Code</a></div><div class="unselected"><a href="/script/Articles/Statistics.aspx?aid=363040">Stats</a></div><div class="unselected"><a href="/script/Articles/ListVersions.aspx?aid=363040">Revisions (2)</a></div><div class="unselected"><a href="/script/Articles/ListAlternatives.aspx?aid=363040">Alternatives</a></div>
+</div>	
+
+
+					<!-- anchorLink used to auto-link to comments at end of article -->
+					<div class="unselected"><a href="../../MasterPages/#_comments" id="ctl00_CommentLink" class="anchorLink">Comments &amp; 
+						Discussions <span id="ctl00_CmtCnt">(47)</span></a>
+					</div>
+				</div>
+
+				<a id="ctl00_AddAlternative" title="Write a related article about upgrades or translate this into a different language." class="add-item" href="/script/Articles/SubmissionWizard.aspx?at=1&amp;apid=363040">Add your own<br />alternative version</a>
+			</div>
+
+		</td>
+		<td>
+			
+			<div id="AT" class="container-article  fixed"> 
+		
+				
+				 
+				<a name="Main"></a>
+
+				
+				<a name="_articleTop" id="_articleTop"></a>
+				<div class="item">
+				<h1 id="ctl00_ArticleTitle" class="fn">An Introduction to Entity Framework for Absolute Beginners</h1> 
+				</div>
+
+				
+				<div class="entry">
+					By <span class="author"><a href="/script/Membership/View.aspx?mid=3402606" rel="author">Rahul Rajat Singh</a></span>, 
+					<span class="date">9 Apr 2012</span>
+			
+								
+				</div>
+
+				
+				<!-- Yes, I'm weak -->
+				<table class="container-rating"><tr><td>
+					<div id="ctl00_CurRat" class="tooltip anchorLink" style="cursor:pointer" onclick="scrollToAnchor(&#39;#_rating&#39;);" name="CurRat_363040">
+				
+						
+
+<table cellpadding="0" cellspacing="0" class="small-text">
+<tr>
+	
+	<td class="nowrap">
+
+		<span id="ctl00_ArticleRating_VI">
+		<div class="nowrap rating-stars-large" style="height:19px;width:139px;position:relative;">
+	<div class="clipped align-left float-left" style="height:19px;width:133px;">
+		<img src="http://s.codeproject.com/script/Ratings/Images/stars-fill-lg.png" style="border-width:0px;" />
+	</div><div class="clipped" style="height:19px;width:6px;position:relative;">
+		<img src="http://s.codeproject.com/script/Ratings/Images/stars-empty-lg.png" style="border-width:0px;position:absolute;top:0;right:0;" />
+	</div>
+</div>
+		</span>
+
+		
+	</td>
+	
+	<td id="ctl00_ArticleRating_VR" class="nowrap">
+		&nbsp;
+		<span id="ctl00_ArticleRating_VotesR">&nbsp;<span class="rating">4.73</span> (<span class="count">62 votes</span>)</span>
+		
+	</td>
+
+</tr>
+
+</table>
+
+
+						<div id="ctl00_RB" class="speech-bubble-container-up">
+							<div class="speech-bubble-up" style="width:150px !important">
+								            
+<div>
+<table class="feature" width="100%" height="50px" title="Voting Distribution. Recent data only" cellpadding="0" cellspacing="0"><tr class="chart-row"><td class="chart-column rating-ignore-vote" title="Outside deviation limits - not included in score."><img src="http://s.codeproject.com/Images/t.gif" width="20pxpx" height="1px" border="0px" alt="" title="" /><br /><span title="0 votes">1</span></td>
+<td class="chart-column rating-ignore-vote" title="Outside deviation limits - not included in score."><img src="http://s.codeproject.com/Images/t.gif" width="20pxpx" height="1px" border="0px" alt="" title="" /><br /><span title="0 votes">2</span></td>
+<td class="chart-column rating-ignore-vote" title="Outside deviation limits - not included in score."><img src="/script/Ratings/Images/pollcol.gif" width="20pxpx" height="2px" border="0px" alt="2 votes, 3.2%" title="2 votes, 3.2%" /><br /><span title="2 votes">3</span></td>
+<td class="chart-column"><img src="/script/Ratings/Images/pollcol.gif" width="20pxpx" height="19px" border="0px" alt="17 votes, 27.4%" title="17 votes, 27.4%" /><br /><span title="17 votes">4</span></td>
+<td class="chart-column"><img src="/script/Ratings/Images/pollcol.gif" width="20pxpx" height="50px" border="0px" alt="43 votes, 69.4%" title="43 votes, 69.4%" /><br /><span title="43 votes">5</span></td>
+</tr></table><div class="small-text align-center">4.73/5 - 62 votes</div><div class="small-text align-center subdue">2 removed</div><div class="small-text align-center subdue">μ 4.65, σ<sub>a</sub> 0.94 [<a href="/KB/FAQs/RatingReputationFAQ.aspx#noisefilter">?</a>]</div>
+</div>
+							</div>
+							<div class="speech-bubble-pointer-up">
+								<div class="speech-bubble-pointer-up-inner"></div>
+							</div>
+						</div>
+					</div>
+				</td>
+				<td>
+					&nbsp;
+					
+				</td></tr></table>
+
+				
+				
+
+				
+				
+
+				
+				
+				
+
+					
+				
+
+				<div id="ctl00_confirmError" class="advise"><img 
+					style="float:left;margin-right:10px" src="/images/warning48.png" width="48px" 
+					height="48px" /><b>Is your email address OK?</b> You are signed up for our 
+					newsletters but your email address is either unconfirmed, or has not been 
+					reconfirmed in a long time. Please click <a id="ctl00_RequestConfirmLink2" href="/script/Membership/SendConfirmRequest.aspx?rp=%2fArticles%2f363040%2fAn-Introduction-to-Entity-Framework-for-Absolute-B">here</a> to have a confirmation email sent 
+					so we can confirm your email address and start sending you newsletters 
+					again. Alternatively, you can 
+					<a id="ctl00_SubscribeLink2" href="/script/Membership/Subscribe.aspx?rp=%2fArticles%2f363040%2fAn-Introduction-to-Entity-Framework-for-Absolute-B">update your subscriptions</a>.</div><form name="aspnetForm" method="post" action="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B" id="aspnetForm" style="margin:0;padding:0">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMjExOTQzNjk4Mw9kFgJmD2QWBAIKDxYCHgVjbGFzcwUTc3ViLWhlYWRlcmJhciBmaXhlZGQCCw8WAh8ABRxjb250YWluZXItY29udGVudC13cmFwIGZpeGVkFhACAQ9kFgJmDxYCHgRUZXh0BYMCPGRpdj48YSBocmVmPSIvc2NyaXB0L0NvbnRlbnQvU2l0ZU1hcC5hc3B4Ij5BcnRpY2xlczwvYT4gJiMxODc7IDxhIGhyZWY9Ii9DaGFwdGVycy84L1BsYXRmb3Jtcy1GcmFtZXdvcmtzLUxpYnJhcmllcy5hc3B4Ij5QbGF0Zm9ybXMsIEZyYW1ld29ya3MgJiBMaWJyYXJpZXM8L2E+ICYjMTg3OyA8YSBocmVmPSIvS0IvbGlicmFyeS8iPkxpYnJhcmllczwvYT4gJiMxODc7IDxhIGhyZWY9Ii9LQi9saWJyYXJ5LyNHZW5lcmFsIj5HZW5lcmFsPC9hPjwvZGl2PmQCAw9kFgQCBA8PFgIeC05hdmlnYXRlVXJsBTkvc2NyaXB0L0F3YXJkcy9BZG1pbi9Bd2FyZE9iamVjdC5hc3B4P29iaWQ9MzYzMDQwJm9idGlkPTJkZAIODw8WAh8CBTAvc2NyaXB0L0FydGljbGVzL0FkbWluL1F1ZXVlRWRpdC5hc3B4P2FpZD0zNjMwNDBkZAIFD2QWBAICDw8WBh8CBT4vc2NyaXB0L0FydGljbGVzL1ByZXZOZXh0TG9va3VwLmFzcHg/YWlkPTM2MzA0MCZhdD0xJnNlY0lkPTExOR4HVG9vbFRpcAUETmV4dB4HVmlzaWJsZWdkZAIDDw8WBB4ISW1hZ2VVcmwFFy9JbWFnZXMvYXJyb3ctcmlnaHQucG5nHwRnFgQeBXN0eWxlBRZ2ZXJ0aWNhbC1hbGlnbjpib3R0b207HgNyZWwFCG5vZm9sbG93ZAIHD2QWBAIDDxYEHgRocmVmBQojX2NvbW1lbnRzHwAFCmFuY2hvckxpbmsWAgIBDxYCHglpbm5lcmh0bWwFBCg0NylkAgUPDxYEHwIFNy9zY3JpcHQvQXJ0aWNsZXMvU3VibWlzc2lvbldpemFyZC5hc3B4P2F0PTEmYXBpZD0zNjMwNDAfBGdkZAIJDxYCHwAFGGNvbnRhaW5lci1hcnRpY2xlICBmaXhlZBYGAgEPFgIfBGcWBmYPFgIfCQU6QW4gSW50cm9kdWN0aW9uIHRvIEVudGl0eSBGcmFtZXdvcmsgZm9yIEFic29sdXRlIEJlZ2lubmVyc2QCAQ8WAh8BBVU8YSBocmVmPSIvc2NyaXB0L01lbWJlcnNoaXAvVmlldy5hc3B4P21pZD0zNDAyNjA2IiByZWw9ImF1dGhvciI+UmFodWwgUmFqYXQgU2luZ2g8L2E+ZAICDxYCHwEFCjkgQXByIDIwMTJkAgMPDxYCHwRnZGQCDQ9kFgRmDxYCHwRnFgQCAQ8PFgIfAgV3L3NjcmlwdC9NZW1iZXJzaGlwL1NlbmRDb25maXJtUmVxdWVzdC5hc3B4P3JwPSUyZkFydGljbGVzJTJmMzYzMDQwJTJmQW4tSW50cm9kdWN0aW9uLXRvLUVudGl0eS1GcmFtZXdvcmstZm9yLUFic29sdXRlLUJkZAIDDw8WAh8CBW4vc2NyaXB0L01lbWJlcnNoaXAvU3Vic2NyaWJlLmFzcHg/cnA9JTJmQXJ0aWNsZXMlMmYzNjMwNDAlMmZBbi1JbnRyb2R1Y3Rpb24tdG8tRW50aXR5LUZyYW1ld29yay1mb3ItQWJzb2x1dGUtQmRkAgIPFgIeBmFjdGlvbgVDL0FydGljbGVzLzM2MzA0MC9Bbi1JbnRyb2R1Y3Rpb24tdG8tRW50aXR5LUZyYW1ld29yay1mb3ItQWJzb2x1dGUtQhYIAgEPZBYCAgEPFgIfBGhkAgMPZBYCAgIPZBYCAgEPEGRkFgBkAgkPFgIeC18hSXRlbUNvdW50AgFkAgsPZBYCAgEPFgIfAQV8PGEgY2xhc3M9ImFuY2hvckxpbmsiIGhyZWY9Ii9BcnRpY2xlcy8zNjMwNDAvQW4tSW50cm9kdWN0aW9uLXRvLUVudGl0eS1GcmFtZXdvcmstZm9yLUFic29sdXRlLUIjX2FydGljbGVUb3AiPkFydGljbGUgVG9wPC9hPmQCCw9kFgICCw9kFgQCAg8PFgIfAgVRL0FydGljbGVzLzM2MzA0MC9Bbi1JbnRyb2R1Y3Rpb24tdG8tRW50aXR5LUZyYW1ld29yay1mb3ItQWJzb2x1dGUtQj9kaXNwbGF5PVByaW50ZGQCBA8PFgIfAgUyL3NjcmlwdC9jb21tb24vVGVsbEZyaWVuZC5hc3B4P29idGlkPTImb2JpZD0zNjMwNDBkZAINDw8WBB8BBQlQZXJtYWxpbmsfAgVDL0FydGljbGVzLzM2MzA0MC9Bbi1JbnRyb2R1Y3Rpb24tdG8tRW50aXR5LUZyYW1ld29yay1mb3ItQWJzb2x1dGUtQmRkAh0PFgIfAQUjQ29weXJpZ2h0IDIwMTIgYnkgUmFodWwgUmFqYXQgU2luZ2hkZAMOtfKbV4uXrtYLwkUo0reB8ivh" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWCAKyrfD+CgLAlMXDBwLBlMXDBwLClMXDBwLDlMXDBwLElMXDBwLP+++tCwK5upDkCyoeBnAkROGcfHjCtJVsMylGqpj8" />
+</div>
+
+						
+						<div id="contentdiv" class="article-text">
+						
+
+
+
+
+<ul class="download">
+<li><a href="/KB/library/363040/EntityFrameworkTest.zip">Download source - 382 KB</a></li>
+</ul>
+<h2>Introduction</h2>
+<p>This article introduces Entity Framework to absolute beginners. The article is meant for developers who are primarily using ADO.NET to write their data access layers. 
+Many experienced developers will find this article very basic but since the article is written from the perspective of beginners, I've tried to keep things simple. </p>
+<h2>Background</h2>
+<p>ADO.NET is a very strong framework for data access. ADO.NET has been around since many years and there are a lot of systems running over ADO.NET. Developers who are 
+totally oblivious to the concept of ORMs will probably be asking &quot;What is Entity Framework? What are the benefits of using it and is it an alternative to ADO.NET?&quot; </p>
+<p>Well, to answer the first question about what is Entity Framework, Entity Framework is an Object Relational Mapper (ORM). It basically generates business objects 
+ and entities according to the database tables and provides the mechanism for:</p>
+<ol>
+<li>Performing basic CRUD (Create, Read, Update, Delete) operations.</li>
+<li>Easily managing &quot;1 to 1&quot;, &quot;1 to many&quot;, and &quot;many to many&quot; relationships.</li>
+<li>Ability to have inheritance relationships between entities.</li>
+</ol>
+<p>and to answer the second question, the benefits are:</p>
+<ol>
+<li>We can have all data access logic written in higher level languages.</li>
+<li>The conceptual model can be represented in a better way by using relationships among entities.</li>
+<li>The underlying data store can be replaced without much overhead since all data access logic is present at a higher level.</li>
+</ol>
+<p>and finally, the last question that whether it is an alternative to ADO.NET, the answer would be &quot;yes and no&quot;. Yes because the developer will not be writing ADO.NET 
+methods and classes for performing data operations and no because this model is actually written on top of ADO.NET, meaning under this framework, we are still 
+using ADO.NET. So let us look at the architecture of Entity Framework (diagram taken from MSDN):</p>
+<p><img width="395" height="508" alt="Entity framework article image" src="/KB/library/363040/architecture.jpg" /></p>
+<h2>Using the code</h2>
+<p>Let's try to understand the ease of use that Entity Framework provides by performing simple CRUD operations. Once we look at the code and how effortlessly and 
+efficiently we can do these operations, the benefits of Entity Framework will become quite obvious.</p>
+<h4>Creating the database</h4>
+<p>Let's have a simple database with one table. Let's create a simple table for Contacts and we will perform CRUD operations on this table.</p>
+<p><img width="256" height="170" alt="Entity framework article image" src="/KB/library/363040/table.jpg" /></p>
+<h4>Adding the Entity Model to the Website</h4>
+<p>Once we have the database ready, we can add the entity model to our website. We can do this by adding an <em>ADO.NET Entity Data Model</em> to the website.</p>
+<p><img width="470" height="391" alt="Entity framework article image" src="/KB/library/363040/add1.jpg" /></p>
+<p>Once we select to add this data model to our website, we will have to select the approach we want to take for our Model's contents.</p>
+<p><img width="439" height="391" alt="Entity framework article image" src="/KB/library/363040/add2.jpg" /></p>
+<p>What this selection means is that we can either choose to generate the entity model from an existing database schema or we can design the entity model here and then later 
+ hook it up to the database. Since we already have the database ready, we will use the first option. 
+Once the Model is generated, the Entity for each table is generated. The generated entity for our contact table is:</p>
+<p><img width="173" height="200" alt="Entity framework article image" src="/KB/library/363040/entity.jpg" /></p>
+<p>Also, the classes for performing database operations are also created. We just need to know how to use these classes to perform database operations.</p>
+<p><img width="324" height="474" alt="Entity framework article image" src="/KB/library/363040/generatedClasses.jpg" /></p>
+<h4>Insert operation</h4>
+<p>Let us create a simple page to perform an insert operation. </p>
+<p><img width="545" height="508" alt="Entity framework article image" src="/KB/library/363040/create.jpg" /></p>
+<p>Now once the user chooses to insert the values into the database, the actual data operation can be performed by using the <code>AddObject</code> method of the Model class entity 
+collection. The following code snippet show how to perform the insert.</p>
+<pre lang="cs">Contact con = <span class="code-keyword">new</span> Contact();
+con.fname = TextBox1.Text;
+con.lname = TextBox2.Text;
+con.phone = TextBox3.Text;
+
+ContactsDb db = <span class="code-keyword">new</span> ContactsDb();
+db.Contacts.AddObject(con);
+db.SaveChanges();</pre>
+<p>This will insert the record into the table. You can notice the simplicity and efficiency of the code we wrote to perform the insertion.</p>
+<h4>Reading all the records</h4>
+<p>There are scenarios when we want to read all records. Let's say we are making a page that will display all the contact information in a single page. </p>
+<p><img width="545" height="508" alt="Entity framework article image" src="/KB/library/363040/Read.jpg" /></p>
+<p>We can retrieve the collection of Entities using the Model object to achieve this. The code snippet below will show how that can be done.</p>
+<pre lang="cs">ContactsDb db = <span class="code-keyword">new</span> ContactsDb();
+Repeater1.DataSource = db.Contacts;
+Repeater1.DataBind();</pre>
+<h4>Selecting a specific record</h4>
+<p>If we want to select a specific record from the table, we can use the <code>SingleOrDefault</code> method on the Model's entities collection. Let's say we want the functionality 
+of updating/deleting a record on a single page then we will first have to select the record based on the ID, then update/delete the selected record.</p>
+<p><img width="545" height="508" alt="Entity framework article image" src="/KB/library/363040/updatedelete.jpg" /></p>
+<p>Selection of any particular record (<code>Contact</code>) based on ID can be done as:</p>
+<pre lang="cs"><span class="code-keyword">int</span> idToupdate = Convert.ToInt32(Request.QueryString[<span class="code-string">"</span><span class="code-string">id"</span>].ToString());
+ContactsDb db = <span class="code-keyword">new</span> ContactsDb();
+Contact con = db.Contacts.SingleOrDefault(p =&gt; p.id == idToupdate);</pre>
+<p>Once this code is executed, the <code>Contact</code> object will contain the required values.</p>
+<h4>Updating the record</h4>
+<p>If we want to update a record, then a simple update operation can be performed as:</p>
+<pre lang="cs"><span class="code-keyword">int</span> idToupdate = Convert.ToInt32(Request.QueryString[<span class="code-string">"</span><span class="code-string">id"</span>].ToString());
+ContactsDb db = <span class="code-keyword">new</span> ContactsDb();
+Contact con = db.Contacts.SingleOrDefault(p =&gt;  p.id == idToupdate);
+
+con.phone = TextBox1.Text;
+db.SaveChanges();</pre>
+<p>Once this code executes, the value of phone number will be updated by a new value which is retrieved from <code>TextBox1</code>.</p>
+<h4>Deleting a record</h4>
+<p>If we want to delete a particular record then we can perform a delete operation by using the <code>DeleteObject</code> function. The following code snippet demonstrates the same:</p>
+<pre lang="cs"><span class="code-comment">//</span><span class="code-comment">delete this contact
+</span><span class="code-keyword">int</span> idToupdate = Convert.ToInt32(Request.QueryString[<span class="code-string">"</span><span class="code-string">id"</span>].ToString());
+ContactsDb db = <span class="code-keyword">new</span> ContactsDb();
+Contact con = db.Contacts.SingleOrDefault(p =&gt; p.id == idToupdate);
+
+db.Contacts.DeleteObject(con);
+db.SaveChanges();</pre>
+<p>Now that we have the basic CRUD operations performed on the database using the Entity Framework.</p>
+<h4>A note on Relationships and Lazy Loading</h4>
+<p>To understand the Entity Framework we need to understand some things like naming conventions, relationships 
+between tables, and relationships between entities. Also, the concept of lazy loading once fully understood will give the power to the developer to use the 
+Entity Framework efficiently. </p>
+<p><strong>Note</strong>: Since this is an introductory article on Entity Framework we have not discussed these things. Perhaps we will discuss them in a separate article.</p>
+<h2>Points of interest</h2>
+<p>Entity Framework has been in use for some time now. But there are many developers who are still getting started with Entity Framework. This article was meant 
+as an overview of the Entity Framework. This should not be treated as a complete tutorial. Also, the code written is very simple and there is a lot of scope for 
+optimization but since the idea here is to understand Entity Framework, I tried to keep the code simple and readable rather and optimal.</p>
+<p><strong>Note</strong>: To run the solution, please change the database path of <code>ConnectionString</code> in the <em>web.config</em> file.</p>
+<h2>History</h2>
+<ul><li>09 April 2012: First version.</li></ul>
+
+
+
+						</div>
+						
+
+						
+						
+						<h2>License</h2>
+						<div id="LicenseTerms"><p>This article, along with any associated source code and files, is licensed under <a href="http://www.codeproject.com/info/cpol10.aspx" rel="license">The Code Project Open License (CPOL)</a></p></div>
+						
+
+						
+						<h2 id="ctl00_AboutHeading">About the Author</h2>
+
+						<div class="float-right" style="margin:0 0 25px 25px;border:1px solid #ccc">
+						<div class="msg-300x250" data-format="300x250" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="ros"  lqm_country='JM' data-country='JM' lqm_loadOnView='true'  data-loadOnView='true'  data-tags='C#, ASP.NET, .NET, Dev, Intermediate,rating4.5'></div>
+						</div>
+
+						
+						
+
+<table cellpadding="0" cellspacing="0" border="0" class="container-member">
+<tr valign="top">
+<td id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberPhotoTable" style="width:155px;overflow:hidden">
+	<center><img id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberPhoto" src="/script/Membership/ProfileImages/{3fc4f28e-eef2-4595-b1d7-5fedf3b29843}.jpg" style="border-width:0px;" /></center>
+</td>
+
+<td style="padding-left:25px">
+	<b><a id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberProfileLink" class="author" href="/Members/rahul-rajat-singh">Rahul Rajat Singh</a></b>
+	<div>
+		<div class="company">
+			<span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberJobTitle">Software Developer (Senior)</span>
+			<span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberCompany"></span>
+		</div>
+
+		<div class="padded-top"><span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberLocation">India <img src="/script/Geo/Images/IN.gif" alt="India" width="16px" height="11px" /></span></div>
+		
+		<div><span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberType">Member</span></div>
+		<div>
+			<br /><a class="small-text" href="http://www.twitter.com/rahulrajatsingh"> <img style="vertical-align:middle;border:0;" src="http://twitter-badges.s3.amazonaws.com/t_mini-b.png" alt="Follow on Twitter"/> Follow on Twitter</a>
+			
+		</div>
+
+		
+	</div>
+</td>
+</tr>
+</table>
+
+<div class="padded-top">
+	I Started my Programming career with C++. Later got a chance to develop Windows Form applications using C#. Now using C# & ASP.NET to write Information Systems, e-commerce/e-governance Portals and Data driven websites.<br />
+ <br />
+My interests involves Programming, Website development and Learning/Teaching subjects related to Computer Science/Information Systems.<br />
+&nbsp;<br />
+<u>Some CodeProject Achievements</u>:<br />
+<ul>
+<li>
+7th in Best Web Dev article of January 2013<br />
+</li>
+<li>
+2nd in Best C# article of December 2012<br />
+</li>
+<li>
+5th in Best overall article of December 2012<br />
+</li>
+<li>
+5th in Best C# article of October 2012<br />
+</li>
+<li>
+4th in Best Web Dev article of September 2012<br />
+</li>
+<li>
+3rd in Best C# article of August 2012<br />
+</li>
+<li>
+5th in Best Web Dev article of August 2012<br />
+</li>
+<li>
+5th in Best Web Dev article of July 2012<br />
+</li>
+<li>
+3rd in Best Overall article of June 2012<br />
+</li>
+<li>
+2nd in Best Web Dev article of June 2012<br />
+</li>
+<li>
+5th in Best Web Dev article of May 2012<br />
+</li>
+<li>
+6th in Best Web Dev article of April 2012<br />
+</li>
+<li>
+4th in Best C++ article of April 2012<br />
+</li>
+<li>
+5th in Best C++ article of March 2012<br />
+</li>
+<li>
+7th in Best Web Dev article of March 2012<br />
+</li>
+<li>
+5th in Best Web Dev article of February 2012<br />
+</li>
+<li>
+7th in Best Web Dev article of February 2012<br />
+</li>
+<li>
+9th in Best Web Dev article of February 2012<br />
+</li>
+<li>
+5th in Best C++ article of February 2012<br />
+</li>
+</ul>
+</div>
+<br />
+						
+						
+
+						<div class="clearfix"></div>
+
+						
+						<div id="ctl00_RateArticleRow" class="clearfix voting-bar">
+						<div class="float-left" style="padding-top:8px"><a class="anchorLink" href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B#_articleTop">Article Top</a></div>
+						<div class="float-left"><a id="_rating" name="_rating">&nbsp;</a></div> 
+						<div class="float-left">
+
+<div class="social-bookmarks">
+<span class="facebook"><div id="fb-root"></div><div class="fb-like" data-href="http://www.codeproject.com/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B" data-send="false" data-layout="button_count" data-width="450"  data-show-faces="false" data-font="segoe ui"></div></span>
+<span class="google"><div class="g-plusone" data-size="medium"></div></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="CodeProject">Tweet</a>
+</div></div> 
+						<div class="float-right align-right">
+							<div id="ctl00_RateArticle_RateItemWrapper" class="container-rating small-text" name="RateItem_363040">
+
+	<table width="100%" cellpadding="0" cellspacing="0" class="small-text">
+	<tr>
+		<td id="ctl00_RateArticle_VoteResultDiv" nowrap="nowrap" align="right">
+			<span class="voteRes"></span>
+			<img class="loaderImg" width="16px" alt="loading..." height="16px" 
+				src="/Images/animated_loading_blue.gif" style="display:none;" /> 
+		</td>
+
+	
+		<td class="voteTbl" style="white-space:nowrap" align="right">
+			<table class="small-text">
+			<tr>
+				
+				<td id="ctl00_RateArticle_RateText" class="rating-prompt">
+					Rate this:
+				</td>
+
+				<td id="ctl00_RateArticle_StartForm" align="right" nowrap="nowrap">
+					<i>&nbsp;&nbsp;Poor</i>
+				</td>
+
+				<td id="ctl00_RateArticle_VoteFormDiv" class="nowrap">
+					
+
+					<span id="ctl00_RateArticle_RB" class="tooltip ajaxHist radio voting">
+						<span id="ctl00_RateArticle_VoteRBL"><input id="ctl00_RateArticle_VoteRBL_0" type="radio" name="ctl00$RateArticle$VoteRBL" value="1" onclick="ChkRtctl00_RateArticle(1, 363040);
+$(&#39;#ctl00_RateArticle_RCD&#39;).show();
+;" /><input id="ctl00_RateArticle_VoteRBL_1" type="radio" name="ctl00$RateArticle$VoteRBL" value="2" onclick="ChkRtctl00_RateArticle(2, 363040);
+$(&#39;#ctl00_RateArticle_RCD&#39;).show();
+;" /><input id="ctl00_RateArticle_VoteRBL_2" type="radio" name="ctl00$RateArticle$VoteRBL" value="3" onclick="ChkRtctl00_RateArticle(3, 363040);
+$(&#39;#ctl00_RateArticle_RCD&#39;).show();
+;" /><input id="ctl00_RateArticle_VoteRBL_3" type="radio" name="ctl00$RateArticle$VoteRBL" value="4" onclick="ChkRtctl00_RateArticle(4, 363040);
+$(&#39;#ctl00_RateArticle_RCD&#39;).show();
+;" /><input id="ctl00_RateArticle_VoteRBL_4" type="radio" name="ctl00$RateArticle$VoteRBL" value="5" onclick="ChkRtctl00_RateArticle(5, 363040);
+$(&#39;#ctl00_RateArticle_RCD&#39;).show();
+;" /></span> 
+
+						
+					</span>
+
+				</td>
+
+				<td id="ctl00_RateArticle_EndForm" align="left">
+					<i>Excellent</i>
+				</td>
+
+				<td style="padding-left:5px">	
+					<input type="submit" name="ctl00$RateArticle$SubmitRateBtn" value="Vote" onclick="return PostBack_ctl00_RateArticle_RateItemWrapper();" id="ctl00_RateArticle_SubmitRateBtn" class="button" />
+				</td>
+			</tr>
+			</table>
+			
+		</td>
+	</tr>
+	</table>
+	<div class="hover-container">
+		<div id="ctl00_RateArticle_RCD" class="rating-comment align-left float-right">
+			Add a reason or comment to your vote: <a href="#" id="clear-rate_ctl00_RateArticle_RCD" 
+				title="close">x</a><br />
+			<textarea class="RateComment" rows="5" cols="60" style="width:98%;"></textarea>
+			<span id="ctl00_RateArticle_CommentReq" class="subdue">Votes of 3 or less require a comment</span>
+		</div>
+	</div>
+</div>
+						</div>
+						</div>
+						
+
+					</form>
+
+					
+					<div style="margin:auto;height:90px;margin-top:10px"> 
+						<div class="msg-728x90" data-format="728x90" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="bottom"  lqm_country='JM' data-country='JM' lqm_loadOnView='true'  data-loadOnView='true'  data-tags='C#, ASP.NET, .NET, Dev, Intermediate,pos_bottom'></div>
+					</div>
+					
+
+					
+					
+					<h2>Comments and Discussions</h2>
+					<a class="float-left" name="_comments" id="_comments">&nbsp;</a><table id="ForumTable" class="forum relaxed" cellpadding="0" cellspacing="0">
+	<tr>
+		<td><table width="100%" border="0" cellpadding="3px" cellspacing="0">
+			<tr class="header1">
+				<td colspan="2" style="white-space:nowrap;"><div class="container">
+					<div class="button new-message compose float-left" onclick="FireNew(this)">
+						<a href="/script/Forums/Edit.aspx?fid=1703677&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B" name="Frm_HoverNL" target="_top">Add a Comment or Question&nbsp;</a>
+					</div><div class="admin-links float-left align-middle" style="width:60px;line-height:24px;margin-top:4px;">
+						&nbsp;<a href="/KB/FAQs/MessageBoardsFAQ.aspx"><img src="http://s.codeproject.com/images/help_sm.png" title="FAQ" alt="FAQ" style="border-width:0;width:16px;height:16px;vertical-align:middle;" /></a>
+					</div><div class="float-right">
+						<form action="/Search.aspx?fid=0" method="get" class="tight">
+							<input type="hidden" name="fid" value="1703677" /><b>Search this forum </b><input type="text" class="text-input" name="qf" style="width:200px;" />&nbsp;<input type="submit" value="Go" class="button" />
+						</form>
+					</div>
+				</div></td><tr class="header2">
+					<td></td><td style="width:100%;"><div style="text-align:right;">
+						<form action="/script/Forums/SetOptions.aspx?floc=%2fArticles%2f363040%2fAn-Introduction-to-Entity-Framework-for-Absolute-B&amp;fid=1703677&amp;df=10000&amp;mpp=25&amp;noise=3&amp;prof=False&amp;sort=Position&amp;view=Expanded&amp;spc=Relaxed" method="get" style="margin:0;padding:0;">
+							<input type="hidden" name="fid" value="1703677" /><input type="hidden" name="currentQS" value="?floc=%2fArticles%2f363040%2fAn-Introduction-to-Entity-Framework-for-Absolute-B&amp;fid=1703677&amp;df=10000&amp;mpp=25&amp;noise=3&amp;prof=False&amp;sort=Position&amp;view=Expanded&amp;spc=Relaxed" /><input type="hidden" name="floc" value="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B" /><input type="checkbox" name="prof" id="prof" style="vertical-align:middle;" /><label for="prof">Profile popups</label>&nbsp;&nbsp;&nbsp;&nbsp;Spacing<select size="1" class="dropdown" name="spc">
+								<option selected value="Relaxed">Relaxed</option><option value="Compact">Compact</option><option value="Tight">Tight</option>
+							</select>&nbsp;&nbsp;Noise<select size="1" class="dropdown" name="noise">
+								<option value="1">Very High</option><option value="2">High</option><option selected value="3">Medium</option><option value="4">Low</option><option value="5">Very Low</option>
+							</select>&nbsp;&nbsp;Layout<select size="1" class="dropdown" name="view">
+								<option value="Quick">Normal</option><option value="Topic">Open Topics</option><option selected value="Expanded">Open All</option><option value="Thread">Thread View</option><option value="Normal">No Javascript</option><option value="Preview">Preview</option>
+							</select>&nbsp;&nbsp;Per page<select size="1" class="dropdown" name="mpp">
+								<option value="10">10</option><option selected value="25">25</option><option value="50">50</option>
+							</select>&nbsp;&nbsp;&nbsp;<input type="submit" value="Update" name="SetOpt" class="button" />
+						</form>
+					</div></td>
+				</tr>
+			</tr>
+		</table></td><tr>
+			<td><a name="xx0xx"></a><table border="0" cellpadding="2px" cellspacing="0" width="100%">
+				<tr class="navbar">
+					<td></td><td style="text-align:right;width:50%;"></td><td style="text-align:right;white-space:nowrap;"><span class="nav-link disabled">First</span> <span class="nav-link disabled">Prev</span><a class="nav-link" name="Frm_HoverNL" href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;noise=3&amp;prof=False&amp;sort=Position&amp;view=Expanded&amp;spc=Relaxed&amp;fr=26#xx0xx">Next</a></td>
+				</tr>
+			</table></td>
+		</tr><tr>
+			<td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="fixed-layout blank-background">
+				<tr>
+					<td><img src="http://s.codeproject.com/script/Forums/Images/t.gif" border="0" width="1px" height="5px" alt="" /></td>
+				</tr><tr class="header hover-row root">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="20px" class="indent"><a name="xx4497629xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_question.gif" alt="Question" /></td><td class="subject hover-container">Hi Rahul   why i can`t see...</td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=8809857">behnam.n</a></td><td class="date">16 Feb '13 - 15:23&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content root">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:20px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="20px" alt="" /><div class="voteform vertical" ownerid="8809857" msgid="4497629" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">Hi Rahul<br />
+&nbsp;<br />
+why i can`t see classes for performing database operations on model1.edmx ?<br />
+&nbsp;<br />
+i tried it many times step by step from tutorial<br />
+&nbsp;<br />
+please help me,how to find ContactsDB and contacts?<br />
+&nbsp;<br />
+best regards<br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4497629&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4497629&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4497629" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4497629/Hi-Rahul-why-i-can-t-see.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4497629&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4497629&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4497629" data-ref="3_4497629" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="8809857" msgid="4497629"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr class="header hover-row root">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="20px" class="indent"><a name="xx4494622xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_question.gif" alt="Question" /></td><td class="subject hover-container">Explain some terms</td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=9547041">shwetav10</a></td><td class="date">13 Feb '13 - 3:45&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content root">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:20px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="20px" alt="" /><div class="voteform vertical" ownerid="9547041" msgid="4494622" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">Can anybody please explain me what does the mean by <b>"Object-Relational Mapping"</b>, <b>"Conceptual Application Model" and "Domain Specific Objects"</b> I read these terms in Entity Framework definition, Like:<br />
+&nbsp;<br />
+Entity Framework is an object-relational mapper that enables the developers to program against the <b>conceptual application model</b> <br />
+&nbsp;<br />
+Entity Framework (EF) is an <b>object-relational mapper</b> that enables .NET developers to work with relational data using <b>domain-specific objects</b>.<br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4494622&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4494622&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4494622" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4494622/Explain-some-terms.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4494622&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4494622&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4494622" data-ref="3_4494622" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="9547041" msgid="4494622"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr class="header hover-row root">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="20px" class="indent"><a name="xx4494588xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_general.gif" alt="General" /></td><td class="subject hover-container">Nice Article</td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=9831531">MUHAMMAD YAQOOB</a></td><td class="date">13 Feb '13 - 2:54&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content root">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:20px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="20px" alt="" /><div class="voteform vertical" ownerid="9831531" msgid="4494588" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">very good for the beginers<br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4494588&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4494588&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4494588" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4494588/Nice-Article.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4494588&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4494588&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4494588" data-ref="3_4494588" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="9831531" msgid="4494588"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr class="header hover-row root">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="20px" class="indent"><a name="xx4493487xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_general.gif" alt="General" /></td><td class="subject hover-container">My vote of 5</td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=9828541">vinaysynec</a></td><td class="date">12 Feb '13 - 2:39&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content root">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:20px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="20px" alt="" /><div class="voteform vertical" ownerid="9828541" msgid="4493487" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">Nice article for beginners.<br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4493487&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4493487&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4493487" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4493487/My-vote-of-5.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4493487&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4493487&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4493487" data-ref="3_4493487" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="9828541" msgid="4493487"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr class="header hover-row root">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="20px" class="indent"><a name="xx4481672xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_general.gif" alt="General" /></td><td class="subject hover-container">My vote of 5</td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=4757252"><font color="green">Edo Tzumer</font></a></td><td class="date">27 Jan '13 - 9:36&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content root">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:20px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="20px" alt="" /><div class="voteform vertical" ownerid="4757252" msgid="4481672" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">Gr8 work Rahul 5<br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4481672&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4481672&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4481672" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4481672/My-vote-of-5.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4481672&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4481672&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4481672" data-ref="3_4481672" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="4757252" msgid="4481672"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr class="header hover-row root">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="20px" class="indent"><a name="xx4458963xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_question.gif" alt="Question" /></td><td class="subject hover-container">Vs 2008 not support for this??</td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=8193404">sarathkumarnallathambi</a></td><td class="date">24 Dec '12 - 7:28&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content root">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:20px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="20px" alt="" /><div class="voteform vertical" ownerid="8193404" msgid="4458963" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">Hi ,<br />
+&nbsp;<br />
+    i am using Vs 2008.. I created object for db. But ContactsDb Not coming.. Only db object only created.. not support for this??<br />
+<div class="signature">Thanks & Regards,<br />
+Sarathkumar.</div><br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4458963&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4458963&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4458963" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4458963/Vs-2008-not-support-for-this.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4458963&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4458963&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4458963" data-ref="3_4458963" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="8193404" msgid="4458963"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr class="header hover-row">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="38px" class="indent"><a name="xx4459192xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_answer.gif" alt="Answer" /></td><td class="subject hover-container"><a class="message-link" name="4459192" parent="4458963" thread="4458963" href="/Messages/4459192/Re-Vs-2008-not-support-for-this.aspx">Re: Vs 2008 not support for this??</a></td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=3402606">Rahul Rajat Singh</a></td><td class="date">25 Dec '12 - 0:26&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:38px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="38px" alt="" /><div class="voteform vertical" ownerid="3402606" msgid="4459192" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">I think the Entity framework was introduced in VS2008 SP1. So you might have to get the SP1. Also, not all the features were available in early releases so some striped down version of the code will work in VS2008 SP1.<br />
+<div class="signature">Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do. So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails. Explore, Dream. Discover.</div><br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4459192&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4459192&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4458963" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4459192/Re-Vs-2008-not-support-for-this.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4459192&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4459192&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4459192" data-ref="3_4459192" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="3402606" msgid="4459192"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr class="header hover-row">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="56px" class="indent"><a name="xx4459579xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_general.gif" alt="General" /></td><td class="subject hover-container"><a class="message-link" name="4459579" parent="4459192" thread="4458963" href="/Messages/4459579/Re-Vs-2008-not-support-for-this.aspx">Re: Vs 2008 not support for this??</a></td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=8193404">sarathkumarnallathambi</a></td><td class="date">25 Dec '12 - 23:30&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:56px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="56px" alt="" /><div class="voteform vertical" ownerid="8193404" msgid="4459579" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">Ok .. Thanks Yaar.... While i  am creating Entity only datalayer like linq only have created others lik classes not created.. Whether its not supporting or Mine mistakes ??<br />
+<div class="signature">Thanks & Regards,<br />
+Sarathkumar.</div><br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4459579&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4459579&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4458963" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4459579/Re-Vs-2008-not-support-for-this.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4459579&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4459579&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4459579" data-ref="3_4459579" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="8193404" msgid="4459579"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr class="header hover-row root">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="20px" class="indent"><a name="xx4458903xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_general.gif" alt="General" /></td><td class="subject hover-container">My vote of 4</td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=8193404">sarathkumarnallathambi</a></td><td class="date">24 Dec '12 - 6:08&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content root">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:20px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="20px" alt="" /><div class="voteform vertical" ownerid="8193404" msgid="4458903" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">ok.. I experts after  read this article we need lot of typical example. so please provide tougher code<br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4458903&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4458903&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4458903" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4458903/My-vote-of-4.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4458903&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4458903&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4458903" data-ref="3_4458903" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="8193404" msgid="4458903"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr class="header hover-row root">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="20px" class="indent"><a name="xx4446595xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_question.gif" alt="Question" /></td><td class="subject hover-container">Pls Reply</td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=9665143">Ankit Kumar Rajput</a></td><td class="date">7 Dec '12 - 7:13&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content root">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:20px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="20px" alt="" /><div class="voteform vertical" ownerid="9665143" msgid="4446595" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">Hi Rahul,<br />
+whenever we insert the data into the table. i m facing exception.exception detail is given below..<br />
+&nbsp;<br />
+Unable to update the EntitySet 'Emp' because it has a DefiningQuery and no element exists in the element to support the current operation.<br />
+&nbsp;<br />
+here Emp is a table.<br />
+&nbsp;<br />
+please give the instruction that what should we do. I m also facing this exception whenever i am using linq to sql .<br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4446595&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4446595&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4446595" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4446595/Pls-Reply.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4446595&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4446595&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4446595" data-ref="3_4446595" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="9665143" msgid="4446595"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr class="header hover-row root">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="20px" class="indent"><a name="xx4434958xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_question.gif" alt="Question" /></td><td class="subject hover-container">WELL FOR BEGINNERS</td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=8314717">aaltintop</a></td><td class="date">23 Nov '12 - 7:09&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content root">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:20px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="20px" alt="" /><div class="voteform vertical" ownerid="8314717" msgid="4434958" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">Very good for beginners. Very simple to understand<img src="/script/Forums/Images/smiley_smile.gif" align="top" alt="Smile | :)" />  Thank you.<br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4434958&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4434958&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4434958" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4434958/WELL-FOR-BEGINNERS.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4434958&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4434958&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4434958" data-ref="3_4434958" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="8314717" msgid="4434958"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr class="header hover-row root">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="20px" class="indent"><a name="xx4430904xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_general.gif" alt="General" /></td><td class="subject hover-container">My vote of 5</td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=2926418">Member 2926418</a></td><td class="date">19 Nov '12 - 7:33&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content root">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:20px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="20px" alt="" /><div class="voteform vertical" ownerid="2926418" msgid="4430904" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">Good article for the beginners<br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4430904&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4430904&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4430904" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4430904/My-vote-of-5.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4430904&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4430904&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4430904" data-ref="3_4430904" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="2926418" msgid="4430904"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr class="header hover-row root">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="20px" class="indent"><a name="xx4425274xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_general.gif" alt="General" /></td><td class="subject hover-container">My vote of 4</td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=4031166">Member 4031166</a></td><td class="date">12 Nov '12 - 6:14&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content root">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:20px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="20px" alt="" /><div class="voteform vertical" ownerid="4031166" msgid="4425274" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">excellent example<br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4425274&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4425274&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4425274" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4425274/My-vote-of-4.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4425274&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4425274&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4425274" data-ref="3_4425274" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="4031166" msgid="4425274"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr class="header hover-row root">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="20px" class="indent"><a name="xx4417097xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_general.gif" alt="General" /></td><td class="subject hover-container">My vote of 5</td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=7584857">Bhupendra Chauhan</a></td><td class="date">2 Nov '12 - 1:26&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content root">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:20px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="20px" alt="" /><div class="voteform vertical" ownerid="7584857" msgid="4417097" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">Very Nice<br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4417097&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4417097&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4417097" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4417097/My-vote-of-5.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4417097&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4417097&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4417097" data-ref="3_4417097" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="7584857" msgid="4417097"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr class="header hover-row root">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="20px" class="indent"><a name="xx4398828xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_general.gif" alt="General" /></td><td class="subject hover-container">Nice Article Rahul</td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=8397383">Shivanand Arur</a></td><td class="date">16 Oct '12 - 3:19&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content root">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:20px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="20px" alt="" /><div class="voteform vertical" ownerid="8397383" msgid="4398828" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">This Article really helped me to understand, how to use this EF.... But I'll still have to look at the basics of EF... Thanks for sharing this Article.<br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4398828&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4398828&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4398828" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4398828/Nice-Article-Rahul.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4398828&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4398828&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4398828" data-ref="3_4398828" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="8397383" msgid="4398828"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr class="header hover-row root">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="20px" class="indent"><a name="xx4391756xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_general.gif" alt="General" /></td><td class="subject hover-container">Thanks...</td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=9363386">Kinzever</a></td><td class="date">9 Oct '12 - 1:48&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content root">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:20px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="20px" alt="" /><div class="voteform vertical" ownerid="9363386" msgid="4391756" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">Really good article to begin with Entity Framework....Thanks.<br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4391756&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4391756&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4391756" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4391756/Thanks.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4391756&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4391756&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4391756" data-ref="3_4391756" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="9363386" msgid="4391756"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr class="header hover-row root">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="20px" class="indent"><a name="xx4391046xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_general.gif" alt="General" /></td><td class="subject hover-container">My vote of 5</td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=460059">Vaso007</a></td><td class="date">8 Oct '12 - 8:39&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content root">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:20px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="20px" alt="" /><div class="voteform vertical" ownerid="460059" msgid="4391046" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">Nice introuduction! Thank you!<br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4391046&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4391046&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4391046" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4391046/My-vote-of-5.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4391046&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4391046&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4391046" data-ref="3_4391046" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="460059" msgid="4391046"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr class="header hover-row root">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="20px" class="indent"><a name="xx4391043xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_general.gif" alt="General" /></td><td class="subject hover-container">Vote 3</td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=460059">Vaso007</a></td><td class="date">8 Oct '12 - 8:37&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content root">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:20px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="20px" alt="" /><div class="voteform vertical" ownerid="460059" msgid="4391043" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">Hi Rahul, I am referencing to a few Vote 3s here. It seems that "Absolute Beginners" has got many meanings for community. Maybe, you could mention in the beginning that this article is rather for c#/sql little experienced and at the same time also Absolute Beginners in Entity Framework.<br />
+&nbsp;<br />
+This way somebody who doestn't understand c# or how to create a table or how to connect to the database so the model is generated won't be confused and rating 3.<br />
+&nbsp;<br />
+Simply, pre-required knowledge/skills in the beginning of article might suggest straigh away if the person is going to understand or not <img src="/script/Forums/Images/smiley_smile.gif" align="top" alt="Smile | :)" /> <br />
+&nbsp;<br />
+I think this article deservers 5 <img src="/script/Forums/Images/smiley_smile.gif" align="top" alt="Smile | :)" /> <br />
+&nbsp;<br />
+Thank you.<br />
+&nbsp;<br />
+Vaso.<br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4391043&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4391043&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4391043" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4391043/Vote-3.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4391043&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4391043&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4391043" data-ref="3_4391043" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="460059" msgid="4391043"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr class="header hover-row root">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="20px" class="indent"><a name="xx4388467xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_question.gif" alt="Question" /></td><td class="subject hover-container">rating</td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=3314379">krupeshshah</a></td><td class="date">5 Oct '12 - 2:11&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content root">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:20px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="20px" alt="" /><div class="voteform vertical" ownerid="3314379" msgid="4388467" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">vote of 4 !! nice article<br />
+<div class="signature">k.k.shah</div><br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4388467&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4388467&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4388467" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4388467/rating.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4388467&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4388467&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4388467" data-ref="3_4388467" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="3314379" msgid="4388467"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr class="header hover-row root">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="20px" class="indent"><a name="xx4381832xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_general.gif" alt="General" /></td><td class="subject hover-container">My vote of 3</td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=7904785">Bhawesh jha</a></td><td class="date">28 Sep '12 - 5:32&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content root">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:20px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="20px" alt="" /><div class="voteform vertical" ownerid="7904785" msgid="4381832" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">description not provided<br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4381832&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4381832&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4381832" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4381832/My-vote-of-3.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4381832&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4381832&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4381832" data-ref="3_4381832" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="7904785" msgid="4381832"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr class="header hover-row root">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="20px" class="indent"><a name="xx4378995xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_answer.gif" alt="Answer" /></td><td class="subject hover-container">Article of the Day on Microsoft's site [modified]</td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=3402606">Rahul Rajat Singh</a></td><td class="date">26 Sep '12 - 1:01&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content root">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:20px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="20px" alt="" /><div class="voteform vertical" ownerid="3402606" msgid="4378995" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">This article has been selected as <code>Article of the Day</code> on Microsoft's site <a href="http://www.asp.net/community">http://www.asp.net/community</a>[<a href="http://www.asp.net/community" target="_blank" title="New Window">^</a>] today (26 September 2012).<br />
+&nbsp;<br />
+<b>Rahul Rajat Singh<br />
+26 September 2012.</b><br />
+<div class="signature">Every now and then say, "What the Elephant." "What the Elephant" gives you freedom. Freedom brings opportunity. Opportunity makes your future.</div><br /><br /><div class="modified">modified  2 Oct '12 - 6:18.</div><br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4378995&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4378995&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4378995" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4378995/Article-of-the-Day-on-Microsofts-site.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4378995&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4378995&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4378995" data-ref="3_4378995" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="3402606" msgid="4378995"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr class="header hover-row root">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="20px" class="indent"><a name="xx4376615xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_general.gif" alt="General" /></td><td class="subject hover-container">My vote of 5</td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=6470164">AnantD</a></td><td class="date">24 Sep '12 - 5:56&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content root">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:20px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="20px" alt="" /><div class="voteform vertical" ownerid="6470164" msgid="4376615" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">it's really helpful for me<br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4376615&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4376615&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4376615" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4376615/My-vote-of-5.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4376615&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4376615&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4376615" data-ref="3_4376615" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="6470164" msgid="4376615"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr class="header hover-row">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="38px" class="indent"><a name="xx4376688xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_answer.gif" alt="Answer" /></td><td class="subject hover-container"><a class="message-link" name="4376688" parent="4376615" thread="4376615" href="/Messages/4376688/Re-My-vote-of-5.aspx">Re: My vote of 5</a></td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=3402606">Rahul Rajat Singh</a></td><td class="date">24 Sep '12 - 7:02&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:38px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="38px" alt="" /><div class="voteform vertical" ownerid="3402606" msgid="4376688" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">Thanks for the feedback.<br />
+<div class="signature">Every now and then say, "What the Elephant." "What the Elephant" gives you freedom. Freedom brings opportunity. Opportunity makes your future.</div><br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4376688&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4376688&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4376615" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4376688/Re-My-vote-of-5.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4376688&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4376688&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4376688" data-ref="3_4376688" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="3402606" msgid="4376688"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr class="header hover-row root">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="20px" class="indent"><a name="xx4375373xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_general.gif" alt="General" /></td><td class="subject hover-container">My vote of 5</td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=7971293">Velkumar Kannan</a></td><td class="date">22 Sep '12 - 2:55&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content root">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:20px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="20px" alt="" /><div class="voteform vertical" ownerid="7971293" msgid="4375373" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">Good content<br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4375373&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4375373&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4375373" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4375373/My-vote-of-5.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4375373&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4375373&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4375373" data-ref="3_4375373" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="7971293" msgid="4375373"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr class="header hover-row">
+					<td class="subject-line expanded " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr>
+							<td width="38px" class="indent"><a name="xx4375405xx"></a><img height="16px" width="16px" align="top" src="/script/Forums/Images/msg_answer.gif" alt="Answer" /></td><td class="subject hover-container"><a class="message-link" name="4375405" parent="4375373" thread="4375373" href="/Messages/4375405/Re-My-vote-of-5.aspx">Re: My vote of 5</a></td><td class="icon"><img border="0" src="http://s.codeproject.com/App_Themes/Std/Img/icn-member-16.gif" title="member" alt="member" height="16px" /></td><td class="author"><a href="/script/Membership/View.aspx?mid=3402606">Rahul Rajat Singh</a></td><td class="date">22 Sep '12 - 4:42&nbsp;</td>
+						</tr>
+					</table></td>
+				</tr><tr class="content">
+					<td class="expanded" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tr valign="top">
+							<td class="indent align-right" style="width:38px;"><img src="http://s.codeproject.com/script/Forums/Images/t.gif" height="1px" width="38px" alt="" /><div class="voteform vertical" ownerid="3402606" msgid="4375405" votingType="GoodOrBad">
+
+							</div></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td colspan="2">Thanks for the feedback.<br />
+<div class="signature">Every now and then say, "What the Elephant." "What the Elephant" gives you freedom. Freedom brings opportunity. Opportunity makes your future.</div><br /></td>
+										</tr><tr class="footer" style="vertical-align:top;">
+											<td><a class="new-message" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4375405&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=r" title="Reply">Reply</a>·<a class="nav-link" href="/script/Forums/Edit.aspx?fid=1703677&amp;select=4375405&amp;floc=/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B&amp;action=e" title="Email">Email</a>·<a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;sort=Position&amp;spc=Relaxed&amp;tid=4375373" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a href="/Messages/4375405/Re-My-vote-of-5.aspx" title="Get permanent link">Permalink</a>·<a href="/script/Bookmarks/Add.aspx?obid=4375405&amp;obtid=3&amp;action=AddBookmark&amp;bio=false" title="Bookmark this post" onclick="return bookmarkMe(0,0,'/script/Bookmarks/Ajax/Add.aspx?obid=4375405&obtid=3&action=AddBookmark&bio=false',false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4375405" data-ref="3_4375405" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="3402606" msgid="4375405"></span></span></td>
+										</tr>
+									</table></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr><tr>
+					<td><img src="http://s.codeproject.com/script/Forums/Images/t.gif" border="0" width="1px" height="5px" alt="" /></td>
+				</tr>
+			</table></td>
+		</tr><tr>
+			<td><table width="100%" cellpadding="2px" cellspacing="0">
+				<tr class="footer">
+					<td>Last Visit: 6 Mar '13 - 10:04 &nbsp; &nbsp; Last Update: 6 Mar '13 - 5:47</td><td><a href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;noise=3&amp;prof=False&amp;sort=Position&amp;view=Expanded&amp;spc=Relaxed">Refresh</a></td><td style="text-align:right;white-space:nowrap;"><input id="_mbnUrl" type="hidden" value="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;noise=3&amp;prof=False&amp;sort=Position&amp;view=Expanded&amp;spc=Relaxed&amp;fr=26" /><span class="nav-link selected">1</span><a class="nav-link" name="Frm_HoverNL" href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;noise=3&amp;prof=False&amp;sort=Position&amp;view=Expanded&amp;spc=Relaxed&amp;fr=26#xx0xx">2</a> <a class="nav-link" name="Frm_HoverNL" href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?fid=1703677&amp;df=10000&amp;mpp=25&amp;noise=3&amp;prof=False&amp;sort=Position&amp;view=Expanded&amp;spc=Relaxed&amp;fr=26#xx0xx">Next »</a></td>
+				</tr>
+			</table></td>
+		</tr>
+	</tr>
+</table><p class="small-text"><img align="top" src="/script/Forums/Images/msg_general.gif" width="16px" height="16px" alt="General" /> General &nbsp;&nbsp; <img align="top" src="/script/Forums/Images/msg_news.gif" width="16px" height="16px" alt="News" /> News &nbsp;&nbsp; <img align="top" src="/script/Forums/Images/msg_idea.gif" width="16px" height="16px" alt="Suggestion" /> Suggestion &nbsp;&nbsp; <img align="top" src="/script/Forums/Images/msg_question.gif" width="16px" height="16px" alt="Question" /> Question &nbsp;&nbsp; <img align="top" src="/script/Forums/Images/msg_bug.gif" width="16px" height="16px" alt="Bug" /> Bug &nbsp;&nbsp; <img align="top" src="/script/Forums/Images/msg_answer.gif" width="16px" height="16px" alt="Answer" /> Answer &nbsp;&nbsp; <img align="top" src="/script/Forums/Images/msg_joke.gif" width="16px" height="16px" alt="Joke" /> Joke &nbsp;&nbsp; <img align="top" src="/script/Forums/Images/msg_rant.gif" width="16px" height="16px" alt="Rant" /> Rant &nbsp;&nbsp; <img align="top" src="/script/Forums/Images/msg_admin.gif" width="16px" height="16px" alt="Admin" /> Admin &nbsp;&nbsp; </p>
+
+				
+
+			</div>
+			
+		</td>
+		<td>
+			<div id="ctl00_RightSideBar" class="container-article-info">
+
+				<div class="header">About Article</div>
+				<div class="article-summary">
+
+					
+					
+
+					
+					
+
+					
+					<div class="summary"><span id="ctl00_ArticleDescr">An introduction to Entity Framework for absolute beginners.</span></div>
+
+					<a id="ctl00_InfoBox_ParentLink"></a>
+
+<table cellpadding="0" cellspacing="0" class="article-info">
+
+	
+	<tr><td>Type&nbsp;</td><td class="value"><a id="ctl00_InfoBox_TypeName" href="/script/Articles/Types.aspx?#Article">Article</a></td></tr>
+	
+
+	<tr><td>Licence&nbsp;</td><td class="value"><a href="http://www.codeproject.com/info/cpol10.aspx" title="The Code Project Open License (CPOL)">CPOL</a></td></tr>
+
+	
+
+	<tr><td>First Posted&nbsp;</td><td nowrap="nowrap" class="value">9 Apr 2012</td></tr>
+
+	<tr><td>Views&nbsp;</td><td class="value">101,898</td></tr>
+
+	
+	<tr><td>Downloads&nbsp;</td><td  class="value">5,508</td></tr>
+		
+
+	
+	<tr><td>Bookmarked&nbsp;</td><td class="value">125 times</td></tr>
+	
+
+	
+
+	
+	
+	
+	<tr><td colspan="2"></td>
+	</tr>
+	
+	
+</table>
+
+					<div class="tags"> 
+					<span id="ctl00_TagsList_TagWrp" class="tags">
+	
+	
+	
+	<span id="ctl00_TagsList_VisibleTags"><span class="t"><a rel="tag" href="/Tags/C--hash--">C#</a></span><span class="t"><a rel="tag" href="/Tags/ASP.NET">ASP.NET</a></span><span class="t"><a rel="tag" href="/Tags/.NET">.NET</a></span><span class="t"><a rel="tag" href="/Tags/Dev">Dev</a></span><br><span class="t"><a rel="tag" href="/Tags/Intermediate">Intermediate</a></span></span> 
+
+	
+	
+</span>
+
+					</div>
+
+					<div class="nowrap align-left">
+						<a id="ctl00_ActionLinks_ArticleBmk_ImgBt" title="Bookmark" AlternateText="Bookmark" name="bm_363040_2" onclick="return bookmarkMe(363040,2,&#39;/script/Bookmarks/Ajax/Add.aspx?obid=363040&amp;obtid=2&amp;action=AddBookmark&amp;bio=true&#39;,false);" href="/script/Bookmarks/Add.aspx?obid=363040&amp;obtid=2&amp;action=AddBookmark&amp;bio=true" style="display:inline-block;height:46px;width:46px;vertical-align:middle;"><img title="Bookmark" src="/App_Themes/Std/Img/bookmark.gif" alt="" style="border-width:0px;" /></a>
+
+
+<span id="ctl00_ActionLinks_ArticleBmk_StatusMsg" class="tiny-text" style="display:none" name="bm_363040_2"></span>
+ 
+
+<a id="ctl00_ActionLinks_PrintLnk" href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?display=Print">
+	<img src="http://s.codeproject.com/App_Themes/Std/Img/print.gif" 
+		width="46px" height="46px" style="border:0">
+</a>
+
+<a id="ctl00_ActionLinks_MailLink" href="/script/common/TellFriend.aspx?obtid=2&amp;obid=363040">
+	<img src="http://s.codeproject.com/App_Themes/Std/Img/email.gif" 
+		width="46px" height="46px" style="border:0">
+</a>
+					</div>
+
+					
+				</div>
+
+				<div style="width:160px;margin: 10px auto;">
+					<div class="msg-160x600" data-format="160x600" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="ros"  lqm_country='JM' data-country='JM' data-tags='C#, ASP.NET, .NET, Dev, Intermediate,rating4.5'></div>
+				</div>
+
+				
+<div class="padded-top">
+<div class="header">Top News</div>
+
+<p><a id="ctl00_News_News_ctl01_Link" href="http://nikic.github.com/2012/06/15/The-true-power-of-regular-expressions.html">The true power of regular expressions</a></p>
+
+Get the <a id="ctl00_News_News_ctl02_Subscribe" href="/Feature/Insider/">Insider News</a> free each morning.
+</div>
+
+				
+				<div class="padded-top">
+					
+	<div id="ctl00_RelatedArticles_RelatedResults_ctl00_header" class="header">Related Articles</div>
+	<div class="content-list">	
+	
+	<div class="content-list-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl02_Link" class="title" href="/KB/library/471643.aspx">A Beginner's Tutorial on Performing Validations in Entity Framework using Partial Methods</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl03_Link" class="title" href="/KB/database/396822.aspx">Basic Handling and Tips of Database Relationships in Entity Framework</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl04_Link" class="title" href="/KB/library/545395.aspx">A Beginner's Tutorial on Understanding Table Per Type(TPT) Inheritance in Entity Framework</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl05_Link" class="title" href="/KB/database/EFWinForms.aspx">Entity Framework in WinForms</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl06_Link" class="title" href="/KB/architecture/ddd_and_entityframework.aspx">DDD and the ADO.NET Entity Framework</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl07_Link" class="title" href="/KB/library/539816.aspx">A Beginner's Tutorial for Understanding and Implementing Relationships using Entity Framework</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl08_Link" class="title" href="/KB/database/ADO_NET_Entity_Framework.aspx">ADO.NET Entity Framework as Data Access Layer</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl09_Link" class="title" href="/KB/aspnet/Custom_Json_Serializer.aspx">Custom JSON Serializer for the Entity Framework</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl10_Link" class="title" href="/KB/database/EFPerformance.aspx">Entity Framework Performance</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl11_Link" class="title" href="/KB/aspnet/MVC3_CodeFirst.aspx">How to use Entity Framework Code First for MVC 3</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl12_Link" class="title" href="/KB/aspnet/498885.aspx">Introduction to Entity Framework</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl13_Link" class="title" href="/KB/library/546058.aspx">A Beginner's Tutorial on Understanding Table Per Hierarchy(TPH) Inheritance in Entity Framework</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl14_Link" class="title" href="/KB/aspnet/web-development-beginners.aspx">Beginner's Walk - Web Development</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl15_Link" class="title" href="/KB/aspnet/selfdiagnostics.aspx">Website Diagnostics Page to diagnose your ASP.NET Website</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl16_Link" class="title" href="/KB/linq/DataObjects-Introduction.aspx">DataObjects.Net - ORM Framework for RAD - Introduction</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl17_Link" class="title" href="/KB/architecture/attachobjectgraph.aspx">Reattaching Entity Graphs with the Entity Framework</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl18_Link" class="title" href="/KB/cs/DataAnnotations4Beginner.aspx">DataAnnotations Validation for Beginner</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl19_Link" class="title" href="/KB/aspnet/377291.aspx">An Introduction to ASP.NET Dynamic Data from a Beginner's Perspective</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl20_Link" class="title" href="/KB/web-security/EFMembershipProvider.aspx">Custom membership provider for the ADO.NET Entity Framework</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl21_Link" class="title" href="/KB/codegen/crudgenerator.aspx">WPF CRUD Generator (Scaffolding)</a>
+		
+	</div>
+	
+	</div>
+	
+
+				</div>
+
+				
+				
+			</div>
+		</td>
+		</tr></table>
+
+		
+		<div class="theme1-background" style="height:2px"></div>
+
+		<div class="extended tiny-text">
+			<div class="row">
+				<div class="float-left">
+					<a id="ctl00_PermaLink" href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B">Permalink</a> | 
+					<a id="ctl00_AdvertiseLink" href="http://developermedia.com/">Advertise </a> |
+					<a id="ctl00_PrivacyLink" href="/info/privacy.aspx">Privacy</a> |
+					<a id="ctl00_Mobile" rel="nofollow" href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?display=Mobile">Mobile</a>
+					<br />
+								
+					
+					Web04 |
+					2.6.130305.1 |
+					Last Updated 9 Apr 2012								
+				</div>
+				<div class="float-right align-right">
+					Article Copyright 2012 by Rahul Rajat Singh<br />Everything else
+					Copyright &copy; <a href="mailto:webmaster@codeproject.com">CodeProject</a>, 1999-2013 <br />
+					<a id="ctl00_TermsOfUseLink" href="/info/TermsOfUse.aspx">Terms of Use</a>
+				</div>
+
+				
+
+
+<div class="page-width">
+Layout: <a id="ctl00_PageWidth_FixedT" title="Fixed width layout" rel="nofollow" class=" active" href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?PageFlow=FixedWidth">fixed</a>
+|
+<a id="ctl00_PageWidth_FluidT" title="Fluid layout" rel="nofollow" href="/Articles/363040/An-Introduction-to-Entity-Framework-for-Absolute-B?PageFlow=Fluid">fluid</a>
+</div>
+
+
+
+			</div>
+		</div>
+		
+
+		<br clear="all" />
+		
+			
+
+	</div> 
+	</div>
+</div>
+
+
+<div style="display:none;" id="lqm_AdTable">
+	
+</div>
+
+
+<script type="text/javascript" language="Javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script><script type='text/javascript'>//<![CDATA[
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='/script/JS/jquery-1.6.2.min.js' type='text/javascript' %3E%3C/script%3E"));
+}//]]></script>
+<script type="text/javascript" language="Javascript" src="http://s.codeproject.com/script/Articles/JS/article.min.js?dt=2.6.130305.1"></script>
+<script type="text/javascript" language="Javascript" src="http://s.codeproject.com/script/JS/navbar.min.js?dt=2.6.130305.1"></script>
+<script type="text/javascript" language="Javascript" src="http://s.codeproject.com/script/Membership/JS/Notifications.min.js?dt=2.6.130305.1"></script>
+<script type="text/javascript" language="Javascript">//<![CDATA[
+$(document).ready(function() { anchorAnimate(); });
+(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));
+(function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true; po.src = 'https://apis.google.com/js/plusone.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s); })();
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){ js=d.createElement(s);js.id=id; js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+var DMReportsOK = null;function showDMAlert() {   var $div = $('div.msg-728x90');  $div.append($('<img src="/images/alert-top-block.gif" style="right:0;position:absolute;z-index:0">'));}function onDMcallBack(event){   if (event.originalEvent) event = event.originalEvent;   jQuery.support.cors = true;   if (event.data == 'DM-disabled') DMReportsOK = false;   else if (event.data == 'DM-enabled') DMReportsOK = true;}function checkLoaded() {  var recordCheck  = false; var showBlockMsg = true; var block        = 'None'; if (!DMReportsOK && block == 'None' && typeof DMAds === 'undefined')     block = 'ResourceBlocked'; if (DMReportsOK === true) block = 'None'; else if (DMReportsOK === false) block = 'DomModified'; if (recordCheck) {  $.ajax({ url:'/script/AdServe/Ajax/VS.aspx',data:{'adbm':block}, cache:false, async:true }); } if (showBlockMsg && block != 'None')    showDMAlert();}$(document).ready(function() {  $(window).bind('message', onDMcallBack);  setTimeout(checkLoaded, 4000);});
+$(document).ready(function() {   $('.alert-bar').fadeIn('slow');   $('.alert-bar a.close-notify').click(function() {      $('.alert-bar').fadeOut('fast');        return false;    });});
+var notificationAlert = new NotificationAlert('ctl00_MemberMenu_Messages_NotificationCount','Notifications','/script/Membership/Ajax/NotificationList.aspx');
+notificationAlert.initialise();
+var oSrchFlt = false, oSrchBox=false,srchBoxFoc=false;
+$(document).ready(function() {
+ if(InitWatermark)InitWatermark('sb_tb', 'Search for articles, questions, tips');
+ var sbar = $('#sb_tb'); 
+ var sfilter = $('#SearchFilter');
+ if (sbar && sfilter) {
+  sfilter.removeClass('popup'); sfilter.hide();
+  sbar.blur(function() {
+ if (!oSrchFlt)sfilter.hide();
+ srchBoxFoc=false;
+ /*sbar.animate( { width:'210px' }, { queue:false, duration:300 });
+*/ });
+  sbar.focus(function() {
+ oSrchFlt=false;srchBoxFoc=true;
+ sfilter.show();
+ /*sbar.animate( { width:'500px' }, { queue:false, duration:300 });
+*/ });
+  sbar.mouseleave(function() { oSrchBox=false; });
+  sbar.mouseover(function() { oSrchBox=true; });
+  sfilter.mouseleave(function() { oSrchFlt=false; if (!srchBoxFoc&&!oSrchBox)sfilter.hide();});
+  sfilter.mouseover(function() { oSrchFlt=true; });
+ }
+});
+$("#ctl00_RateArticle_RateItemWrapper").removeClass("container-rating");$('#clear-rate_ctl00_RateArticle_RCD').click(function () { $('#ctl00_RateArticle_RCD').hide(); return false;});
+function PostBack_ctl00_RateArticle_RateItemWrapper() {
+  return rateItem(363040,2,1,true,true,3,'LargeStars');
+}
+function ChkRtctl00_RateArticle(val, objId) {if (val<=3||true) {
+$('div[name=RateItem_' + objId + '] .rating-comment').css("display","");}
+else $('div[name=RateItem_' + objId + '] .rating-comment').css("display","none");}
+
+forumDir = '/script/Forums/';
+staticServer = 'http://s.codeproject.com';
+allowReporting = false;
+allowRating = true;
+allowRatingDisplay = true;
+var smoothScroll = false;
+Selected        = -1;
+oldTitle        = document.title;
+minMessageScore = 1;
+minMessageScore = 5;
+abuseScore      = -2;
+spamScore       = -1;
+getRatingUrl    = '/script/Ratings/Ajax/GetRatings.aspx';
+noiseThreshold  = 3;
+getRatingRefKey = 'obrs';
+
+
+//]]>
+</script>
+
+</body>
+</html>

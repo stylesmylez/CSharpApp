@@ -1,0 +1,1626 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" dir="ltr" >
+<head>
+  <base href="http://www.shabdar.org/asp-net/71-google-maps-control-for-aspnet-part-2.html" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="keywords" content="Discuss Google Maps Control for ASP.Net, Main Forum, Shabdar.org, Forum, J25 Shabdar.org - Home of tutorials" />
+  <meta name="author" content="Shabdar" />
+  <meta name="description" content="Ask questions on Google Maps Control for ASP.Net here. Click reply button below." />
+  <meta name="generator" content="Joomla! - Open Source Content Management" />
+  <title>Google Maps Control for ASP.Net - Part 2</title>
+  <link href="/templates/beez_20/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <link href="http://www.shabdar.org/component/search/?Itemid=485&amp;catid=77&amp;id=71&amp;format=opensearch" rel="search" title="Search J25 Shabdar.org - Home of tutorials" type="application/opensearchdescription+xml" />
+  <link rel="stylesheet" href="http://www.shabdar.org/plugins/content/kunenadiscuss/kunenadiscuss/discuss.css" type="text/css" />
+  <link rel="stylesheet" href="/templates/system/css/system.css" type="text/css" />
+  <link rel="stylesheet" href="/templates/beez_20/css/position.css" type="text/css" media="screen,projection"  />
+  <link rel="stylesheet" href="/templates/beez_20/css/layout.css" type="text/css" media="screen,projection"  />
+  <link rel="stylesheet" href="/templates/beez_20/css/print.css" type="text/css" media="print"  />
+  <link rel="stylesheet" href="/templates/beez_20/css/general.css" type="text/css" />
+  <link rel="stylesheet" href="/templates/beez_20/css/general_mozilla.css" type="text/css" />
+  <link rel="stylesheet" href="/templates/beez_20/css/personal.css" type="text/css" />
+  <script src="/media/system/js/mootools-core.js" type="text/javascript"></script>
+  <script src="/media/system/js/core.js" type="text/javascript"></script>
+  <script src="/media/system/js/caption.js" type="text/javascript"></script>
+  <script src="/media/system/js/mootools-more.js" type="text/javascript"></script>
+  <script src="/templates/beez_20/javascript/md_stylechanger.js" type="text/javascript"></script>
+  <script src="/templates/beez_20/javascript/hide.js" type="text/javascript"></script>
+  <script type="text/javascript">
+window.addEvent('load', function() {
+				new JCaption('img.caption');
+			});
+  </script>
+  <link type="text/css" rel="stylesheet" href="http://www.shabdar.org/plugins/content/CodeCitation/codecitation/styles/shCore_css.php"/>
+<link type="text/css" rel="stylesheet" href="http://www.shabdar.org/plugins/content/CodeCitation/codecitation/styles/shThemeDefault.css"/>
+<script type="text/javascript" src="http://www.shabdar.org/plugins/content/CodeCitation/codecitation/scripts/shCore_js.php"></script>
+  <script type="text/javascript" src="http://www.shabdar.org/plugins/content/CodeCitation/codecitation/scripts/shBrushPlain.js"></script>
+
+
+<!--[if lte IE 6]>
+<link href="/templates/beez_20/css/ieonly.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+#line {
+	width:98% ;
+}
+.logoheader {
+	height:200px;
+}
+#header ul.menu {
+	display:block !important;
+	width:98.2% ;
+}
+</style>
+<![endif]-->
+
+<!--[if IE 7]>
+<link href="/templates/beez_20/css/ie7only.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+<script type="text/javascript">
+	var big ='72%';
+	var small='53%';
+	var altopen='is open';
+	var altclose='is closed';
+	var bildauf='/templates/beez_20/images/plus.png';
+	var bildzu='/templates/beez_20/images/minus.png';
+	var rightopen='Open info';
+	var rightclose='Close info';
+	var fontSizeTitle='Font size';
+	var bigger='Bigger';
+	var reset='Reset';
+	var smaller='Smaller';
+	var biggerTitle='Increase size';
+	var resetTitle='Revert styles to default';
+	var smallerTitle='Decrease size';
+</script>
+
+
+<script type='text/javascript'>
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-3005969-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+</script>
+</head>
+
+<body>
+
+<div id="all">
+        <div id="back">
+                <div id="header">
+                                <div class="logoheader">
+                                        <h1 id="logo">
+
+                                                                                <img src="/images/logo.gif"  alt="" />
+                                                                                                                        <span class="header1">
+                                                                                </span></h1>
+                                </div><!-- end logoheader -->
+                                        <ul class="skiplinks">
+                                                <li><a href="#main" class="u2">Skip to content</a></li>
+                                                <li><a href="#nav" class="u2">Jump to main navigation and login</a></li>
+                                                                                    </ul>
+                                        <h2 class="unseen">Nav view search</h2>
+                                        <h3 class="unseen">Navigation</h3>
+                                        
+<ul class="menu">
+<li class="item-542"><a href="/" >Home</a></li><li class="item-485 current active"><a href="/asp-net.html" >ASP.Net</a></li><li class="item-486"><a href="/visual-basicnet.html" >Visual Basic.Net</a></li><li class="item-487"><a href="/c-sharp.html" >C#</a></li><li class="item-488"><a href="/sql-server.html" >SQL Server</a></li><li class="item-489"><a href="/visual-basic.html" >Visual Basic</a></li><li class="item-490"><a href="/miscellaneous.html" >Miscellaneous</a></li><li class="item-482"><a href="/forum-main.html" >Forum</a></li></ul>
+
+                                        <div id="line">
+                                        <div id="fontsize"></div>
+                                        <h3 class="unseen">Search</h3>
+                                        <form action="/asp-net.html" method="post">
+	<div class="search">
+		<label for="mod-search-searchword">Search...</label><input name="searchword" id="mod-search-searchword" maxlength="20"  class="inputbox" type="text" size="20" value="Search..."  onblur="if (this.value=='') this.value='Search...';" onfocus="if (this.value=='Search...') this.value='';" />	<input type="hidden" name="task" value="search" />
+	<input type="hidden" name="option" value="com_search" />
+	<input type="hidden" name="Itemid" value="485" />
+	</div>
+</form>
+
+                                        </div> <!-- end line -->
+
+
+                        </div><!-- end header -->
+                        <div id="contentarea">
+                                        <div id="breadcrumbs">
+
+                                                        
+<div class="breadcrumbs">
+<span class="showHere">You are here: </span><a href="/" class="pathway">Home</a> <img src="/templates/beez_20/images/system/arrow.png" alt=""  /> <a href="/asp-net.html" class="pathway">ASP.Net</a> <img src="/templates/beez_20/images/system/arrow.png" alt=""  /> <span>Google Maps Control for ASP.Net - Part 2</span></div>
+
+
+                                        </div>
+
+                                        
+                                        <div id="wrapper2" class="shownocolumns">
+
+                                                <div id="main">
+
+                                                
+                                                        
+<div id="system-message-container">
+</div>
+                                                        <div class="item-page">
+
+	<h2>
+			<a href="/google-maps-user-control-for-asp-net-part2.html">
+		Google Maps Control for ASP.Net - Part 2</a>
+		</h2>
+
+	<ul class="actions">
+						<li class="print-icon">
+			<a href="/google-maps-user-control-for-asp-net-part2.html?tmpl=component&amp;print=1&amp;page=" title="Print" onclick="window.open(this.href,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no'); return false;" rel="nofollow"><img src="/media/system/images/printButton.png" alt="Print"  /></a>			</li>
+		
+					<li class="email-icon">
+			<a href="/component/mailto/?tmpl=component&amp;template=beez_20&amp;link=94b3c19a1a4977db3ac1ceaf334c65001f1c4148" title="Email" onclick="window.open(this.href,'win2','width=400,height=350,menubar=yes,resizable=yes'); return false;"><img src="/media/system/images/emailButton.png" alt="Email"  /></a>			</li>
+		
+		
+	
+	</ul>
+
+
+1
+
+	<dl class="article-info">
+	<dt class="article-info-term">Details</dt>
+	<dd class="category-name">
+				Category: <a href="/asp-net.html">ASP.Net</a>		</dd>
+	<dd class="published">
+	Published on Sunday, 17 April 2011 04:41	</dd>
+	<dd class="createdby">
+				Written by Shabdar		</dd>
+	<dd class="hits">
+	Hits: 29127	</dd>
+	</dl>
+
+
+
+<h2 style="color: Black">Free Open source Control</h2>
+<p><img src="/shabdar_images/GoogleMapControl/MainScreen.jpg" border="0" alt="Google Map Control for ASP.Net" width="450" height="403" style="border: 0;" /><br /> <br /></p>
+<h3><span style="color: #003300;">Introduction</span></h3>
+<p>This is second part in two part series of my article Google Maps User Control for ASP.Net. In first part <span style="color: #008000;"><strong><a href="/google-maps-user-control-for-ASP-Net-part1.html">Google Maps Control for ASP.Net - Part 1</a></strong></span> I have explained how to use this control in your ASP.Net application. In this part I am going to explain <strong>source code</strong> of this user control so that you can modify it for your own use.</p>
+<h3><span style="color: #003300;">Diagram</span></h3>
+<div><img src="/shabdar_images/GoogleMapControl/Diagram.gif" border="0" alt="Google Map Control Logical Diagram" width="600" height="370" style="border: 0;" /></div>
+<p>Diagram above shows working flow of this user control. I will explain you one by one each element in this diagram.</p>
+<p>
+
+
+</p>
+
+<h3><span style="color: #003300;">ASPX page with Google Map User Control</span></h3>
+<ul>
+<li>As I mentioned in part 1, we need to initialize few properties of this user control to make it work. These properties are initialized in Page_Load() event of ASPX page.
+
+<script type="text/javascript">
+	SyntaxHighlighter.config.clipboardSwf = "http://www.shabdar.org/plugins/content/CodeCitation/codecitation/scripts/clipboard.swf";
+	SyntaxHighlighter.defaults["auto-links"] = true;
+	SyntaxHighlighter.defaults["collapse"] = false;
+	SyntaxHighlighter.defaults["gutter"] = true;
+	SyntaxHighlighter.defaults["smart-tabs"] = true;
+	SyntaxHighlighter.defaults["tab-size"] = 4;
+	SyntaxHighlighter.defaults["toolbar"] = true;
+	SyntaxHighlighter.defaults["wrap-lines"] = true;	
+	SyntaxHighlighter.all();
+</script><div style="overflow: hidden; display: block; height: auto; width: inherit;"><pre class="brush:text;">protected void Page_Load(object sender, EventArgs e)    {        //Specify API key        GoogleMapForASPNet1.GoogleMapObject.APIKey =                     ConfigurationManager.AppSettings["GoogleAPIKey"];         //Specify width and height for map.        GoogleMapForASPNet1.GoogleMapObject.Width = "800px";         // You can also specify percentage(e.g. 80%) here        GoogleMapForASPNet1.GoogleMapObject.Height = "600px";        //Specify initial Zoom level.        GoogleMapForASPNet1.GoogleMapObject.ZoomLevel = 14;        //Specify Center Point for map.         GoogleMapForASPNet1.GoogleMapObject.CenterPoint =                         new GooglePoint("1", 43.66619, -79.44268);        //Add pushpins for map.        //This should be done with intialization of GooglePoint class.        //In constructor of GooglePoint, First argument is ID of this pushpin.         //It must be unique for each pin. Type is string.        //Second and third arguments are latitude and longitude.        GoogleMapForASPNet1.GoogleMapObject.Points.Add(                                new GooglePoint("1", 43.65669, -79.45278));      }</pre></div> 
+
+
+</li>
+<li>When you initialize these properties, they gets stored in GOOGLE_MAP_OBJECT session variable. Later on this session variable is accessed by GService.asmx web service to draw google map.</li>
+<li>Go to source of GoogleMapForASPNet.aspx.cs file. Check Page_Load() method.
+
+<div style="overflow: hidden; display: block; height: auto; width: inherit;"><pre class="brush:text;">    protected void Page_Load(object sender, EventArgs e)    {        .        .        .        if (!IsPostBack)        {            Session["GOOGLE_MAP_OBJECT"] = GoogleMapObject;        }        else        {            GoogleMapObject = (GoogleObject)Session["GOOGLE_MAP_OBJECT"];            .            .            .</pre></div> 
+
+<br /> As you can see, I am storing GoogleMapObject property in a session variable if this is a first time load of page. If this is a post back then I use existing session variable value and assign it to GoogleMapObject property. </li>
+</ul>
+
+<p>
+
+</p>
+
+<h3>User Control (GoogleMapForASPNet.ascx)</h3>
+<ul>
+<li>GoogleMapForASPNet.ascx file contains a &amp;ltDIV&gt; element with ID=GoogleMap_Div. Google map is drawn on this &amp;ltDIV&gt; element</li>
+<li>GoogleMapForASPNet.ascx is responsible for calling DrawGoogleMap() javascript function on page load. If you see source of GoogleMapForASPNet.ascx.cs file, it contains following lines in Page_Load() event.
+
+<div style="overflow: hidden; display: block; height: auto; width: inherit;"><pre class="brush:text;">Page.ClientScript.RegisterStartupScript(Page.GetType(), "onLoadCall", "                                             if (window.DrawGoogleMap) { DrawGoogleMap(); }                                             ");</pre></div> 
+
+<br /> This causes DrawGoogleMap() function to get fired. </li>
+</ul>
+<h3><span style="color: #003300;">GoogleMapAPIWrapper.js</span></h3>
+<ul>
+<li>This javascript acts as a wrapper between ASP.Net calls and Google Maps Core API functions.</li>
+<li>When DrawGoogleMap() function is called, it calls web service method GService.GetGoogleObject() to get session variable values.</li>
+<li>Once different parameters are retrieved from session variable, it will start calling Google Maps core API functions to draw a map.</li>
+</ul>
+<h3><span style="color: #003300;">Web Service (GService.asmx)</span></h3>
+<ul>
+<li>As I have mentioned before, GService.GetGoogleObject() and GService.GetGoogleObjectOptimized() are functions defined in GService.asmx file.</li>
+<li>These functions retrieves Google Map parameters from session variable.</li>
+</ul>
+<h3><span style="color: #003300;">How to define a Web Service Method</span></h3>
+<ul>
+<li>This control uses Web Service Methods to get values from a session variable. These methods are defined in Gservice.cs(GService.asmx code behind) file.</li>
+<li>Go to source of GService.cs file. Observe how GetGoogleObject() web method is defined. <br />
+
+<div style="overflow: hidden; display: block; height: auto; width: inherit;"><pre class="brush:text;">    [WebMethod(EnableSession = true)]    public GoogleObject GetGoogleObject()    {        GoogleObject objGoogle =              (GoogleObject)System.Web.HttpContext.Current.Session["GOOGLE_MAP_OBJECT"];        System.Web.HttpContext.Current.Session["GOOGLE_MAP_OBJECT_OLD"] =                                                           new GoogleObject(objGoogle);        return objGoogle;    }</pre></div> 
+
+<br /> Return value type from this method is GoogleObject. </li>
+</ul>
+<h3><span style="color: #003300;">How to call ASP.Net function (Web service method) from Javascript using a Web Service</span></h3>
+<ul>
+<li>If you go to HTML source of GoogleMapForASPNet.ascx file, you will see that I am using &lt;ScriptManagerProxy&gt; control.<br />
+
+<div style="overflow: hidden; display: block; height: auto; width: inherit;"><pre class="brush:text;"></pre></div> 
+
+When &amp;ltServiceReference&gt; is used with &amp;ltScriptManagerProxy&gt; or &amp;ltScriptManager&gt; controls, it allows you to use web service methods defined in code behind. </li>
+<li>Go to source of GoogleMapAPIWrapper.js file. Observe how I am calling a web service method in DrawGoogleMap() function.
+
+<div style="overflow: hidden; display: block; height: auto; width: inherit;"><pre class="brush:text;">function DrawGoogleMap(){    if (GBrowserIsCompatible())    {    map = new GMap2(document.getElementById("GoogleMap_Div"));    geocoder = new GClientGeocoder();       GService.GetGoogleObject(fGetGoogleObject);    }}</pre></div> 
+
+<br /> GService.GetGoogleObject() is a web service method. fGetGoogleObject() is a javascript function that should be called once web service method returns. <br />
+
+<div style="overflow: hidden; display: block; height: auto; width: inherit;"><pre class="brush:text;">function fGetGoogleObject(result, userContext){    map.setCenter(new GLatLng(result.CenterPoint.Latitude,                         result.CenterPoint.Longitude), result.ZoomLevel);        if(result.ShowMapTypesControl)    {        map.addControl(new GMapTypeControl());    }    .    .    .</pre></div> 
+
+
+<br /> <strong>result</strong> is return value from web service method GService.GetGoogleObject(). Thus <strong>result</strong> is of type GoogleObject. You can access properties of <strong>result</strong> in javascript to get map parameters. </li>
+</ul>
+
+<p>
+
+</p>
+
+<h3><span style="color: #003300;">Difference between GetGoogleObject() and GetGoogleObjectOptimized()</span></h3>
+<ul>
+<li>Both of these methods work in similar fashion. GetGoogleObject() is called when page loads for first time. It returns all of the GoogleObject properties to javascript function. While GetGoogleObjectOptimized is called on postback. It does not return all of the properties. Instead it returns minimum properties required to make a change in existing map.</li>
+<li>If you view source of GoogleMapAPIWrapper.js file, there are two functions defined in it as below,
+
+<div style="overflow: hidden; display: block; height: auto; width: inherit;"><pre class="brush:text;">function endRequestHandler(sender, args){    GService.GetOptimizedGoogleObject(fGetGoogleObjectOptimized);}function pageLoad(){    if(!Sys.WebForms.PageRequestManager.getInstance().get_isInAsyncPostBack())        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(endRequestHandler);}  </pre></div> 
+
+<br /> These function causes GService.GetOptimizedGoogleObject() to get fired when an AJAX call finishes. For example let's say you have a button in an UpdatePanel. When you click it, it postbacks the page. When this postback completes, above function will get fire. </li>
+</ul>
+<h3><span style="color: #003300;">Functions defined in GoogleMapAPIWrapper.js</span></h3>
+<ul>
+<li>To make this article short, I don't want to explain each and every function defined in this file. Instead I will explain important functions only. If you want more details for any code that's not explained here, you can post your questions in Comments section..</li>
+<li>
+
+<div style="overflow: hidden; display: block; height: auto; width: inherit;"><pre class="brush:text;">function CreateMarker(point,icon1,InfoHTML,bDraggable,sTitle){    var marker;        marker = new GMarker(point,{icon:icon1,draggable:bDraggable,title: sTitle});    if(InfoHTML!='')    {        GEvent.addListener(marker, "click", function() { this.openInfoWindowHtml(InfoHTML); });    }        GEvent.addListener(marker, "dragend", function() {              GService.SetLatLon(this.value,this.getLatLng().y,this.getLatLng().x);            RaiseEvent('PushpinMoved',this.value);  });    return marker;}</pre></div> 
+
+<br /> This function creates a marker on Google Map. As you can see, I am adding two events with each marker. First one is click(). When a user clicks on marker, a balloon (info window) pops up. This is a javascript event. Second one is dragend(). If a user wants he can drag a pushpin to a new location. This will cause a web method GService.SetLatLon() to get executed. This method sets new latitude and longitude values in Session Variable. As you can see this function also calls RaiseEvent() function which causes an AJAX postback.
+
+<div style="overflow: hidden; display: block; height: auto; width: inherit;"><pre class="brush:text;">function RaiseEvent(pEventName,pEventValue){    document.getElementById('').value = pEventName;    document.getElementById('').value = pEventValue;    __doPostBack('UpdatePanel1','');}</pre></div> 
+
+<br /> When postback finishes, new latitude and longitude values will be picked up from Session Variable. </li>
+<li>
+<div style="overflow: hidden; display: block; height: auto; width: inherit;"><pre class="brush:text;">function RecenterAndZoom(bRecenter,result)</pre></div>
+
+<br />This function causes Recentering of map. It finds all visible markers on map and decides center point and zoom level based on these markers. </li>
+<li>
+<div style="overflow: hidden; display: block; height: auto; width: inherit;"><pre class="brush:text;">function CreatePolyline(points,color,width,isgeodesic)</pre></div>
+
+<br /> This function creates polylines between given points. See <strong>Polylines</strong> property in GoogleObject class. </li>
+<li>
+<div style="overflow: hidden; display: block; height: auto; width: inherit;"><pre class="brush:text;">function CreatePolygon(points,strokecolor,strokeweight,strokeopacity,fillcolor,fillopacity)</pre></div>
+
+
+<br /> This function creates polygons between given points. See <strong>Polygons</strong> property in GoogleObject class. </li>
+</ul>
+
+<p>
+
+</p>
+
+<h3><span style="color: #003300;">How to define Icons for google map</span></h3>
+<ul>
+<li>If you see implementation of fGetGoogleObject() and fGetGoogleObjectOptimized() javascript functions, you can see that I am creating custom icons for google map. This is how they are defined.
+<div style="overflow: hidden; display: block; height: auto; width: inherit;"><pre class="brush:text;">    .    .    myIcon_google = new GIcon(G_DEFAULT_ICON);    markerOptions = { icon:myIcon_google };    myIcon_google.iconSize = new GSize(result.Points[i].IconImageWidth,                                        result.Points[i].IconImageHeight);    myIcon_google.image = result.Points[i].IconImage;    myIcon_google.shadow = result.Points[i].IconShadowImage;    myIcon_google.shadowSize = new GSize(result.Points[i].IconShadowWidth,                                             result.Points[i].IconShadowHeight);    myIcon_google.iconAnchor =  new GPoint(result.Points[i].IconAnchor_posX,                                         result.Points[i].IconAnchor_posY);    myIcon_google.infoWindowAnchor = new GPoint(result.Points[i].InfoWindowAnchor_posX,                                     result.Points[i].InfoWindowAnchor_posY);    .    .</pre></div>
+
+
+</li>
+<li>There are various properties that you can set for a custom icon. Following article explains you each of these properties in detail. <br /> <a href="http://econym.googlepages.com/custom.htm">Making your own custom markers</a> </li>
+</ul>
+<h3><span style="color: #003300;">Special Notes </span></h3>
+<p align="left">I have published this article on <a href="http://www.codeproject.com/" title="Code Project">www.codeproject.com</a> as well. Here is the link to this article.</p>
+<p align="left"><a href="http://www.codeproject.com/KB/custom-controls/Google-Maps-User-Control.aspx" title="Google Maps Control for ASP.Net - Part 1">Google Maps Control for ASP.Net - Part 1</a></p>
+<p align="left"> </p>
+<h3>Comments/Questions</h3>
+<p> </p>
+<table style="border-left: 1px solid #9b9c9c; border-right: 1px solid #9b9c9c; border-bottom: 1px solid #9b9c9c" border="0">
+<tbody>
+<tr>
+<td style="border-top: 1px solid #9b9c9c" width="100%" align="left">
+<div>Thank you very much for this great web user control. <br /> <br />I have a one question here, how can i put some pins on client click. For example i want users to put only one pin on the map and there will be a save marker button when the user clicks on the button, the coordinates will be saved in database. <br /> <br />Thanks</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Barbaros (Thursday 05-Jun-08 05:40 AM)</em></strong></div>
+</td>
+<td style="border-top: 1px solid #9b9c9c; text-align: left" width="0" align="left"><br /></td>
+</tr>
+<tr>
+<td colspan="2" width="100%" align="left">
+<table style="border: 1px none #9b9c9c" border="0">
+<tbody>
+<tr>
+<td width="100%" align="left">
+<div>See my CreateMarker function. In this function I have defined a click event, which opens up a balloon. You need to add similar code for map click event. Somethink like this, <br /> <br />GEvent.addListener(map, 'click', function(overlay, latlng) { <br /> var lat = latlng.lat(); <br /> var lon = latlng.lng(); <br /> <br />Once you have lat/lon values, you can create marker based on these lat longs values <br /> <br />var point = new GLatLng(lat,lon); <br />map.addOverlay(new GMarker(point)); <br /> <br />To save this new lat longs in database, you can define a webmethod and call it in javascript. <br /> <br />GService.SaveNewMarker(lat,lon); <br /> <br /></div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Shabdar (Thursday 05-Jun-08 09:51 AM)</em></strong></div>
+</td>
+<td width="0" align="left"><br /></td>
+</tr>
+<tr>
+<td colspan="2" width="100%" align="left"><br /></td>
+</tr>
+<tr>
+<td style="padding-left: 20px" colspan="2" align="left">
+<table style="border: 1px none #9b9c9c" border="0">
+<tbody>
+<tr>
+<td width="100%" align="left">
+<div>Can you provide a sample code to add a puspin when clicked on the map. i cannot invoke the createmarker code onclick of map</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Prajith (Thursday 21-Aug-08 01:05 AM)</em></strong></div>
+</td>
+<td width="0" align="left"><br /></td>
+</tr>
+<tr>
+<td colspan="2" width="100%" align="left"><br /></td>
+</tr>
+<tr>
+<td style="padding-left: 20px" colspan="2" align="left">
+<table style="border: 1px none #9b9c9c" border="0">
+<tbody>
+<tr>
+<td width="100%" align="left">
+<div><br />i did it like this in my way , can you suggest a better way,  <br /> <br /> <br /> Untitled Page <br /> <br /> function display() <br /> {                 <br /> GEvent.addListener(map, "click", function(marker, latlng)  <br /> { <br /> var inputForm3 = document.createElement("form");                         <br /> inputForm3.setAttribute("action",""); <br /> inputForm3.onsubmit = function() { storeMarker(latlng); return false;}; <br /> var lng = latlng.lng(); <br /> var lat = latlng.lat(); <br /> inputForm3.innerHTML = '' <br /> + 'Add Transformer'  <br /> + 'Transformer Name:' <br /> + '' <br /> + 'Transformer NO:' <br /> + ''  <br /> + ''                         <br /> + '' <br /> + '' <br /> + '';                          <br /> map.openInfoWindow (latlng,inputForm3); <br /> }); <br /> } <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+<h3><a href="/Default.aspx">Back</a></h3>
+<br />
+<h3>Google map with draggable pushpins.</h3>
+<br /> Drag any pushpin and see changed latitude and longitude value at bottom of page. <br />
+<div><br /> <br /></div>
+</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; prajith (Thursday 21-Aug-08 01:30 AM)</em></strong></div>
+</td>
+<td width="0" align="left"><br /></td>
+</tr>
+<tr>
+<td colspan="2" width="100%" align="left"><br /></td>
+</tr>
+<tr>
+<td style="padding-left: 20px" colspan="2" align="left"><br /></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<div>First, Thanks for a Nice collection of code. <br />But, when I use "MapWithDraggableIcons" I gets a Error in the following function: <br />Is Says "document.getElementById('')" dont return a valid Object. <br /> <br />I look forward to hear from you. <br />Regads <br />Thomas. <br /> <br /> <br />function RaiseEvent(pEventName,pEventValue) <br />{ <br /> document.getElementById('').value = pEventName; <br /> document.getElementById('').value = pEventValue; <br /> __doPostBack('UpdatePanel1','');</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Thomas Olsen (Sunday 08-Jun-08 05:51 AM)</em></strong></div>
+<table style="border: 1px none #9b9c9c" border="0">
+<tbody>
+<tr>
+<td width="100%" align="left">
+<div>Thank you for reporting this. This was a bug. I have fixed it. You can download source code again.</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Shabdar (Monday 09-Jun-08 10:22 AM)</em></strong></div>
+</td>
+<td width="0" align="left"><br /></td>
+</tr>
+<tr>
+<td colspan="2" width="100%" align="left"><br /></td>
+</tr>
+<tr>
+<td style="padding-left: 20px" colspan="2" align="left">
+<table style="border: 1px none #9b9c9c" border="0">
+<tbody>
+<tr>
+<td width="100%" align="left">
+<div>Shabdar, <br /> <br />I see you already corrected it (I asked the same question on the codeproject site). I also found another solution. <br /> <br />I see you moved the RaiseEvent function out of the GoogleMapAPIWrapper.js and into the GoogleMapForASPNET.ascx. <br />To leave it in the .js file you can also do this: <br /> <br />Add script section after UpdatePanel: <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> var panelXXXYYY = ''; <br /> var hidEventName = ''; <br /> var hidEventValue = ''; <br /> <br /> <br />Change RaiseEvent function in.js file to : <br /> <br />function RaiseEvent(pEventName,pEventValue) <br />{ <br />document.getElementById(hidEventName).value = pEventName;;  <br /> document.getElementById(hidEventValue).value = pEventValue; <br /> if(document.getElementById(panelXXXYYY) != null) <br /> { <br /> __doPostBack(panelXXXYYY,''); <br /> } <br />} <br /> <br />Or something like this of course. <br /> <br />Regards, <br /> <br />Geert Veenstra</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Geert Veenstra (Tuesday 10-Jun-08 04:57 PM)</em></strong></div>
+</td>
+<td width="0" align="left"><br /></td>
+</tr>
+<tr>
+<td colspan="2" width="100%" align="left"><br /></td>
+</tr>
+<tr>
+<td style="padding-left: 20px" colspan="2" align="left"><br /></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<div>Hi Shabdar, <br /> <br />I upgraded to your new v1.5 control, so far it looks great. <br /> <br />In v.1.4 I had added G_PHYSICAL_MAP map type, enableDoubleClickZoom, and enableScrollWheelZoom, and all worked great. I moved my code changes over into the new GoogleMapAPIWrapper,js file (see below) but none of the functions work now. Any ideas? <br /> <br />Chris <br /> <br /> // Add the Terrain map type  <br /> map.addMapType(G_PHYSICAL_MAP); <br /> <br /> map.setMapType(eval(result.MapType)); <br /> // Add zoom via mouse double click <br /> map.enableDoubleClickZoom();  <br /> // Add zoom via mouse scroll wheel <br /> map.enableScrollWheelZoom();</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Chris Mangiapane (Wednesday 11-Jun-08 12:14 AM)</em></strong></div>
+<table style="border: 1px none #9b9c9c" border="0">
+<tbody>
+<tr>
+<td width="100%" align="left">
+<div>Hi <br /> <br />I corrected my own question; For those that might like to use the G_PHYSICAL_MAP map type, enableDoubleClickZoom, and/or enableScrollWheelZoom, the code snippnet above needed to be moved from fGetGoogleObjectOptimized to the fGetGoogleObject method in the new GoogleMapAPIWrapper,js file. <br /> <br />Shabdar, you  might like to consider adding this functionality to the next release. <br /> <br />Chris</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Chris Mangiapane (Wednesday 11-Jun-08 10:16 AM)</em></strong></div>
+</td>
+<td width="0" align="left"><br /></td>
+</tr>
+<tr>
+<td colspan="2" width="100%" align="left"><br /></td>
+</tr>
+<tr>
+<td style="padding-left: 20px" colspan="2" align="left">
+<table style="border: 1px none #9b9c9c" border="0">
+<tbody>
+<tr>
+<td width="100%" align="left">
+<div>Thanks, <br /> <br />I will include this in next release.</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Shabdar (Wednesday 11-Jun-08 11:57 AM)</em></strong></div>
+</td>
+<td width="0" align="left"><br /></td>
+</tr>
+<tr>
+<td colspan="2" width="100%" align="left"><br /></td>
+</tr>
+<tr>
+<td style="padding-left: 20px" colspan="2" align="left"><br /></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<div>When I send parameters to a aspx file this mymap.aspx?id=2 <br />I got a Decode error in s = System.Web.HttpContext.Current.Request.MapPath(PageName).Split(new char[] { '' }); Becayse Pagename include th "?id=2" <br />I have changed this to solv the problem in cGoogleMap.cs: <br />public static string GetLocalPath() <br /> { <br /> string[] s = System.Web.HttpContext.Current.Request.Url.AbsoluteUri.Split(new char[] { '/' }); <br /> string PageName = s[s.Length - 1]; <br /> int PageNameLength = PageName.IndexOf("?");  // New <br /> if (PageNameLength != -1)                    // New <br /> {                                            // New <br /> PageName = PageName.Substring(0,         PageNameLength); <br /> }                                            // New <br /> s = System.Web.HttpContext.Current.Request.MapPath(PageName).Split(new char[] { '' }); <br /> <br /> <br /> string path = s[0] + ""; <br /> for (int i = 1; i &lt; s.Length - 1; i++) <br /> { <br /> path = path + s[i] + ""; <br /> } <br /> <br /> <br /> return path; <br /> <br />I hope you will aplly this to your code base ! <br /> <br /></div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Thomas Olsen (Wednesday 11-Jun-08 01:58 AM)</em></strong></div>
+<table style="border: 1px none #9b9c9c" border="0">
+<tbody>
+<tr>
+<td width="100%" align="left">
+<div>Thanks for this correction, <br /> <br />I will include this update in next release.</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Shabdar (Wednesday 11-Jun-08 11:58 AM)</em></strong></div>
+</td>
+<td width="0" align="left"><br /></td>
+</tr>
+<tr>
+<td colspan="2" width="100%" align="left"><br /></td>
+</tr>
+<tr>
+<td style="padding-left: 20px" colspan="2" align="left">
+<table style="border: 1px none #9b9c9c" border="0">
+<tbody>
+<tr>
+<td width="100%" align="left">
+<div>Hi Shabdar, <br /> <br />It seems to me that the call to GetLocalPath (and also GetHttpURL) is not really necessary. <br /> <br />I think this because in the IconImage set part you go through all this code, but at the end there is a line _icon = value; which makes all previous code unneeded ? <br /> <br />Or is all that code there just to make sure (check) that the bitmap really exists ? <br /> <br />Regards,  <br /> <br />Geert Veenstra</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Geert Veenstra (Tuesday 24-Jun-08 11:31 AM)</em></strong></div>
+</td>
+<td width="0" align="left"><br /></td>
+</tr>
+<tr>
+<td colspan="2" width="100%" align="left"><br /></td>
+</tr>
+<tr>
+<td style="padding-left: 20px" colspan="2" align="left"><br /></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<div>Is there a way to put a hyperlink inside the InfoHTML html text that contains javascript to fire a server-side event? <br /> <br />I one to add a 'Select' link in the InfoHTML. When clicked, it should fire a server-side event with that marker's information sent to the code-behind, so the server can change the marker icon and redraw the map. <br /> <br />Sure would appreciate a small example; I've been struggling with this one for days. <br /> <br />Chris</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Chris Mangiapane (Saturday 14-Jun-08 08:36 PM)</em></strong></div>
+<table style="border: 1px none #9b9c9c" border="0">
+<tbody>
+<tr>
+<td width="100%" align="left">
+<div>Ok I answered part of my own question :) I added a 'Select' tag inside the InfoHTML. When clicked, it fires a server-side event and passes the marker's id. The server-side code records the selection and changes the marker icon color. BUT, the map does not redraw itself! <br /> <br />How do I direct the map to redraw itself? <br /> <br />The only work around I have found is to do a post-back --Response.Redirect("default.aspx")</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Chris Mangiapane (Wednesday 25-Jun-08 11:00 AM)</em></strong></div>
+</td>
+<td width="0" align="left"><br /></td>
+</tr>
+<tr>
+<td colspan="2" width="100%" align="left"><br /></td>
+</tr>
+<tr>
+<td style="padding-left: 20px" colspan="2" align="left"><br /></td>
+</tr>
+</tbody>
+</table>
+<div>GetLocalPath() in cGoogleMap.cs doesn't handle URLs with query strings. <br /> <br />ex: <br />'locate_dealer.aspx?zipcode=02360' is not a valid virtual path. <br /> <br />I did a second split on the ? to fix it.</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Steve (Monday 16-Jun-08 08:31 AM)</em></strong></div>
+<table style="border: 1px none #9b9c9c" border="0">
+<tbody>
+<tr>
+<td width="100%" align="left">
+<div>Hi <br />Please see my reply =&gt;  <br />Thomas Olsen (Wednesday 11-Jun-08 01:58 AM) <br /> <br />Regards <br />Thomas Olsen.</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Thomas Olsen (Tuesday 24-Jun-08 01:16 AM)</em></strong></div>
+</td>
+<td width="0" align="left"><br /></td>
+</tr>
+<tr>
+<td colspan="2" width="100%" align="left"><br /></td>
+</tr>
+<tr>
+<td style="padding-left: 20px" colspan="2" align="left"><br /></td>
+</tr>
+</tbody>
+</table>
+<div>Hey, this is very useful and i love that you can dynamically set the push pins by longitude and latitude, but is there a way of setting them by a postcode? Or is there a simple way of getting the longitude and latitude values from a postcode? <br /> <br />Help with this would be invaluable. Thanks Si!</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Simon Caine (Sunday 22-Jun-08 09:57 PM)</em></strong></div>
+<div>Hi <br /> <br />In denmark we use "," as the default seperator, but the converter function use systemet setting, it must be hardcodet to use "." as Seperator. <br />I made a small addon to Code: <br />public static double GetNumericValue(object pNumValue) <br /> { <br /> if ((pNumValue == null)) <br /> { <br /> return 0; <br /> } <br /> System.Globalization.NumberFormatInfo GoogleFormat = new System.Globalization.NumberFormatInfo(); // New <br /> GoogleFormat.NumberDecimalSeparator = "."; // New <br /> if (IsNumeric(pNumValue)) <br /> { <br /> return double.Parse((pNumValue.ToString()), GoogleFormat);  // Updated. <br /> } <br /> else <br /> { <br /> return 0; <br /> } <br /> <br /> <br />I hope you will use this in next release, or make your own type of code ;)</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Thomas Olsen (Monday 23-Jun-08 05:36 AM)</em></strong></div>
+<div>I was hoping you'd show how to read an SQL table and get the Lng/Lat data as pushpins into your maps...  Thank you!</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Brian (Tuesday 24-Jun-08 03:08 PM)</em></strong></div>
+<table style="border: 1px none #9b9c9c" border="0">
+<tbody>
+<tr>
+<td width="100%" align="left">
+<div>I think most of the people know how to read an sql table and load values in variable. If not, there are plenty of examples on net. <br /> <br />I didn't want to make my sample to tightly bind with SQL Database. That's the reason I didn't include it in my samples as well.</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Shabdar (Wednesday 25-Jun-08 09:12 AM)</em></strong></div>
+</td>
+<td width="0" align="left"><br /></td>
+</tr>
+<tr>
+<td colspan="2" width="100%" align="left"><br /></td>
+</tr>
+<tr>
+<td style="padding-left: 20px" colspan="2" align="left"><br /></td>
+</tr>
+<tr>
+<td width="100%" align="left">
+<div>There's an automated SQL geocoder out there already. While it isn't open-source, I'm fairly certain that it is free. Link: http://sql.geocoder.jetkey.com/</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Mike (Monday 30-Jun-08 07:11 AM)</em></strong></div>
+</td>
+<td width="0" align="left"><br /></td>
+</tr>
+<tr>
+<td colspan="2" width="100%" align="left"><br /></td>
+</tr>
+<tr>
+<td style="padding-left: 20px" colspan="2" align="left"><br /></td>
+</tr>
+</tbody>
+</table>
+<div>Is it possible to hide the map control on the page and then show it on the click of a Button ? <br />This button would be in another UpdatePanel on the same Page. <br /> <br />I tried it, but ran into a problem where the UpdatePanelXXXYYY could not be found (I don't know the exact message right now) ? <br /> <br />Regards, <br /> <br />Geert Veenstra</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Geert Veenstra (Wednesday 25-Jun-08 11:06 PM)</em></strong></div>
+<div>Hi Shabdar <br /> <br />Has anyone taken a look a the GStreetviewOverlay in order to provide a map 'street view'? <br /> <br />Here is a nice glimpse at what it can do: <br />http://googlemapsapi.blogspot.com/2008/03/street-view-in-api-or-how-i-spent-my.html <br /> <br />Any plans to add this in upcoming versions?</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Chris Mangiapane (Wednesday 02-Jul-08 11:01 AM)</em></strong></div>
+<div>I have a requirement as: <br />I want to add a Plane Map of India on a aspx Page. It should only show states boundaries. On clicking of a particular state it should get highlighted and i want to show some further information pertaining to that state, which is stored in database. How can i do that in visual studio 2005.</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Gaurav (Thursday 03-Jul-08 12:29 AM)</em></strong></div>
+<div>Is it possible to use the Google Maps Control in SQL Server Reporing services 2005? <br /> <br />I have stored the coordinates in the DB and to jump to an URL. The parameter ( coordinates, Text ) should be transferd over the Hyperlink Address. <br /> <br />Or is there an other way ?</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Peda (Thursday 03-Jul-08 07:10 AM)</em></strong></div>
+<div>HI, <br /> <br />I downloaded your component, started up VS2008 after updating to 3.5 the application run quite well. <br /> <br />I then tried the setup steps outlined above to create a new project and on build received a message that I was missing a Script Manager. I added one and the result was a blank page. <br /> <br />Do you have any suggestions on how to get started so that the default map displays? <br /> <br />Thanks In Advance, <br />James <br /> <br /></div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; James Hein (Thursday 10-Jul-08 01:50 AM)</em></strong></div>
+<table style="border: 1px none #9b9c9c" border="0">
+<tbody>
+<tr>
+<td width="100%" align="left">
+<div>I solved the problem by also adding the GoogleMapApiWrapper.js file to my project. <br /> <br />I have built Google Maps before inside plain HTMl but I am having problems making the transition to the ASP.NET version/implementation. Do you have any full examples of say how to implement a click to create a marker (I see the function in the included file) because I don't know how to 'wire' it all together in this environment. <br /> <br />I am also interested in basic functionality like clicking a few points and creating a polygon / line from those clicked points for example. <br /> <br />Thanks in advance <br />James.</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; James Hein (Thursday 10-Jul-08 03:21 AM)</em></strong></div>
+</td>
+<td width="0" align="left"><br /></td>
+</tr>
+<tr>
+<td colspan="2" width="100%" align="left"><br /></td>
+</tr>
+<tr>
+<td style="padding-left: 20px" colspan="2" align="left"><br /></td>
+</tr>
+</tbody>
+</table>
+<div>Great article!I have to remember the latitude and longitude of the icons in sql table.I did it,but with one error,which come very rare.When I drag one icon everything is ok.But when I have two or more icons when i am dragging some of them the dragged before the last go to the "old" place and in the table the "old coordinates" are stored.But the last is stored with new coordinates.I can't understand why.</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; stefan (Friday 11-Jul-08 05:51 AM)</em></strong></div>
+<div>Hi again!I have another question.I make my error,but i have one question about the service. <br /> <br />public void SetLatLon(string pID, double pLatitude, double pLongitude) <br /> { <br /> GoogleObject objGoogleNew = (GoogleObject)System.Web.HttpContext.Current.Session["GOOGLE_MAP_OBJECT"]; <br /> GoogleObject objGoogleOld = (GoogleObject)System.Web.HttpContext.Current.Session["GOOGLE_MAP_OBJECT_OLD"]; <br /> objGoogleNew.Points[pID].Latitude = pLatitude; <br /> objGoogleNew.Points[pID].Longitude = pLongitude; <br /> //objGoogleOld.Points[pID].Latitude = pLatitude; <br /> //objGoogleOld.Points[pID].Longitude = pLongitude; <br />} <br />I marked this two lines an everything is ok.What is the purpose of them. <br /> <br />I marked them because i think that the GetOptimizedGoogleObject() can't understand about the changet point location.</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; stefan (Friday 11-Jul-08 09:15 AM)</em></strong></div>
+<div>Is it possible to use this in a Web Application VS2005? I have spent quite a few hours trying. First I recieved the GService is undefined error and seam to have gotten past that by adding Inline scripts = true <br /> <br /> <br /> <br />But now I get Error: no element found <br />Source File: http://localhost/website/GService.asmx/GetGoogleObject <br />Line: 1 <br /> <br />I see the div with the Google logo on the bootom but no map <br /> <br />Any ideas would be appreciated</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Dave (Tuesday 15-Jul-08 07:46 PM)</em></strong></div>
+<table style="border: 1px none #9b9c9c" border="0">
+<tbody>
+<tr>
+<td width="100%" align="left">
+<div>I figured this out and it does work on a Web Application Project. First do not use InlineScript = "true" as shown above. The GService is undefined error was being caused by the fact I was doing a url rewrite for the pages in the global.asax Application_BeginRequest which was causing the errors with GService.asmx. <br /> <br />By removing this for .asmx extentions everthing is working fine. <br /> <br />if (Request.Path.IndexOf(".asmx") == -1) <br />{ <br /> // do page rewrite function <br />} <br /> <br />Hope this may help someone out as it took me quite some time to figure it out. <br /> <br />Great control!!! <br /> <br />Thanks, <br />Dave</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Dave (Wednesday 16-Jul-08 09:22 AM)</em></strong></div>
+</td>
+<td width="0" align="left"><br /></td>
+</tr>
+<tr>
+<td colspan="2" width="100%" align="left"><br /></td>
+</tr>
+<tr>
+<td style="padding-left: 20px" colspan="2" align="left"><br /></td>
+</tr>
+</tbody>
+</table>
+<div>Have you thought about incorporating this? <br /> <br />"If you have an existing Maps API site, you can 3D-enable your page with as little as one line of code."</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Brian (Wednesday 16-Jul-08 09:36 AM)</em></strong></div>
+<div>I noticed the following behavior in your example "Google Map with Draggable pushpins"  <br />when you zoom in and move the pushpin to a new location the map will zoom out to the original zoom level. Is there a way to keep it from doing that? <br />I have tried to set the zoomlevel (GoogleMapForASPNet1.GoogleMapObject.ZoomLevel) to different values in different places of the script <br />- load page area (doesnt seem to change the zoomlevel) <br />- in OnPushpinMoved <br /> <br />It seems that it still will go back to the original zoomlevel <br /> <br />Any suggestions how to fix this? <br /> <br />Thanks for a nice google map control</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Islandhopper8 (Saturday 19-Jul-08 12:33 PM)</em></strong></div>
+<table style="border: 1px none #9b9c9c" border="0">
+<tbody>
+<tr>
+<td width="100%" align="left">
+<div>First you have to find the function RecenterAndZoom in the GoogleMapAPIWrapper.js file, then you have to comment the following lines: <br /> <br />//var iZoomLevel = map.getBoundsZoomLevel(bounds); <br />var point = bounds.getCenter();         <br />//        if(iZoomLevel&gt;14) <br />//        { <br />//            iZoomLevel = 14; <br />//        }        <br />if(cnt&lt;=0) <br />{ <br />point = new GLatLng(result.CenterPoint.Latitude,result.CenterPoint.Longitude); <br />//  iZoomLevel =result.ZoomLevel; <br />} <br />// map.setZoom(iZoomLevel); <br />map.setCenter(point);  <br /> <br />also check this in the function IgnoreZeroLatLongs at the beginning of the same file <br /> <br />// var iZoomLevel = map.getBoundsZoomLevel(bounds); <br />var point = bounds.getCenter(); <br /> <br />// map.setZoom(iZoomLevel); <br />map.setCenter(point); <br /> <br />then try it</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Gabriel Baldeon (Thursday 16-Oct-08 01:07 PM)</em></strong></div>
+</td>
+<td width="0" align="left"><br /></td>
+</tr>
+<tr>
+<td colspan="2" width="100%" align="left"><br /></td>
+</tr>
+<tr>
+<td style="padding-left: 20px" colspan="2" align="left"><br /></td>
+</tr>
+</tbody>
+</table>
+<div>Hi, <br />I am facing the problem to draw Poly line on the GMap. i.e I am able to draw up to 15 Lan&amp;Lat values, if above I am not able to draw line dynamically. <br />Here I am  retrieving the Lag &amp; Lat values dynamically from Sql-Server. <br />Even here I am mentioning the error which I am getting…. <br /> <br /> <br /> <br /> <br />Microsoft JScript runtime error: Sys.Net.WebServiceFailedException: The server method 'GetGoogleObject' failed with the following error: System.InvalidOperationException-- Error during serialization or deserialization using the JSON JavaScriptSerializer. The length of the string exceeds the value set on the maxJsonLength property. <br /> <br /> <br /> <br /> <br />Thanks &amp; Regards, <br />Hanu</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Hanu (Monday 21-Jul-08 08:42 AM)</em></strong></div>
+<table style="border: 1px none #9b9c9c" border="0">
+<tbody>
+<tr>
+<td width="100%" align="left">
+<div>I am having the same problem.  Was anyone able to resolve this?</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Tejal Gandhi (Thursday 30-Oct-08 11:57 AM)</em></strong></div>
+</td>
+<td width="0" align="left"><br /></td>
+</tr>
+<tr>
+<td colspan="2" width="100%" align="left"><br /></td>
+</tr>
+<tr>
+<td style="padding-left: 20px" colspan="2" align="left"><br /></td>
+</tr>
+</tbody>
+</table>
+<div>Hi all! <br />I need help.I am not familiar with Javascript and want to ask something about Polylines.Can i create a InfoHTML for a polyline,when it is clicked or mouseover to show some info? <br />Thanks</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; stefoto (Monday 21-Jul-08 09:19 AM)</em></strong></div>
+<div>I just wanted to say that I enjoyed reviewing and using this control. I have successfully implemented it with minor changes. A previous post mentioned having to change the "GetLocalPath" function. However, it didn't work so I changed it to the following which fixed it. <br /> <br /> <br />public static string GetLocalPath()  <br />{  <br />string[] s = System.Web.HttpContext.Current.Request.Url.AbsoluteUri.Split(new char[] { '/' });  <br />string PageName = s[s.Length - 1];  <br />int PageNameLength = PageName.IndexOf("?"); <br />if (PageNameLength != -1)  <br />{ <br />PageName = PageName.Substring(0, PageNameLength);  <br />}  <br />s = System.Web.HttpContext.Current.Request.MapPath(PageName).Split(new char[] { '//' }); //NEW because '' is not valid char  <br /> <br />string path = s[0] + ""; //places proper backslashes  <br />for (int i = 1; i &lt; s.Length - 1; i++)  <br />{  <br />path = path + s[i] + "";  // new  <br />} <br />return path;</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; brent (Monday 28-Jul-08 10:37 AM)</em></strong></div>
+<div>Do you do any custom development?  I have a Google Maps project I would like to be completed. <br />Thanks, <br />Steve</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Steve (Monday 04-Aug-08 10:45 AM)</em></strong></div>
+<table style="border: 1px none #9b9c9c" border="0">
+<tbody>
+<tr>
+<td width="100%" align="left">
+<div>Hi <br />We do Google Map project, please provide me with your project details, we'll send you an offer. <br /> <br />Please contact me at "tol (a-NoSpam) promobil.dk" <br /> <br />Regards <br />Thomas Olsen.</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Thomas Olsen (Tuesday 05-Aug-08 01:58 AM)</em></strong></div>
+</td>
+<td width="0" align="left"><br /></td>
+</tr>
+<tr>
+<td colspan="2" width="100%" align="left"><br /></td>
+</tr>
+<tr>
+<td style="padding-left: 20px" colspan="2" align="left"><br /></td>
+</tr>
+</tbody>
+</table>
+<div>Hi; <br />Thanks for the great control. I wonder if i can get geocodes of any point i click on the map.</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Burak (Friday 15-Aug-08 09:52 AM)</em></strong></div>
+<div>Hi Shabdar. Great google map control but there is a runtime error if i use this control with the browsers(IE,FF).  <br />I downloaded the newest Version from here: downloads/GoogleMapControl.zip  <br /> <br />If i click one time with the right mouse button on the map, this runtime error appears:  <br />line: 784  <br />Error: 'this.ff.width' is Null or not an object  <br /> <br />This is the line (main.js):  <br />Uj.prototype.Ow=function(a){return new N(a.x+this.ff.width,a.y+this.ff.height)};  <br /> <br />Thanks,</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Quang (Thursday 21-Aug-08 03:15 AM)</em></strong></div>
+<table style="border: 1px none #9b9c9c" border="0">
+<tbody>
+<tr>
+<td width="100%" align="left">
+<div>I met this error,too.Admin can explain for us? :( <br />Thanks!</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; John (Saturday 23-Aug-08 01:22 PM)</em></strong></div>
+</td>
+<td width="0" align="left"><br /></td>
+</tr>
+<tr>
+<td colspan="2" width="100%" align="left"><br /></td>
+</tr>
+<tr>
+<td style="padding-left: 20px" colspan="2" align="left"><br /></td>
+</tr>
+<tr>
+<td width="100%" align="left">
+<div>Hi, <br />I have same problem, I discover that situation occurs when no markers on the map.</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; DDdeveloper (Wednesday 10-Sep-08 08:49 AM)</em></strong></div>
+</td>
+<td width="0" align="left"><br /></td>
+</tr>
+<tr>
+<td colspan="2" width="100%" align="left"><br /></td>
+</tr>
+<tr>
+<td style="padding-left: 20px" colspan="2" align="left"><br /></td>
+</tr>
+</tbody>
+</table>
+<div>Hi there, looks to be a great control but I can't seem to get your control to work. <br /> <br />if (hidEventName.Value == "PushpinMoved") <br /> { <br /> //Set event name to blank string, so on next postback same event doesn't fire again. <br /> hidEventName.Value = ""; <br /> OnPushpinMoved(hidEventValue.Value); <br /> <br /> <br />This line doesn't seem to work, sine the hidEventName is in the contentTemplate, so it can't be accessed, or am I doing something wrong? <br /> <br />Cheers, Sarkie.</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Sarkie (Friday 22-Aug-08 04:06 AM)</em></strong></div>
+<div>thank you</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; xna (Wednesday 03-Sep-08 09:39 AM)</em></strong></div>
+<div>hi., <br /> *I am having some problems in writing to databases... can u show me a sample test page where database connection is used <br />and the database design too.. <br />*is it possible for me to convert a text file with lat and lang to a organized XML file.  <br />thanks</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; hussain (Thursday 04-Sep-08 02:39 AM)</em></strong></div>
+<div>Thank You very much for your great control,I want to say that it  <br />is the greatest one as I ever seen before.you save my life,you are  <br />the god.</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; intrepid (Friday 05-Sep-08 12:43 AM)</em></strong></div>
+<div>H! Great article. <br />I have two questions.1-Can I use this without webservice? <br />and 2-I want a image from DBase along with text to b displayed in a bubble that comes when user click the pin. <br />For first question I tried to write methods in the code-behind file and using "PageMethods" I called them from javascript.Functions get called ,but with some script errors. <br />Can you comment on it please.</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Nirav (Thursday 11-Sep-08 12:09 AM)</em></strong></div>
+<div>One More Problem <br />When I add more(50+) points on map it takes too long to get loaded. <br />What to do when we have thousands of loactions to be pointed on the map.</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Nirav (Thursday 11-Sep-08 02:55 AM)</em></strong></div>
+<div>Thanks for a great control. In my part of the world (Kenya) we get some pretty lousy internet connections. When a connection fails partway the javascript fails at <br /> <br />if(GBrowserIsCompatible())  <br /> <br />Now I can either move this into a try..catch block, or test that the function is instantiated first with  <br /> <br />if(GBrowserIsCompatible) <br /> <br />I need to bubble this error up into an error event for the control that I can handle in the calling program. <br /> <br />The problem is that what I know about JavaScript is dangerous and I'd be very grateful for any suggestions you may have. <br /> <br />Regards Bob Morris</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Bob Morris (Wednesday 17-Sep-08 01:47 PM)</em></strong></div>
+<div>This thing is awsome!!!  Thank you so much.  The only thing I am missing is Street View.  Anyway to do this?</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Dale (Thursday 25-Sep-08 08:53 AM)</em></strong></div>
+<div>First of all, great article. I have a question about Geocoding. I keep getting a 'request timed out' error when entering Seattle, WA in the GooglePoint address property. Its pretty much straight from the sample. Perhaps I'm doing something wrong. Any suggestions?</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Sancho (Tuesday 07-Oct-08 03:23 PM)</em></strong></div>
+<div>Hi, you made a great job... It's very usefull control. But i've got a question, i try to get the ID of a point when i click on it to show it in a label...As you do with the pushpin moved. Is there a way to get back and handle the informations from the bubble???? Please answer me if you have any idea or anyone else got any idea... <br /> <br />Thank you.</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; panos (Wednesday 19-Nov-08 07:10 AM)</em></strong></div>
+<div>If I want to display a point's infoHTML by default, how would I do that? Whenever a point has some infoHTML, it should be displayed. How this can be done?</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Sanket Apte (Saturday 29-Nov-08 11:51 PM)</em></strong></div>
+<div>Thank you very much for this great web user control.  <br />How do I plot routemap or polyline based on some langitude and longitude values in a looop. <br /> <br />Any one please advice or guide me to any URL...of doumentation please.. <br /> <br />thanks <br /> <br />venky</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; venky (Tuesday 02-Dec-08 12:58 PM)</em></strong></div>
+<div>Dear Shabdar, <br /> <br />Thanks for the great control.... <br /> <br />I've got some queries... <br /> <br />How can I get the Latitude &amp; Longitude of a point clicked on the map. <br /> <br />Thanks, <br />Yogesh J S</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Yogesh (Wednesday 03-Dec-08 03:14 AM)</em></strong></div>
+<div>I was wondering if you have worked on the getBounds or adding the ability to get directions yet? <br /> <br />Charles</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Charles Ralston (Thursday 04-Dec-08 02:51 PM)</em></strong></div>
+<table style="border: 1px none #9b9c9c" border="0">
+<tbody>
+<tr>
+<td width="100%" align="left">
+<div>No...</div>
+<div style="background-color: #d9dde0; color: #8d0603"><strong><em>=&gt; Yogesh (Thursday 04-Dec-08 10:29 PM)</em></strong></div>
+</td>
+<td width="0" align="left"><br /></td>
+</tr>
+<tr>
+<td colspan="2" width="100%" align="left"><br /></td>
+</tr>
+<tr>
+<td style="padding-left: 20px" colspan="2" align="left"><br /></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+
+</p>
+
+
+ 
+				<ul class="pagenav">
+					<li class="pagenav-prev">
+						<a href="/google-maps-user-control-for-asp-net-part1.html" rel="prev">&lt; Prev</a>
+					</li>
+					<li class="pagenav-next">
+						<a href="/asp-net/69-implementing-amazon-api-signed-requests-helper-in-aspnet-and-c.html" rel="next">Next &gt;</a>
+					</li>
+				</ul>
+	
+<div class="kunenadiscuss"><div id="kdiscuss-quick-post71" class="kdiscuss-form">
+	<div class="kdiscuss-title">Discuss this article</div>
+			You need to <a href="/login.html">log in</a> or <a href="/register-user.html">register</a> to participate in this discussion.	</div>
+
+<br /><div class="kdiscuss-title"><a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html" title="follow" rel="follow">Posts in discussion</a></div>
+
+<div class="kdiscuss-item kdiscuss-item1">
+	<a name="285" id="id285" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="28 May 2013 12:01">
+			Posted: 2 months, 3 weeks ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-user" href="/forum/profile/userid-885.html" title="" rel="nofollow">ashutoshmars</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=90#285" title="#285">#285</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-user" href="/forum/profile/userid-885.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/./nophoto.jpg" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						Is it possible to add Google earth view also in this control? As per my project requirement, Google Earth option should also be there.  <br />
+<br />
+Please advice.		</div>
+	</div>
+</div>
+
+
+
+<div class="kdiscuss-item kdiscuss-item2">
+	<a name="283" id="id283" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="25 Apr 2013 11:15">
+			Posted: 4 months ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-user" href="/forum/profile/userid-876.html" title="" rel="nofollow">james_cope69</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=90#283" title="#283">#283</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-user" href="/forum/profile/userid-876.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/./nophoto.jpg" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						Hi, I'm trying to implement V3 with directions between more than two points.  The source as downloaded will only show route between two points and directions between two points.  If Point 1, 2, and 3 are filled in it plots between 1 and 3.  If point 1 and 2 are filled in but 3 is blank it will plot between 1 and 2.<br />
+Please help!<br />
+Thanks		</div>
+	</div>
+</div>
+
+
+
+<div class="kdiscuss-item kdiscuss-item1">
+	<a name="281" id="id281" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="28 Mar 2013 11:37">
+			Posted: 4 months, 4 weeks ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-user" href="/forum/profile/userid-871.html" title="" rel="nofollow">Mohammad</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=90#281" title="#281">#281</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-user" href="/forum/profile/userid-871.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/gallery/airplane.gif" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						Hi, I need to plot routes between any two coordinates via some stop over coordinates. Current Directions property takes actual text address, how can i achieve the same using Google coordinates. Please advise. I tried using Polylines but it’s not following the actual routes but straight line plotting. Thanks for the help.		</div>
+	</div>
+</div>
+
+
+
+<div class="kdiscuss-item kdiscuss-item2">
+	<a name="278" id="id278" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="12 Feb 2013 11:17">
+			Posted: 6 months, 1 week ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-user" href="/forum/profile/userid-865.html" title="" rel="nofollow">hadi-z</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=90#278" title="#278">#278</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-user" href="/forum/profile/userid-865.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/./nophoto.jpg" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						hi<br />
+After two or three times zoomin and zoomout on control, all the markers had disappeared runtime on a map....<br />
+<br />
+<br />
+please help me<br />
+thanks.		</div>
+	</div>
+</div>
+
+
+
+<div class="kdiscuss-item kdiscuss-item1">
+	<a name="276" id="id276" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="07 Feb 2013 12:13">
+			Posted: 6 months, 2 weeks ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-user" href="/forum/profile/userid-862.html" title="" rel="nofollow">rongqu40</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=90#276" title="#276">#276</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-user" href="/forum/profile/userid-862.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/./nophoto.jpg" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						Hi, I am a new learner on your user control. Can you tell me how to use your control to set up dynamicly the zoom level to include all markers inside the map instard of using automaticboundaryzoom property?		</div>
+	</div>
+</div>
+
+
+
+<div class="kdiscuss-item kdiscuss-item2">
+	<a name="269" id="id269" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="20 Nov 2012 18:57">
+			Posted: 9 months ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-user" href="/forum/profile/userid-846.html" title="" rel="nofollow">MxW</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=90#269" title="#269">#269</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-user" href="/forum/profile/userid-846.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/./nophoto.jpg" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						Hello Shabdar,<br />
+<br />
+Thanks for your Maps control, your instructions are well written enough so that even someone like me who does not know much c# has been able to make them work.  <br />
+<br />
+I would like to use your control with a web page but I am having problems because I need to use Visual Basic instead of C#. I would like to be able to put a dragable pin on the map with a mouse click, and then get the longitude and latitude of the pin when it is either added or dragged.  This would be kind of like what Barbaros in the first comment want's to do combined with your PushPin drag.  I have been able to get the map with a dragable pin to display on my web page using the following code which I converted to VB by using your example:<br />
+<br />
+ If Not IsPostBack Then<br />
+<br />
+            ' GoogleMapForASPNet1.GoogleMapObject.APIKey = &quot;&quot;<br />
+<br />
+            GoogleMapForASPNet1.GoogleMapObject.APIVersion = &quot;2&quot;<br />
+            GoogleMapForASPNet1.GoogleMapObject.Width = &quot;800px&quot;<br />
+            GoogleMapForASPNet1.GoogleMapObject.Height = &quot;600px&quot;<br />
+            GoogleMapForASPNet1.GoogleMapObject.ZoomLevel = 6<br />
+            GoogleMapForASPNet1.GoogleMapObject.CenterPoint = New GooglePoint(&quot;CenterPoint&quot;, 40.75, -111.8833)<br />
+<br />
+            Dim GP2 As New GooglePoint()<br />
+            GP2.ID = &quot;SpillLoc&quot;<br />
+            GP2.Latitude = 40.75<br />
+            GP2.Longitude = -111.8833<br />
+            GP2.InfoHTML = &quot;Drag this push pin to mark the spill location.&quot;<br />
+            GP2.Draggable = True<br />
+            GP2.ToolTip = &quot;Simple Pushpin&quot;<br />
+            GoogleMapForASPNet1.GoogleMapObject.Points.Add(GP2)<br />
+<br />
+<br />
+        End If<br />
+    End Sub<br />
+<br />
+I would like to use your example to get the Latitude and Longitude of the pin when it is either added or dragged. <br />
+<br />
+ //Add event handler for PushpinDrag event<br />
+    void OnPushpinDrag(string pID)<br />
+    {<br />
+        //pID is ID of pushpin which was moved.<br />
+        lblLastPushpin.Text = pID;<br />
+        //Print all pushpin positions<br />
+        lblPushpin1.Text = &quot;(&quot; + GoogleMapForASPNet1.GoogleMapObject.Points[pID].Latitude.ToString() + &quot;,&quot; + GoogleMapForASPNet1.GoogleMapObject.Points[pID].Longitude.ToString() + &quot;)&quot;;<br />
+    }<br />
+<br />
+<br />
+The problem that I am running into is that I do not know how to make an event handler for the PushPin drag event, or how to make an event handler for the click function that you advise Barbaros about.<br />
+<br />
+Your help would be greatly appreciated.<br />
+<br />
+Thanks,<br />
+MxW		</div>
+	</div>
+</div>
+
+
+
+<div class="kdiscuss-item kdiscuss-item1">
+	<a name="268" id="id268" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="12 Nov 2012 18:43">
+			Posted: 9 months, 1 week ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-user" href="/forum/profile/userid-845.html" title="" rel="nofollow">KDeV</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=90#268" title="#268">#268</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-user" href="/forum/profile/userid-845.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/./nophoto.jpg" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						Hi Shabdar,<br />
+<br />
+Thanks for the great control.<br />
+<br />
+I have a question regarding overlapping pins. What is your take on how to handle this?<br />
+<br />
+I have read about the spiderfy api, have you used this together with your control?<br />
+<br />
+Thanks.<br />
+<br />
+Best regards,<br />
+Toff		</div>
+	</div>
+</div>
+
+
+
+<div class="kdiscuss-item kdiscuss-item2">
+	<a name="264" id="id264" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="15 Oct 2012 01:07">
+			Posted: 10 months, 1 week ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-user" href="/forum/profile/userid-836.html" title="" rel="nofollow">kings512</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=90#264" title="#264">#264</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-user" href="/forum/profile/userid-836.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/./nophoto.jpg" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						Hi Shabdar,<br />
+<br />
+I want to draw two lines on the map to cover the vehicles  which has pass through between these lines by vehicle ID.<br />
+<br />
+can you please help / guide me how to do that?<br />
+<br />
+Thanks a lot for your help!<br />
+Cheers		</div>
+	</div>
+</div>
+
+
+
+<div class="kdiscuss-item kdiscuss-item1">
+	<a name="246" id="id246" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="02 Jul 2012 11:05">
+			Posted: 1 year, 1 month ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-user" href="/forum/profile/userid-764.html" title="" rel="nofollow">ziggy</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=80#246" title="#246">#246</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-user" href="/forum/profile/userid-764.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/./nophoto.jpg" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						<b>wy.no.cn@gmail.com wrote:</b><br />
+<div class="kmsgtext-quote">Hei,Shabdar:<br />
+<br />
+Thank you for your excellent work first. I work google map control in my website project. But when i create a project for ASP.Net web application the &quot;GoogleObject&quot; can not be found. I tried to do some changes for namespace, but it doesnot help. Could you give me help how to config GoogleMapForASPNET in web project? Thanks</div><br />
+<br />
+I am also trying to incorporate this control into a Project. Did you manage to sort this? My project compiles ok, but when run I just get a blank map (i.e. grey map background with the 'powered by Google' logo in the bottom left)		</div>
+	</div>
+</div>
+
+
+
+<div class="kdiscuss-item kdiscuss-item2">
+	<a name="242" id="id242" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="06 Jun 2012 13:31">
+			Posted: 1 year, 2 months ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-user" href="/forum/profile/userid-742.html" title="" rel="nofollow">betul</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=80#242" title="#242">#242</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-user" href="/forum/profile/userid-742.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/./nophoto.jpg" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						Hello,<br />
+<br />
+Thanks for the great control. I have a question, what is the max number of points that can be added to the map? I get the lat and lng values from DB, and when the number of records exceeds 160, a gray screen is displayed with powered by google and terms of use labels. How can I display more points?		</div>
+	</div>
+</div>
+
+
+
+<div class="kdiscuss-item kdiscuss-item1">
+	<a name="236" id="id236" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="25 May 2012 13:15">
+			Posted: 1 year, 3 months ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-user" href="/forum/profile/userid-726.html" title="" rel="nofollow">StephenP</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=80#236" title="#236">#236</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-user" href="/forum/profile/userid-726.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/./nophoto.jpg" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						Did you set the GPS location for the push pin?		</div>
+	</div>
+</div>
+
+
+
+<div class="kdiscuss-item kdiscuss-item2">
+	<a name="235" id="id235" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="23 May 2012 20:40">
+			Posted: 1 year, 3 months ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-user" href="/forum/profile/userid-733.html" title="" rel="nofollow">andyyew</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=80#235" title="#235">#235</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-user" href="/forum/profile/userid-733.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/./nophoto.jpg" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						Hi, I'm trying to use your control in a page in vb however all I get is a map but the pushpin are not displaying, do you know what I missed? I tried creating a page as part of your sample website and it's the same.		</div>
+	</div>
+</div>
+
+
+
+<div class="kdiscuss-item kdiscuss-item1">
+	<a name="233" id="id233" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="14 May 2012 06:50">
+			Posted: 1 year, 3 months ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-user" href="/forum/profile/userid-726.html" title="" rel="nofollow">StephenP</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=80#233" title="#233">#233</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-user" href="/forum/profile/userid-726.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/./nophoto.jpg" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						Hi <br />
+<br />
+My problem i am having is using the scroll on mouse to zoom in out of the map. If i use the java script you gave me above my pins locations dont show on the map. So i cant use it but i would like the mouse scroll zoom		</div>
+	</div>
+</div>
+
+
+
+<div class="kdiscuss-item kdiscuss-item2">
+	<a name="232" id="id232" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="11 May 2012 18:32">
+			Posted: 1 year, 3 months ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-admin" href="/forum/profile/userid-42.html" title="" rel="nofollow">shabdar</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=80#232" title="#232">#232</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-admin" href="/forum/profile/userid-42.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/./nophoto.jpg" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						<b>StephenP wrote:</b><br />
+<div class="kmsgtext-quote">That you for a quick response. It is always appreciated!<br />
+That example you showed me is easy enough to follow and understand, thank you.<br />
+<br />
+But it doesn't work for me 100%. I need my map to be connected to a DB, the lat &amp; long as well as description all come from a db on the server side.<br />
+<br />
+I am using Google Maps User Control for ASP.Net version 1.0 for the C# version</div><br />
+<br />
+Hi<br />
+Please provide more details. What's the issue? Connecting to DB, getting lat/lng from DB etc. If possible attach your source code and tell me where you are struggling so that I can help you.		</div>
+	</div>
+</div>
+
+
+
+<div class="kdiscuss-item kdiscuss-item1">
+	<a name="231" id="id231" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="11 May 2012 09:42">
+			Posted: 1 year, 3 months ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-user" href="/forum/profile/userid-726.html" title="" rel="nofollow">StephenP</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=80#231" title="#231">#231</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-user" href="/forum/profile/userid-726.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/./nophoto.jpg" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						That you for a quick response. It is always appreciated!<br />
+That example you showed me is easy enough to follow and understand, thank you.<br />
+<br />
+But it doesn't work for me 100%. I need my map to be connected to a DB, the lat &amp; long as well as description all come from a db on the server side.<br />
+<br />
+I am using Google Maps User Control for ASP.Net version 1.0 for the C# version		</div>
+	</div>
+</div>
+
+
+
+<div class="kdiscuss-item kdiscuss-item2">
+	<a name="230" id="id230" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="10 May 2012 21:11">
+			Posted: 1 year, 3 months ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-admin" href="/forum/profile/userid-42.html" title="" rel="nofollow">shabdar</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=80#230" title="#230">#230</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-admin" href="/forum/profile/userid-42.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/./nophoto.jpg" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						<b>StephenP wrote:</b><br />
+<div class="kmsgtext-quote">Hi there <br />
+I wonder if you can help. I am using the google Map API in a website of mine and i would like to use the mouse scroll to zoom in and out but i can seem to find anything about it. i am using VB.net. can you help?</div><br />
+<br />
+Use following function in Javascript. Make sure you are using API v2.78 or higher.<br />
+map.enableScrollWheelZoom();<br />
+<br />
+Reference : <a href="http://googlemapsapi.blogspot.ca/2007/04/v278-go-ahead-scroll-your-mouse-wheels.html"  rel="nofollow" target="_blank">googlemapsapi.blogspot.ca/2007/04/v278-g...ur-mouse-wheels.html</a>		</div>
+	</div>
+</div>
+
+
+
+<div class="kdiscuss-item kdiscuss-item1">
+	<a name="229" id="id229" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="10 May 2012 14:20">
+			Posted: 1 year, 3 months ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-user" href="/forum/profile/userid-726.html" title="" rel="nofollow">StephenP</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=80#229" title="#229">#229</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-user" href="/forum/profile/userid-726.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/./nophoto.jpg" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						Hi there <br />
+I wonder if you can help. I am using the google Map API in a website of mine and i would like to use the mouse scroll to zoom in and out but i can seem to find anything about it. i am using VB.net. can you help?		</div>
+	</div>
+</div>
+
+
+
+<div class="kdiscuss-item kdiscuss-item2">
+	<a name="228" id="id228" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="07 May 2012 00:16">
+			Posted: 1 year, 3 months ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-user" href="/forum/profile/userid-718.html" title="" rel="nofollow">guyroy</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=80#228" title="#228">#228</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-user" href="/forum/profile/userid-718.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/./nophoto.jpg" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						I figured it out, thank you again for your help.<br />
+<br />
+I needed to declare an array. It’s working beautifully now.		</div>
+	</div>
+</div>
+
+
+
+<br />
+<b>Warning</b>:  Creating default object from empty value in <b>/home/shabdar1/public_html/shabdar_j25/components/com_kunena/lib/kunena.parser.bbcode.php</b> on line <b>209</b><br />
+<br />
+<b>Warning</b>:  Creating default object from empty value in <b>/home/shabdar1/public_html/shabdar_j25/components/com_kunena/lib/kunena.parser.bbcode.php</b> on line <b>209</b><br />
+<div class="kdiscuss-item kdiscuss-item1">
+	<a name="227" id="id227" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="06 May 2012 00:20">
+			Posted: 1 year, 3 months ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-user" href="/forum/profile/userid-718.html" title="" rel="nofollow">guyroy</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=70#227" title="#227">#227</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-user" href="/forum/profile/userid-718.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/./nophoto.jpg" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						Thank you for the guidelines:<br />
+I managed to get some data back but can’t seem to get the info back on my aspx page.<br />
+I Added in the GoogleMapAPIWrapper.js  file:<br />
+    function MoveEndFunction(overlay, latlng) {<br />
+        RaiseEvent('MoveEnd',  map.getCenter());<br />
+          }<br />
+And<br />
+        GEvent.addListener(map, &quot;moveend&quot;, MoveEndFunction);<br />
+<br />
+The function getCenter returns this:<br />
+?map.getCenter() <br />
+    Ha: -74.16363716125488<br />
+    Vd: 45.389167952325664<br />
+    x: -74.16363716125488<br />
+    y: 45.389167952325664<br />
+so i know the data is there, but i don’t know how to format the other functions to pass the info back to the webpage.<br />
+<br />
+<br />
+In the GoogleMapForASPNet.ascx.cs i put: <br />
+<br />
+    public delegate void MoveEndHandler(double dLatitude, double dLongitude);<br />
+    public event MoveEndHandler MoveEnded;<br />
+<br />
+    public void OnMoveEnd(double dLatitude, double dLongitude)<br />
+    {<br />
+        // Check if there are any Subscribers<br />
+        if (MoveEnded != null)<br />
+        {<br />
+            // Call the Event<br />
+            GoogleMapObject = (GoogleObject)System.Web.HttpContext.Current.Session[&quot;GOOGLE_MAP_OBJECT&quot;];<br />
+            MoveEnded(dLatitude, dLongitude);<br />
+        }<br />
+    }<br />
+<br />
+On the void page_load:<br />
+        if (hidEventName.Value == &quot;MoveEnd&quot;)<br />
+        {<br />
+            string[] sLatLng = hidEventValue.Value.Split(new char[] { ',' }, StringSplitOptions.None);<br />
+            if (sLatLng.Length &gt; 0)<br />
+            {<br />
+                double dLat = double.Parse(sLatLng[0]);<br />
+                double dLng = double.Parse(sLatLng[1]);<br />
+                //Set event name to blank string, so on next postback same event doesn't fire again.<br />
+                hidEventName.Value = &quot;&quot;;<br />
+                OnMoveEnd(dLat, dLng);<br />
+            }<br />
+        }<br />
+<br />
+It gives me : Microsoft JScript runtime error: Sys.WebForms.PageRequestManagerServerErrorException: Input string was not in a correct format.<br />
+Could you help me formatting the functions in the GoogleMapForASPNet.ascx files?<br />
+<br />
+Thank you very much for your help.		</div>
+	</div>
+</div>
+
+
+
+<div class="kdiscuss-item kdiscuss-item2">
+	<a name="225" id="id225" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="05 May 2012 07:31">
+			Posted: 1 year, 3 months ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-user" href="/forum/profile/userid-681.html" title="" rel="nofollow">alitahirsandhu</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=70#225" title="#225">#225</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-user" href="/forum/profile/userid-681.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/./nophoto.jpg" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						Shabdar can you tell me that google map can be opened on desktop application or not??and any changes on desktop can take place on web application also<br />
+is it possible???		</div>
+	</div>
+</div>
+
+
+
+<div class="kdiscuss-item kdiscuss-item1">
+	<a name="224" id="id224" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="04 May 2012 11:29">
+			Posted: 1 year, 3 months ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-user" href="/forum/profile/userid-367.html" title="" rel="nofollow">anjumrizwi</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=70#224" title="#224">#224</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-user" href="/forum/profile/userid-367.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/./nophoto.jpg" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						Thank you for response,<br />
+<br />
+I tried with iframe since iframe shares session with parent page. Both Map display same however it should be different but it is not.<br />
+<br />
+Please help me if you have any other idea.		</div>
+	</div>
+</div>
+
+
+
+<div class="kdiscuss-item kdiscuss-item2">
+	<a name="219" id="id219" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="02 May 2012 19:27">
+			Posted: 1 year, 3 months ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-admin" href="/forum/profile/userid-42.html" title="" rel="nofollow">shabdar</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=70#219" title="#219">#219</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-admin" href="/forum/profile/userid-42.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/./nophoto.jpg" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						Hi guyroy,<br />
+You can get viewport coordinates using Javascript easily. Check out google maps documentation. See below sample javascript code<br />
+<br />
+<div class="highlight"><pre class="php">
+var center_lat = map.getBounds().getCenter().lat();
+var center_lng = map.getBounds().getCenter().lng();
+
+var top_right_lat = map.getBounds().getNorthEast().lat();
+var top_right_lng = map.getBounds().getNorthEast().lng();
+
+Similarly,
+var top_left_lat = map.getBounds().getNorthWest().lat();
+var top_left_lng = map.getBounds().getNorthWest().lng();
+</pre></div><br />
+<br />
+Ok, that's easy. Now, if you want to pass these values to ASP.Net code, it's little tricky. There are various events that I am firing from Javascript to pass javascript values to ASP.Net code. For example<br />
+<br />
+<div class="highlight"><pre class="php">
+//Javascript code
+RaiseEvent('MapClicked', latlng.lat()+&quot;,&quot;+latlng.lng());
+</pre></div><br />
+<br />
+This event is captured in GoogleMapForASPNet.ascx.cs class and that's where I pass values to ASP.Net variables. See below ASP.Net code,<br />
+<br />
+<div class="highlight"><pre class="php">
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        //Console.Write(hidEventName.Value);
+        //Console.Write(hidEventValue.Value);
+        //Fire event for Pushpin Move
+        if (hidEventName.Value == &quot;MapClicked&quot;)
+        {
+            string[] sLatLng = hidEventValue.Value.Split(new char[] {','}, StringSplitOptions.None);
+            if (sLatLng.Length &gt; 0)
+            {
+                double dLat = double.Parse(sLatLng[0]);
+                double dLng = double.Parse(sLatLng[1]);
+                //Set event name to blank string, so on next postback same event doesn't fire again.
+                hidEventName.Value = &quot;&quot;;
+                OnMapClicked(dLat,dLng);
+            }
+        }
+.
+.
+.
+</pre></div><br />
+<br />
+You need to write similar code as above. I will try and add this functionality of View Port co-ordinates in next realease of google maps control. But for now you need to do this workaround.<br />
+<br />
+-Shabdar<br />
+<br />
+<b>guyroy wrote:</b><br />
+<div class="kmsgtext-quote">Thank you, thank you!<br />
+<br />
+This is great. i just need one more thing please...<br />
+<br />
+I would like to know what coordinates are showing. for example when the user moves the map, i would like to know what is the latitude and longitude of the center or the top-left corner so i know which records to load on the map.<br />
+<br />
+ps, there seems to be a bug, when i double-click the zoom, it gives me a script error: Sys.ParameterCountException: Parameter count mismatch.<br />
+<br />
+Again, thank you very much.</div>		</div>
+	</div>
+</div>
+
+
+
+<div class="kdiscuss-item kdiscuss-item1">
+	<a name="218" id="id218" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="02 May 2012 19:05">
+			Posted: 1 year, 3 months ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-admin" href="/forum/profile/userid-42.html" title="" rel="nofollow">shabdar</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=70#218" title="#218">#218</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-admin" href="/forum/profile/userid-42.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/./nophoto.jpg" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						Hi anjumrizwi,<br />
+As you know, I am using only one session variable to store map data. This limits only one map per webpage. What you can do is, use two IFRAMEs in one page. In one IFRAME you can display one web page. And in another you can display another web page. This will allow you to display two maps in one page. Other than that I don't see any other way to accomplish this except changing google map control code. That will be too tedious to do and comlex.<br />
+<br />
+-Shabdar<br />
+<br />
+<b>anjumrizwi wrote:</b><br />
+<div class="kmsgtext-quote">Hi Sabdar,<br />
+<br />
+Thank you very much form your great control. I am using your for long time.<br />
+<br />
+Now I need your help, I have to display two map on one page with ploy line <br />
+eg. <br />
+1. one map will display London to Paris with poly line &amp; marker <br />
+2. Another map will display Paris to Lille with polyline &amp; marker<br />
+<br />
+We have one Session object &amp; one map variable.<br />
+<br />
+Both map will display like static map based on Lat &amp; Long.</div>		</div>
+	</div>
+</div>
+
+
+
+<div class="kdiscuss-item kdiscuss-item2">
+	<a name="217" id="id217" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="02 May 2012 17:27">
+			Posted: 1 year, 3 months ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-user" href="/forum/profile/userid-718.html" title="" rel="nofollow">guyroy</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=70#217" title="#217">#217</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-user" href="/forum/profile/userid-718.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/./nophoto.jpg" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						Thank you, thank you!<br />
+<br />
+This is great. i just need one more thing please...<br />
+<br />
+I would like to know what coordinates are showing. for example when the user moves the map, i would like to know what is the latitude and longitude of the center or the top-left corner so i know which records to load on the map.<br />
+<br />
+ps, there seems to be a bug, when i double-click the zoom, it gives me a script error: Sys.ParameterCountException: Parameter count mismatch.<br />
+<br />
+Again, thank you very much.		</div>
+	</div>
+</div>
+
+
+
+<div class="kdiscuss-item kdiscuss-item1">
+	<a name="216" id="id216" > </a>
+	<div class="kdiscuss-reply-header">
+		<span class="kdiscuss-date" title="02 May 2012 12:32">
+			Posted: 1 year, 3 months ago		</span>
+		<span class="kdiscuss-username">
+			by <a class="kwho-user" href="/forum/profile/userid-367.html" title="" rel="nofollow">anjumrizwi</a>		</span>
+		<span class="kdiscuss-id">
+			<a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html?limit=10&amp;start=70#216" title="#216">#216</a>
+		</span>
+	</div>
+	<div class="kdiscuss-reply-body">
+			<div class="kdiscuss-avatar">
+			<a class="kwho-user" href="/forum/profile/userid-367.html" title="" rel="nofollow"><span class="kavatar"><img class="kavatar" src="http://www.shabdar.org/media/kunena/avatars/resized/size144/./nophoto.jpg" alt="" style="max-width: 144px; max-height: 144px" /></span></a>		</div>
+			<div class="kdiscuss-text">
+						Hi Sabdar,<br />
+<br />
+Thank you very much form your great control. I am using your for long time.<br />
+<br />
+Now I need your help, I have to display two map on one page with ploy line <br />
+eg. <br />
+1. one map will display London to Paris with poly line &amp; marker <br />
+2. Another map will display Paris to Lille with polyline &amp; marker<br />
+<br />
+We have one Session object &amp; one map variable.<br />
+<br />
+Both map will display like static map based on Lat &amp; Long.		</div>
+	</div>
+</div>
+
+
+
+<div class="kdiscuss-more"><a href="/forum/4-asp-net/12-discuss-google-maps-control-for-asp-net.html" title="follow" rel="follow">Read More...</a></div>
+</div></div>
+
+
+                                                </div><!-- end main -->
+
+                                        </div><!-- end wrapper -->
+
+                                
+                        
+                                <div class="wrap"></div>
+
+                                </div> <!-- end contentarea -->
+
+                        </div><!-- back -->
+
+                </div><!-- all -->
+
+                <div id="footer-outer">
+                        
+                        <div id="footer-sub">
+
+
+                                <div id="footer">
+
+                                        
+                                        <p>
+                                                Powered by <a href="http://www.joomla.org/">Joomla!&#174;</a>
+                                        </p>
+
+
+                                </div><!-- end footer -->
+
+                        </div>
+
+                </div>
+				
+        </body>
+</html>

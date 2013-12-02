@@ -1,0 +1,12 @@
+protected void btnQueryStringValues_Click(object sender, EventArgs e) {
+    string name = txtboxName.Text;
+    string city = txtBoxCity.Text;
+    Response.Redirect("Page2.aspx?Name=" + name + "&City=" + city);
+}
+
+protected void Page_Load(object sender, EventArgs e) {
+    string name = Request.QueryString["Name"];
+    string city = Request.QueryString["City"];
+ 
+    lblQueryStringValues.Text = "Your name is: " + name + " and City is: " + city;
+}
